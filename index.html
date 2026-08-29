@@ -8,7 +8,9 @@
   <meta property="og:title" content="PokéSpa — trading card restoration" />
   <meta property="og:description" content="We bring tired trading cards back to life — carefully, and honestly." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1016'/%3E%3Crect x='9' y='6' width='14' height='20' rx='2' fill='none' stroke='%237fd1c9' stroke-width='2'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230e1016'/%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237fd1c9'/%3E%3Cstop offset='.5' stop-color='%23b9a7f0'/%3E%3Cstop offset='1' stop-color='%23f0c98a'/%3E%3C/linearGradient%3E%3Cg transform='rotate(-8 50 50)'%3E%3Crect x='31' y='21' width='40' height='56' rx='5' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3C/g%3E%3Cpath d='M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z' fill='%23f0c98a'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e1016" />
   <style>
     :root{
       --bg:#0e1016; --panel:#161923; --line:#272b38; --text:#f1efe9; --muted:#9aa0ad;
@@ -28,8 +30,7 @@
       -webkit-background-clip:text;background-clip:text;color:transparent;
     }
     header{padding:26px 0;display:flex;align-items:center;gap:11px}
-    .logo{width:24px;height:24px;flex:none}
-    .logo rect{fill:none;stroke:var(--accent);stroke-width:2}
+    .logo{width:26px;height:26px;flex:none}
     .brand{font-weight:800;letter-spacing:.02em;font-size:18px}
 
     .hero{padding:64px 0 40px;text-align:center}
@@ -64,7 +65,11 @@
 <body>
   <div class="wrap">
     <header>
-      <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="4" width="16" height="24" rx="3"/></svg>
+      <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fd1c9"/><stop offset=".5" stop-color="#b9a7f0"/><stop offset="1" stop-color="#f0c98a"/></linearGradient></defs>
+        <g transform="rotate(-8 50 50)"><rect x="31" y="21" width="40" height="56" rx="5" fill="none" stroke="url(#lg)" stroke-width="5"/></g>
+        <path d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z" fill="#f0c98a"/>
+      </svg>
       <span class="brand"><span class="holo">Poké</span>Spa</span>
     </header>
 
