@@ -5,7 +5,7 @@
 // at ~4.5MB — the form compresses images client-side to stay well under it.
 
 const TO = 'info@alexandermhughes.com';
-const FROM = 'PokéSpa <alerts@berouteaware.com>';
+const FROM = 'PokéSpa <quotes@pokespa.com>';
 const MAX_PHOTOS = 4;
 const MAX_TOTAL_BASE64 = 3_800_000; // ~2.8MB of image data, under Vercel's body cap
 
