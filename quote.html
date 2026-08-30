@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Request a quote — PokéSpa</title>
+  <meta name="description" content="Tell us about your card, attach a few photos, and get an honest restoration assessment." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e1016" />
+  <style>
+    :root{
+      --bg:#0e1016; --panel:#161923; --line:#272b38; --text:#f1efe9; --muted:#9aa0ad;
+      --accent:#7fd1c9; --accent-dim:#2c4b48; --err:#e08a84;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:100%}
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+    .topline{height:3px;background:linear-gradient(90deg,#7fd1c9,#b9a7f0 35%,#f0c98a 70%,#7fd1c9)}
+    .wrap{width:100%;max-width:680px;margin:0 auto;padding:0 24px}
+    a{color:inherit;text-decoration:none}
+    .holo{background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header{padding:26px 0;display:flex;align-items:center;gap:11px}
+    .logo{width:26px;height:26px;flex:none}
+    .brand{font-weight:800;letter-spacing:.02em;font-size:18px}
+    h1{font-size:clamp(1.9rem,5.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-top:26px}
+    .lede{color:var(--muted);margin-top:12px;max-width:52ch}
+    form{margin:34px 0 60px;display:flex;flex-direction:column;gap:18px}
+    label{font-size:13px;font-weight:700;letter-spacing:.04em;display:block;margin-bottom:7px}
+    label span{color:var(--muted);font-weight:400}
+    input[type=text],input[type=email],textarea{
+      width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      color:var(--text);padding:13px 14px;font:inherit;font-size:1rem;
+    }
+    input:focus,textarea:focus{outline:2px solid var(--accent-dim);border-color:var(--accent-dim)}
+    textarea{min-height:130px;resize:vertical}
+    .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+    .drop{border:1px dashed var(--line);border-radius:10px;background:var(--panel);padding:16px;text-align:center;color:var(--muted);font-size:.95rem;cursor:pointer}
+    .drop:hover{border-color:var(--accent-dim)}
+    .drop input{display:none}
+    .thumbs{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .thumb{position:relative;width:74px;height:74px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .thumb button{position:absolute;top:2px;right:2px;background:#0e1016cc;color:var(--text);border:0;border-radius:6px;width:20px;height:20px;font-size:12px;cursor:pointer;line-height:1}
+    .btn{background:var(--accent);color:#0e1016;font-weight:800;padding:15px 26px;border-radius:8px;border:0;font:inherit;font-size:1rem;cursor:pointer;transition:transform .1s ease,filter .1s ease}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .btn:disabled{opacity:.6;cursor:default;transform:none}
+    #status{min-height:24px;font-size:.95rem}
+    #status.err{color:var(--err)}
+    #status.ok{color:var(--accent);font-weight:700}
+    .fineprint{color:var(--muted);font-size:12px}
+    footer{margin-top:auto;border-top:1px solid var(--line);padding:22px 0}
+    .foot{color:var(--muted);font-size:12px;line-height:1.7}
+    .foot a:hover{color:var(--accent)}
+    @media(prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <div class="wrap">
+    <header>
+      <a href="/" style="display:flex;align-items:center;gap:11px">
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fd1c9"/><stop offset=".5" stop-color="#b9a7f0"/><stop offset="1" stop-color="#f0c98a"/></linearGradient></defs>
+          <g transform="rotate(-8 50 50)"><rect x="31" y="21" width="40" height="56" rx="5" fill="none" stroke="url(#lg)" stroke-width="5"/></g>
+          <path d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z" fill="#f0c98a"/>
+        </svg>
+        <span class="brand"><span class="holo">Poké</span>Spa</span>
+      </a>
+    </header>
+
+    <h1>Request a quote</h1>
+    <p class="lede">Tell us about the card and attach a few photos. We'll reply with an honest assessment — what can improve, what can't, and what it would cost.</p>
+
+    <form id="f" novalidate>
+      <div>
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required maxlength="120" />
+      </div>
+      <div>
+        <label for="email">Email <span>— where the assessment goes</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required maxlength="200" />
+      </div>
+      <div>
+        <label for="message">The card &amp; what needs help</label>
+        <textarea id="message" name="message" required maxlength="4000" placeholder="What card is it, and what's wrong? Creases, grime, edges, surface — tell us what you see."></textarea>
+      </div>
+      <div>
+        <label>Photos <span>— up to 4; front and problem areas help most</span></label>
+        <label class="drop" id="drop">
+          <input type="file" id="photos" accept="image/*" multiple />
+          Tap to add photos (or drop them here)
+        </label>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
+      <div>
+        <button class="btn" id="send" type="submit">Send inquiry →</button>
+      </div>
+      <div id="status" role="status" aria-live="polite"></div>
+      <p class="fineprint">Prefer plain email? <a href="mailto:info@alexandermhughes.com" style="text-decoration:underline">info@alexandermhughes.com</a> works too.</p>
+    </form>
+  </div>
+
+  <footer>
+    <div class="wrap foot">
+      Restoration is disclosed and honest — never to deceive a grader or buyer.
+      PokéSpa is an independent service and is <b>not affiliated with, endorsed by, or sponsored by</b>
+      Nintendo, Creatures, Game Freak, or The Pokémon Company.
+      <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var MAX = 4, files = [];
+      var input = document.getElementById('photos');
+      var thumbs = document.getElementById('thumbs');
+      var drop = document.getElementById('drop');
+      var statusEl = document.getElementById('status');
+      var sendBtn = document.getElementById('send');
+
+      function say(msg, cls) { statusEl.textContent = msg; statusEl.className = cls || ''; }
+
+      function render() {
+        thumbs.innerHTML = '';
+        files.forEach(function (f, idx) {
+          var d = document.createElement('div'); d.className = 'thumb';
+          var img = document.createElement('img'); img.src = f.preview; img.alt = '';
+          var x = document.createElement('button'); x.type = 'button'; x.textContent = '×';
+          x.setAttribute('aria-label', 'Remove photo');
+          x.addEventListener('click', function () { files.splice(idx, 1); render(); });
+          d.appendChild(img); d.appendChild(x); thumbs.appendChild(d);
+        });
+      }
+
+      // Shrink images client-side so 4 phone photos fit comfortably in one request.
+      function compress(file) {
+        return new Promise(function (resolve, reject) {
+          var url = URL.createObjectURL(file);
+          var img = new Image();
+          img.onload = function () {
+            var maxDim = 1600, w = img.width, h = img.height;
+            var scale = Math.min(1, maxDim / Math.max(w, h));
+            var c = document.createElement('canvas');
+            c.width = Math.round(w * scale); c.height = Math.round(h * scale);
+            c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+            URL.revokeObjectURL(url);
+            var dataUrl = c.toDataURL('image/jpeg', 0.82);
+            resolve({
+              name: (file.name || 'photo').replace(/\.[^.]+$/, '') + '.jpg',
+              data: dataUrl.split(',')[1],
+              preview: dataUrl
+            });
+          };
+          img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('bad image')); };
+          img.src = url;
+        });
+      }
+
+      function addFiles(list) {
+        var incoming = Array.prototype.slice.call(list || []);
+        if (!incoming.length) return;
+        if (files.length + incoming.length > MAX) {
+          say('Up to ' + MAX + ' photos, please.', 'err');
+          incoming = incoming.slice(0, MAX - files.length);
+        }
+        Promise.all(incoming.map(function (f) { return compress(f).catch(function () { return null; }); }))
+          .then(function (done) {
+            done.filter(Boolean).forEach(function (f) { files.push(f); });
+            render();
+            if (files.length) say('');
+          });
+      }
+
+      input.addEventListener('change', function () { addFiles(input.files); input.value = ''; });
+      drop.addEventListener('dragover', function (e) { e.preventDefault(); });
+      drop.addEventListener('drop', function (e) { e.preventDefault(); addFiles(e.dataTransfer.files); });
+
+      document.getElementById('f').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('name').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var message = document.getElementById('message').value.trim();
+        if (!name || !email || !message) { say('Name, email, and the card details are all needed.', 'err'); return; }
+        sendBtn.disabled = true; say('Sending…');
+        fetch('/api/inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name, email: email, message: message,
+            website: document.getElementById('website').value,
+            photos: files.map(function (f) { return { name: f.name, data: f.data }; })
+          })
+        }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+          .then(function (res) {
+            if (res.ok) {
+              say('Sent! We’ll get back to you with an honest assessment.', 'ok');
+              document.getElementById('f').reset(); files = []; render();
+              sendBtn.disabled = false;
+            } else {
+              say(res.j && res.j.error || 'Couldn’t send — please email us directly.', 'err');
+              sendBtn.disabled = false;
+            }
+          })
+          .catch(function () {
+            say('Network hiccup — please try again or email us directly.', 'err');
+            sendBtn.disabled = false;
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
