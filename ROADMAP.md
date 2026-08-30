@@ -10,8 +10,12 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   restorations photographed — blocker: content, not code)
 
 ## Next (when Alexander wants inquiries flowing)
-- ⬜ Proper inquiry form (replace mailto) — email via a provider behind an
-  interface (portfolio rule); spam protection; no analytics beyond privacy-safe
+- ✅ Proper inquiry form (2026-08-29): /quote.html + /api/inquiry — Resend,
+  photo attachments (client-compressed, max 4), honeypot, reply-to submitter.
+  Verified end-to-end: test email w/ photo landed in info@ inbox.
+- ⬜ Verify pokespa.com in Resend (DNS records at Namecheap) so the sender
+  becomes quotes@pokespa.com — currently sends from verified
+  alerts@berouteaware.com (only Alexander sees the from-address)
 - ⬜ Pricing / turnaround copy — ONLY once Alexander sets real numbers
 - ⬜ OG share checks after any copy change
 

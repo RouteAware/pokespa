@@ -26,6 +26,11 @@ global profile (`~/.claude/CLAUDE.md`) + portfolio home (`~/Desktop/HALE.md`).
 - Voice: warm, careful, craftsperson-honest. Short sentences.
 
 ## State (2026-08-29)
-Single-page landing: hero (mailto CTA) → What we do → How it works (4 steps)
-→ The PokéSpa promise (disclosure tenets) → Before & after (placeholder) →
-footer w/ legal. No backend, no analytics. Direction: `ROADMAP.md`.
+Landing: hero (CTA → /quote.html) → What we do → How it works (4 steps) →
+The PokéSpa promise (disclosure tenets) → Before & after (placeholder) →
+footer w/ legal. **Backend: one Vercel function, `api/inquiry.js`** — quote
+form w/ photo attachments via Resend (RESEND_API_KEY in Vercel env, key
+shared w/ lane-watch; stored SENSITIVE so `vercel env pull` returns it
+empty — the plaintext lives in lane-watch/.env.local). Sender is
+alerts@berouteaware.com until pokespa.com is Resend-verified. No analytics.
+Direction: `ROADMAP.md`.
