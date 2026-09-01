@@ -49,8 +49,14 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   ⚠️ Alexander: payout setup before first sale.
 - ⬜ Learn era next articles (1–2/session): whitening · holo scratches ·
   creases · warping · vintage wax · indents (hub already teases them)
-- ⬜ Affiliate accounts (Alexander): Amazon Associates, BCW affiliate/wholesale
-  → then swap /shop.html plain links to disclosed affiliate links
+- ✅ Image refresh 2026-09-01 (Alexander disliked muddier set): premium dark
+  holo-silk imagery sitewide + FW store hero rebuilt as designed brand cards
+  (merch-art/card-a+b); credits/rules in img/CREDITS.md
+- 🔄 Amazon Associates (Alexander applying 2026-09-01; Hale supplied
+  application answers): when tracking ID arrives → set AMZ_TAG in shop.html
+  + flip disclosure to "As an Amazon Associate, PokéSpa earns from qualifying
+  purchases" + build his curated product list into the grid
+- ⬜ BCW affiliate/wholesale (Alexander) — later, for the dropship era
 - ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
   dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
 - 🅿️ **Phase 3 — Brand era** (trigger: real sales): white-label PokéSpa
