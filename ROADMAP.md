@@ -28,6 +28,10 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   placeholder gallery removed (Alexander's ask), replaced with Learn grid.
   Links are PLAIN retail links for now — swap to affiliate once accounts exist
   (Amazon Associates + BCW = Alexander signups; disclosure copy already in place).
+- ✅ Glow-up pass 2026-08-31: license-verified Unsplash imagery (img/CREDITS.md
+  — NEVER use card/character photos; watch for watermarked Unsplash+ tier),
+  article banners, hub image cards, holo homepage hero, wider desktop
+  (articles 860px / hub+home 1080–1100px), mobile verified at 390px
 - ⬜ Learn era next articles (1–2/session): whitening · holo scratches ·
   creases · warping · vintage wax · indents (hub already teases them)
 - ⬜ Affiliate accounts (Alexander): Amazon Associates, BCW affiliate/wholesale
