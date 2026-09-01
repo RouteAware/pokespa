@@ -28,6 +28,11 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   placeholder gallery removed (Alexander's ask), replaced with Learn grid.
   Links are PLAIN retail links for now — swap to affiliate once accounts exist
   (Amazon Associates + BCW = Alexander signups; disclosure copy already in place).
+- ✅ Depth pass 2026-08-31 (Alexander loved the holo foil, asked for more
+  depth w/o overdoing): aurora radial ground on all pages, holo-gradient-edge
+  card hovers ("card catching the light"), holo frame on the promise panel,
+  holo-swirl CTA underlays, gradient footer hairlines, holo "back to life."
+  hero line, nav added to quote.html
 - ✅ Glow-up pass 2026-08-31: license-verified Unsplash imagery (img/CREDITS.md
   — NEVER use card/character photos; watch for watermarked Unsplash+ tier),
   article banners, hub image cards, holo homepage hero, wider desktop
