@@ -52,10 +52,12 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ✅ Image refresh 2026-09-01 (Alexander disliked muddier set): premium dark
   holo-silk imagery sitewide + FW store hero rebuilt as designed brand cards
   (merch-art/card-a+b); credits/rules in img/CREDITS.md
-- 🔄 Amazon Associates (Alexander applying 2026-09-01; Hale supplied
-  application answers): when tracking ID arrives → set AMZ_TAG in shop.html
-  + flip disclosure to "As an Amazon Associate, PokéSpa earns from qualifying
-  purchases" + build his curated product list into the grid
+- ✅ Amazon Associates ACTIVE 2026-09-01: ID **pokespa-20**, tags baked into
+  shop.html hrefs statically, "(paid link)" markers + Associates disclosure
+  live. ⚠️ Amazon requires QUALIFIED SALES within 180 days (by ~2027-03-01)
+  or the account is withdrawn — drive shop traffic.
+- ⬜ Alexander's curated Amazon product list → build into shop grid as cards
+  (he'll send links; append &tag=pokespa-20 to each)
 - ⬜ BCW affiliate/wholesale (Alexander) — later, for the dropship era
 - ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
   dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
