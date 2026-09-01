@@ -72,6 +72,16 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
     all handled; text-only results, NO card images per trademark rule)
   · /shows.html card show finder (live local searches + recurring majors)
   · Hub: encyclopedia live + Toolbox section
+- ✅ Slab care shop section 2026-09-01 (Alexander's ask): sleeves, bumper
+  cases, NOVUS polish ("polish the case, never the card"), storage, stands,
+  UV displays — 6 tiles, 6 new icons, all tagged
+- 🔄 Pokémon Center drop notifications (Alexander idea; researched 2026-09-01,
+  full report in docs/DROP-ALERTS-RESEARCH.md): VERDICT — never run our own
+  monitor (explicit pokemoncenter.com TOS ban on scraping + DataDome/Queue-it
+  + we must stay clean with TPCi; they mass-canceled 42k botted preorders).
+  Recommended v1 instead: Drop Calendar page + "how to win drop day" guide +
+  curated FREE alert-tool directory + weekly email digest. AWAITING
+  Alexander's green light.
 - ⬜ pokemontcg.io API key (Alexander, free signup at dev.pokemontcg.io) →
   add X-Api-Key header in value.html for reliable rate limits
 - ⬜ Alexander's personally curated Amazon list → add as tiles (tag applied)
