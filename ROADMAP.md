@@ -75,13 +75,17 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ✅ Slab care shop section 2026-09-01 (Alexander's ask): sleeves, bumper
   cases, NOVUS polish ("polish the case, never the card"), storage, stands,
   UV displays — 6 tiles, 6 new icons, all tagged
-- 🔄 Pokémon Center drop notifications (Alexander idea; researched 2026-09-01,
-  full report in docs/DROP-ALERTS-RESEARCH.md): VERDICT — never run our own
-  monitor (explicit pokemoncenter.com TOS ban on scraping + DataDome/Queue-it
-  + we must stay clean with TPCi; they mass-canceled 42k botted preorders).
-  Recommended v1 instead: Drop Calendar page + "how to win drop day" guide +
-  curated FREE alert-tool directory + weekly email digest. AWAITING
-  Alexander's green light.
+- ✅ DROP RADAR shipped 2026-09-01 (Alexander: "add all that + fully
+  automate"): /drops.html (auto set calendar + news + drop-day guide + free
+  alert-tool directory + signup) · /api/drops (edge-cached 1h) · /api/subscribe
+  → Resend audience 25aac3cb-6f49-4ec1-9924-6d43813ebcd0 · /api/digest weekly
+  broadcast, Vercel cron Mon 14:00 UTC w/ CRON_SECRET (prod env; NOTE: first
+  set attempt stored EMPTY — re-add needs file-redirect not var pipe).
+  ZERO-MAINTENANCE by design; we never touch pokemoncenter.com
+  (docs/DROP-ALERTS-RESEARCH.md). HARD-WON: Vercel egress is blocked by
+  Reddit (403/429) and pokemontcg.io 500s from DCs — server sources are
+  GitHub raw PokemonTCG/pokemon-tcg-data (sets) + Google News RSS (news).
+  Live test broadcast sent to Alexander (subscriber #1) 2026-09-01.
 - ⬜ pokemontcg.io API key (Alexander, free signup at dev.pokemontcg.io) →
   add X-Api-Key header in value.html for reliable rate limits
 - ⬜ Alexander's personally curated Amazon list → add as tiles (tag applied)
