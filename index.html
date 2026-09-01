@@ -31,7 +31,7 @@
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
       line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
     }
-    .wrap{width:100%;max-width:960px;margin:0 auto;padding:0 24px}
+    .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 24px}
     a{color:inherit;text-decoration:none}
     .holo{
       background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);
@@ -47,7 +47,10 @@
     .logo .spark{animation:twinkle 3.4s ease-in-out infinite}
     .brand{font-weight:800;letter-spacing:.02em;font-size:18px}
 
-    .hero{padding:64px 0 40px;text-align:center;position:relative}
+    .hero{padding:clamp(56px,9vw,96px) 24px clamp(44px,7vw,72px);text-align:center;position:relative;
+      border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:4px;
+      background:linear-gradient(180deg,rgba(14,16,22,.80),rgba(14,16,22,.93) 70%,#0e1016),
+        url(/img/hero-holo.jpg) center/cover}
     .hero-card{position:absolute;right:-60px;top:-10px;width:280px;height:280px;opacity:.09;pointer-events:none}
     .hero-card rect{fill:none;stroke:#7fd1c9;stroke-width:2.5}
     .hero-card path{fill:#f0c98a}
