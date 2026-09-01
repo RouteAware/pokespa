@@ -78,7 +78,7 @@ td.ok{color:var(--accent);font-weight:700;white-space:nowrap}
 td.no{color:var(--gold);font-weight:700;white-space:nowrap}
 
 .cta{border:1px solid var(--accent-dim);
-  background:linear-gradient(180deg,rgba(20,26,34,.93),rgba(18,21,29,.97)),url(/img/holo-swirl.jpg) center/cover;
+  background:linear-gradient(180deg,rgba(20,26,34,.93),rgba(18,21,29,.97)),url(/img/silk-dark.jpg) center/cover;
   border-radius:14px;padding:22px;margin:34px 0 0;text-align:center}
 .cta h2{margin:0 0 6px;font-size:1.25rem}
 .cta p{color:var(--muted);margin:0 auto 16px;max-width:52ch}

@@ -146,5 +146,16 @@
       </div>
     </footer>
   </div>
+  <script>
+    // Amazon Associates: set the tracking ID to activate affiliate links sitewide.
+    // When set, ALSO update the .disclosure copy above to the affirmative Amazon
+    // statement: "As an Amazon Associate, PokéSpa earns from qualifying purchases."
+    var AMZ_TAG = ""; // e.g. "pokespa-20"
+    if (AMZ_TAG) {
+      document.querySelectorAll('a[href*="amazon.com"]').forEach(function(a){
+        try { var u = new URL(a.href); u.searchParams.set('tag', AMZ_TAG); a.href = u.toString(); } catch(e){}
+      });
+    }
+  </script>
 </body>
 </html>
