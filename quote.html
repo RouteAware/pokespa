@@ -29,12 +29,19 @@
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:100%}
-    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+    body{background:
+        radial-gradient(640px 420px at 12% 0%,rgba(127,209,201,.06),transparent 70%),
+        radial-gradient(560px 380px at 88% 100%,rgba(185,167,240,.055),transparent 70%),
+        var(--bg);
+      color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
     .topline{height:3px;background:linear-gradient(90deg,#7fd1c9,#b9a7f0 35%,#f0c98a 70%,#7fd1c9)}
     .wrap{width:100%;max-width:680px;margin:0 auto;padding:0 24px}
     a{color:inherit;text-decoration:none}
     .holo{background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);-webkit-background-clip:text;background-clip:text;color:transparent}
     header{padding:26px 0;display:flex;align-items:center;gap:11px}
+    header nav{margin-left:auto;display:flex;gap:18px;font-size:13px}
+    header nav a{color:var(--muted)}
+    header nav a:hover{color:var(--accent)}
     .logo{width:26px;height:26px;flex:none}
     .brand{font-weight:800;letter-spacing:.02em;font-size:18px}
     h1{font-size:clamp(1.9rem,5.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-top:26px}
@@ -81,6 +88,10 @@
         </svg>
         <span class="brand"><span class="holo">Poké</span>Spa</span>
       </a>
+      <nav>
+        <a href="/learn/">Learn</a>
+        <a href="/service.html">Service</a>
+      </nav>
     </header>
 
     <h1>Request a quote</h1>

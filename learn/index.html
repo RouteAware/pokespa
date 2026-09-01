@@ -25,12 +25,16 @@
     .hubhero h1,.hubhero .standfirst,.hubhero .eyebrow{position:relative}
     .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
     @media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
-    .g-card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px;display:block;color:var(--text)}
-    .g-card:hover{border-color:var(--accent-dim);text-decoration:none}
+    .g-card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px;display:block;color:var(--text);
+      transition:transform .18s ease,box-shadow .18s ease}
+    a.g-card:hover{text-decoration:none;border-color:transparent;
+      background:linear-gradient(var(--panel),var(--panel)) padding-box,
+        linear-gradient(120deg,#7fd1c9,#b9a7f0 45%,#f0c98a 80%,#7fd1c9) border-box;
+      transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.35)}
     .g-card .thumb{aspect-ratio:16/7;overflow:hidden;border-radius:9px;margin-bottom:14px;border:1px solid var(--line)}
     .g-card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
     .g-card:hover .thumb img{transform:scale(1.04)}
-    @media(prefers-reduced-motion:reduce){.g-card .thumb img{transition:none}.g-card:hover .thumb img{transform:none}}
+    @media(prefers-reduced-motion:reduce){.g-card,.g-card .thumb img{transition:none}.g-card:hover .thumb img{transform:none}a.g-card:hover{transform:none}}
     .g-card .k{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
     .g-card h3{font-size:1.05rem;font-weight:700;margin-top:6px}
     .g-card p{color:var(--muted);font-size:.9rem;margin:6px 0 0;max-width:none}

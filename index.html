@@ -27,7 +27,11 @@
     *{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:100%}
     body{
-      background:var(--bg);color:var(--text);
+      background:
+        radial-gradient(640px 420px at 12% 0%,rgba(127,209,201,.06),transparent 70%),
+        radial-gradient(560px 380px at 88% 100%,rgba(185,167,240,.055),transparent 70%),
+        var(--bg);
+      color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
       line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;
     }
@@ -70,6 +74,11 @@
     .svc{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:18px}
     .svc h3{font-size:1.1rem;font-weight:700}
     .svc p{color:var(--muted);font-size:.92rem;margin-top:5px}
+    a.svc{transition:transform .18s ease,box-shadow .18s ease}
+    a.svc:hover{border-color:transparent;
+      background:linear-gradient(var(--panel),var(--panel)) padding-box,
+        linear-gradient(120deg,#7fd1c9,#b9a7f0 45%,#f0c98a 80%,#7fd1c9) border-box;
+      transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.35)}
 
     .steps{display:grid;grid-template-columns:1fr;gap:12px}
     @media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
@@ -78,17 +87,20 @@
     .step h3{font-size:1.02rem;font-weight:700;margin-top:8px}
     .step p{color:var(--muted);font-size:.9rem;margin-top:5px}
 
-    .promise{border:1px solid var(--accent-dim);background:linear-gradient(180deg,#141a22,#12151d);border-radius:14px;padding:24px}
+    .promise{border:1px solid transparent;border-radius:14px;padding:24px;
+      background:linear-gradient(180deg,#141a22,#12151d) padding-box,
+        linear-gradient(120deg,rgba(127,209,201,.5),rgba(185,167,240,.45) 45%,rgba(240,201,138,.5) 80%,rgba(127,209,201,.5)) border-box}
     .promise .plede{color:var(--text);font-weight:700;font-size:1.15rem}
     .tenets{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
     @media(min-width:760px){.tenets{grid-template-columns:repeat(3,1fr)}}
     .tenet b{display:block;color:var(--accent);font-size:.95rem}
     .tenet p{color:var(--muted);font-size:.9rem;margin-top:5px}
-    @media(prefers-reduced-motion:reduce){.logo .spark{animation:none}.btn{transition:none}}
+    @media(prefers-reduced-motion:reduce){.logo .spark{animation:none}.btn{transition:none}a.svc{transition:none}a.svc:hover{transform:none}}
 
     .soonnote{color:var(--muted);font-size:.9rem;margin-top:14px}
 
-    footer{margin-top:auto;border-top:1px solid var(--line);padding:24px 0}
+    footer{margin-top:auto;border-top:1px solid transparent;padding:24px 0;
+      border-image:linear-gradient(90deg,transparent,rgba(127,209,201,.45) 30%,rgba(185,167,240,.45) 50%,rgba(240,201,138,.45) 70%,transparent) 1}
     .foot{color:var(--muted);font-size:12px;line-height:1.7}
     .foot a:hover{color:var(--accent)}
   </style>
@@ -116,7 +128,7 @@
         <path d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z"/>
       </svg>
       <p class="eyebrow">Trading card restoration</p>
-      <h1>Bring tired cards<br>back to life.</h1>
+      <h1>Bring tired cards<br><span class="holo">back to life.</span></h1>
       <p class="lede">PokéSpa restores Pokémon and collectible trading cards — carefully, and honestly. Cleaning, de-creasing, surface and edge work, and more.</p>
       <div class="cta">
         <a class="btn" href="/quote.html">Request a quote →</a>
