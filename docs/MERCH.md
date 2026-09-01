@@ -16,11 +16,19 @@ the designer). Created + first products built by Hale 2026-08-31→09-01._
   file input — JS-click the slot's Remove button first, then tag the input with
   aria-label and file_upload to it (panel Remove buttons no-op via normal click).
 
-## Products (both PUBLIC, ready for launch)
+## Products (all PUBLIC)
 | Product | Price | Base/Margin | Design |
 |---|---|---|---|
 | The PokéSpa Tee (black Bella+Canvas 3001 Supersoft) | $32 | $17.70 / $14.30 | Front: card mark 3.71" left chest ("Fit to area → Left chest"). Back: full crest — mark + holo PokéSpa wordmark + "RESTORATION, DISCLOSED. ALWAYS." |
 | The Holo Mug (Black Glossy WGM79B, 11/15oz) | $18 / $21 | $8.95+ / ~$9-10.50 | Card mark 2.14" left of handle |
+| The Shine Sticker (Allcolor 5493 kiss-cut, 3"/4"/5.5") | $6 | $2.29+ / ~$3.71 | icon-mark; 15×3.75" strip size REMOVED (bad quality flag) |
+| The Bench Hoodie (Cotton Heritage M2580 black) | $48 | $33.24 / $14.76 | front-mark left chest + back-tee crest (2 prints) |
+| The Bench Mat (Allcolor SP70018 desk mat 15.5×31.5") | $28 | $13 / $15 | benchmat300.jpg — NOTE: this product needs 300dpi (9921×5197); 150dpi masters get "Low quality" flag |
+
+## Theme (2026-09-01 second pass — Alexander wanted light bg for black garments)
+LIGHT storefront: Background #F5F4F1, Text #16181d, Primary teal #7fd1c9.
+Hero = designed silk cards (merch-art/card-a.jpg mark card + card-b.jpg
+wordmark card + icon-mark), replacing the raw texture crops he disliked.
 
 ## Print masters (merch-art/, transparent, print-grade)
 - front-mark.png 4200×4200 — card mark (copy of Recursis-Site back-pokespa.png)

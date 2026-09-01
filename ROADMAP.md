@@ -56,8 +56,21 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   shop.html hrefs statically, "(paid link)" markers + Associates disclosure
   live. ⚠️ Amazon requires QUALIFIED SALES within 180 days (by ~2027-03-01)
   or the account is withdrawn — drive shop traffic.
-- ⬜ Alexander's curated Amazon product list → build into shop grid as cards
-  (he'll send links; append &tag=pokespa-20 to each)
+- ✅ Shop catalog expansion 2026-09-01: 26 curated cards in 6 sections (dry
+  kit, full Kurt's line, humidity/storage, protect, inspect, bench tools w/
+  pressing caveat) — 22 tagged Amazon links, all with paid-link markers
+- ✅ Merch expansion 2026-09-01: Shine Sticker $6 + Bench Hoodie $48 + Bench
+  Mat $28 (5 products total); storefront flipped to LIGHT theme (Alexander:
+  black items on black bg) — details docs/MERCH.md
+- ⬜ "Store-feel" shop upgrade (Alexander wants product-page look): own
+  illustrations/photos per product tile + prices — NOTE: Amazon product
+  IMAGES require their PA-API (needs 3 qualifying sales first); until then
+  use our own graphics, never scraped Amazon images
+- ⬜ Alexander's personally curated Amazon list → add as cards (append
+  &tag=pokespa-20)
+- 🅿️ Card show locator page (Alexander idea 2026-09-01)
+- 🅿️ Card price/market-value lookup feature (Alexander idea 2026-09-01 —
+  candidate APIs: pokemontcg.io, PriceCharting, eBay sold listings)
 - ⬜ BCW affiliate/wholesale (Alexander) — later, for the dropship era
 - ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
   dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
