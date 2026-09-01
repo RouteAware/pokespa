@@ -39,6 +39,9 @@
     }
     .topline{height:3px;background:linear-gradient(90deg,#7fd1c9,#b9a7f0 35%,#f0c98a 70%,#7fd1c9)}
     header{padding:26px 0;display:flex;align-items:center;gap:11px}
+    header nav{margin-left:auto;display:flex;gap:18px;font-size:13px}
+    header nav a{color:var(--muted)}
+    header nav a:hover{color:var(--accent)}
     .logo{width:26px;height:26px;flex:none}
     @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.3}}
     .logo .spark{animation:twinkle 3.4s ease-in-out infinite}
@@ -80,11 +83,6 @@
     .tenet p{color:var(--muted);font-size:.9rem;margin-top:5px}
     @media(prefers-reduced-motion:reduce){.logo .spark{animation:none}.btn{transition:none}}
 
-    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media(min-width:640px){.gallery{grid-template-columns:repeat(4,1fr)}}
-    .frame{aspect-ratio:3/4;border:1px dashed var(--line);border-radius:10px;background:
-      linear-gradient(135deg,#12151d,#191d28);display:flex;align-items:center;justify-content:center;
-      color:var(--muted);font-size:11px;font-family:ui-monospace,Menlo,monospace;text-align:center;padding:8px}
     .soonnote{color:var(--muted);font-size:.9rem;margin-top:14px}
 
     footer{margin-top:auto;border-top:1px solid var(--line);padding:24px 0}
@@ -102,6 +100,11 @@
         <path class="spark" d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z" fill="#f0c98a"/>
       </svg>
       <span class="brand"><span class="holo">Poké</span>Spa</span>
+      <nav>
+        <a href="/learn/">Learn</a>
+        <a href="/service.html">Service</a>
+        <a href="/quote.html">Get a quote</a>
+      </nav>
     </header>
 
     <section class="hero">
@@ -115,7 +118,7 @@
       <div class="cta">
         <a class="btn" href="/quote.html">Request a quote →</a>
       </div>
-      <p class="fineprint">Attach photos of your card — we reply with an honest assessment. Before/after portfolio coming soon.</p>
+      <p class="fineprint">Attach photos of your card — we reply with an honest assessment, free.</p>
     </section>
 
     <section class="block">
@@ -151,14 +154,14 @@
     </section>
 
     <section class="block">
-      <h2>Before &amp; after</h2>
-      <div class="gallery">
-        <div class="frame">portfolio<br>coming soon</div>
-        <div class="frame">portfolio<br>coming soon</div>
-        <div class="frame">portfolio<br>coming soon</div>
-        <div class="frame">portfolio<br>coming soon</div>
+      <h2>Learn card care</h2>
+      <div class="services">
+        <a class="svc" href="/learn/how-to-clean-pokemon-cards.html" style="display:block;color:inherit"><h3>How to clean cards safely</h3><p>The dry-first method — what to use, and when to stop.</p></a>
+        <a class="svc" href="/learn/cleaning-cards-before-grading.html" style="display:block;color:inherit"><h3>Cleaning before grading</h3><p>What PSA, BGS and CGC actually flag as alteration.</p></a>
+        <a class="svc" href="/learn/cleaning-vs-card-doctoring.html" style="display:block;color:inherit"><h3>Cleaning vs. doctoring</h3><p>Where the hobby draws the line — and where we do.</p></a>
+        <a class="svc" href="/learn/diy-or-pro.html" style="display:block;color:inherit"><h3>DIY or pro?</h3><p>An honest triage for the card on your desk.</p></a>
       </div>
-      <p class="soonnote">Real before/after shots of cards we&apos;ve restored are on the way.</p>
+      <p class="soonnote"><a href="/learn/" style="color:var(--accent)">Browse all guides →</a></p>
     </section>
 
     <footer>
@@ -167,7 +170,7 @@
         PokéSpa is an independent service and is <b>not affiliated with, endorsed by, or sponsored by</b>
         Nintendo, Creatures, Game Freak, or The Pokémon Company. All card and character names/artwork are the
         property of their respective owners.
-        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="mailto:info@pokespa.com">contact</a>
+        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/learn/">Learn</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a>
       </div>
     </footer>
   </div>

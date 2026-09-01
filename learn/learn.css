@@ -1,0 +1,90 @@
+/* PokéSpa Learn — shared article styles (brand: see CLAUDE.md) */
+:root{
+  --bg:#0e1016; --panel:#161923; --panel2:#12151d; --line:#272b38;
+  --text:#f1efe9; --muted:#9aa0ad; --accent:#7fd1c9; --accent-dim:#2c4b48;
+  --gold:#f0c98a; --gold-dim:#5a4a2e; --lav:#b9a7f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;
+  display:flex;flex-direction:column;
+}
+.topline{height:3px;background:linear-gradient(90deg,#7fd1c9,#b9a7f0 35%,#f0c98a 70%,#7fd1c9)}
+.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.holo{background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+
+header.site{padding:24px 0;display:flex;align-items:center;gap:11px}
+header.site .logo{width:24px;height:24px;flex:none}
+header.site .brand{font-weight:800;letter-spacing:.02em;font-size:17px;color:var(--text)}
+header.site .brand:hover{text-decoration:none}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:13px}
+header.site nav a{color:var(--muted)}
+header.site nav a:hover{color:var(--accent);text-decoration:none}
+header.site nav a.active{color:var(--text);font-weight:700}
+
+.eyebrow{font-family:ui-monospace,Menlo,monospace;color:var(--accent);font-size:12px;
+  letter-spacing:.22em;text-transform:uppercase}
+.eyebrow a{color:inherit}
+article{padding:28px 0 48px}
+h1{font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;
+  margin:12px 0 10px;text-wrap:balance}
+.standfirst{color:var(--muted);font-size:1.08rem;max-width:60ch;margin-bottom:6px}
+.byline{font-family:ui-monospace,Menlo,monospace;color:var(--muted);font-size:11px;
+  letter-spacing:.08em;margin-bottom:26px}
+
+article h2{font-size:1.45rem;font-weight:800;letter-spacing:-.01em;margin:38px 0 12px;text-wrap:balance}
+article h3{font-size:1.12rem;font-weight:700;margin:26px 0 8px}
+article p{margin:0 0 14px;max-width:68ch}
+article ul,article ol{margin:0 0 16px 22px;max-width:66ch}
+article li{margin-bottom:7px}
+article strong{color:var(--text)}
+article p,article li{color:#d6d4cd}
+
+.callout{border:1px solid var(--gold-dim);background:linear-gradient(180deg,#1a1712,#14120e);
+  border-radius:12px;padding:16px 18px;margin:20px 0}
+.callout b,.callout .t{color:var(--gold)}
+.callout p{color:var(--muted);font-size:.95rem;margin:6px 0 0}
+.tip{border:1px solid var(--accent-dim);background:linear-gradient(180deg,#141a22,#12151d);
+  border-radius:12px;padding:16px 18px;margin:20px 0}
+.tip b,.tip .t{color:var(--accent)}
+.tip p{color:var(--muted);font-size:.95rem;margin:6px 0 0}
+
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin:20px 0}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:520px}
+th{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:#d6d4cd}
+tr:last-child td{border-bottom:0}
+td.ok{color:var(--accent);font-weight:700;white-space:nowrap}
+td.no{color:var(--gold);font-weight:700;white-space:nowrap}
+
+.cta{border:1px solid var(--accent-dim);background:linear-gradient(180deg,#141a22,#12151d);
+  border-radius:14px;padding:22px;margin:34px 0 0;text-align:center}
+.cta h2{margin:0 0 6px;font-size:1.25rem}
+.cta p{color:var(--muted);margin:0 auto 16px;max-width:52ch}
+.btn{background:var(--accent);color:#0e1016;font-weight:800;padding:13px 24px;border-radius:8px;
+  display:inline-block;transition:transform .1s ease,filter .1s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05);text-decoration:none}
+@media(prefers-reduced-motion:reduce){.btn{transition:none}}
+
+.related{border-top:1px solid var(--line);margin-top:40px;padding-top:22px}
+.related h2{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 14px}
+.related ul{list-style:none;margin:0;display:flex;flex-direction:column;gap:9px}
+.related a{color:var(--text)}
+.related a:hover{color:var(--accent)}
+.related span{color:var(--muted);font-size:.88rem}
+
+.disclosure{color:var(--muted);font-size:12px;border:1px dashed var(--line);border-radius:10px;
+  padding:12px 16px;margin:26px 0 0;line-height:1.6}
+
+footer.site{margin-top:auto;border-top:1px solid var(--line);padding:24px 0}
+footer.site .foot{color:var(--muted);font-size:12px;line-height:1.7}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--accent)}

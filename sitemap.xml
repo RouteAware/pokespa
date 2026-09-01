@@ -2,10 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pokespa.com/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-08-31</lastmod>
   </url>
   <url>
     <loc>https://pokespa.com/quote.html</loc>
     <lastmod>2026-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://pokespa.com/service.html</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://pokespa.com/learn/</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://pokespa.com/learn/how-to-clean-pokemon-cards.html</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://pokespa.com/learn/cleaning-cards-before-grading.html</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://pokespa.com/learn/cleaning-vs-card-doctoring.html</loc>
+    <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://pokespa.com/learn/diy-or-pro.html</loc>
+    <lastmod>2026-08-31</lastmod>
   </url>
 </urlset>
