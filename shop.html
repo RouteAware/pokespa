@@ -18,25 +18,70 @@
   <meta name="theme-color" content="#0e1016" />
   <link rel="stylesheet" href="/learn/learn.css" />
   <style>
-    .wrap{max-width:1000px}
-    .cat{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:34px 0 14px;display:flex;align-items:center;gap:12px}
+    .wrap{max-width:1080px}
+    .cat{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:36px 0 14px;display:flex;align-items:center;gap:12px}
     .cat::after{content:"";flex:1;height:1px;background:var(--line)}
     .pgrid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:680px){.pgrid{grid-template-columns:1fr 1fr}}
-    .prod{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;
+    @media(min-width:640px){.pgrid{grid-template-columns:1fr 1fr}}
+    @media(min-width:960px){.pgrid{grid-template-columns:1fr 1fr 1fr}}
+    .prod{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:14px 14px 18px;display:flex;flex-direction:column;gap:8px;
       transition:transform .18s ease,box-shadow .18s ease}
     .prod:hover{border-color:transparent;
       background:linear-gradient(var(--panel),var(--panel)) padding-box,
         linear-gradient(120deg,#7fd1c9,#b9a7f0 45%,#f0c98a 80%,#7fd1c9) border-box;
       transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.35)}
     @media(prefers-reduced-motion:reduce){.prod{transition:none}.prod:hover{transform:none}}
-    .prod h3{font-size:1.05rem;font-weight:700}
-    .prod p{color:var(--muted);font-size:.92rem;margin:0;max-width:none}
-    .prod .go{margin-top:auto;padding-top:8px;font-size:.9rem;font-weight:700}
+    .thumb{aspect-ratio:16/10;border-radius:10px;border:1px solid var(--line);
+      background:radial-gradient(90% 120% at 50% 0%,#1b1f2b,#12151d);
+      display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+    .thumb svg{width:42%;max-height:72%;fill:none;stroke:url(#pg);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    .thumb svg .dot{fill:url(#pg);stroke:none}
     .why{color:var(--accent);font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .prod h3{font-size:1.02rem;font-weight:700}
+    .prod p{color:var(--muted);font-size:.9rem;margin:0;max-width:none}
+    .rowend{margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .pricehint{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--muted);letter-spacing:.04em}
+    .buy{display:inline-block;background:var(--accent);color:#0e1016;font-weight:800;font-size:.85rem;
+      padding:9px 14px;border-radius:8px}
+    .buy:hover{text-decoration:none;filter:brightness(1.06)}
+    .buy.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent-dim)}
+    .paid{color:var(--muted);font-size:.72rem}
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7fd1c9"/><stop offset=".5" stop-color="#b9a7f0"/><stop offset="1" stop-color="#f0c98a"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-blower" viewBox="0 0 100 100"><circle cx="40" cy="62" r="20"/><path d="M54 48 L74 24"/><path d="M70 18 l12 12"/></symbol>
+    <symbol id="i-cloth" viewBox="0 0 100 100"><rect x="25" y="30" width="50" height="44" rx="9"/><path d="M25 46 h50"/></symbol>
+    <symbol id="i-brush" viewBox="0 0 100 100"><path d="M28 80 L52 56"/><path d="M52 56 l12 12"/><path d="M64 68 l16 -5 M64 68 l13 9 M64 68 l5 15"/></symbol>
+    <symbol id="i-glove" viewBox="0 0 100 100"><path d="M36 76 V44 a14 14 0 0 1 28 0 v32"/><path d="M64 58 q13 -7 8 -18"/><path d="M36 68 h28"/></symbol>
+    <symbol id="i-book" viewBox="0 0 100 100"><path d="M50 32 C41 25 30 25 24 29 V70 C30 66 41 66 50 73 C59 66 70 66 76 70 V29 C70 25 59 25 50 32 Z"/><path d="M50 32 V73"/></symbol>
+    <symbol id="i-kit" viewBox="0 0 100 100"><rect x="24" y="40" width="52" height="34" rx="7"/><path d="M40 40 v-5 a6 6 0 0 1 6 -6 h8 a6 6 0 0 1 6 6 v5"/><path d="M24 55 h52"/></symbol>
+    <symbol id="i-spray" viewBox="0 0 100 100"><rect x="38" y="44" width="24" height="32" rx="6"/><path d="M44 44 v-11 h13 l8 8"/><circle class="dot" cx="74" cy="30" r="2.6"/><circle class="dot" cx="81" cy="23" r="2.6"/><circle class="dot" cx="80" cy="37" r="2.6"/></symbol>
+    <symbol id="i-polish" viewBox="0 0 100 100"><rect x="31" y="46" width="38" height="28" rx="7"/><rect x="38" y="35" width="24" height="11" rx="4"/></symbol>
+    <symbol id="i-recovery" viewBox="0 0 100 100"><rect x="37" y="42" width="22" height="34" rx="6"/><path d="M43 42 v-8 h10 v8"/><path d="M72 50 q9 11 0 18 q-9 -7 0 -18 Z"/></symbol>
+    <symbol id="i-edgetool" viewBox="0 0 100 100"><path d="M36 74 L58 32 l10 5 L46 79 Z"/><path d="M58 32 l5 -9"/></symbol>
+    <symbol id="i-bundle" viewBox="0 0 100 100"><rect x="26" y="40" width="48" height="34" rx="5"/><path d="M26 53 h48 M50 40 v34"/></symbol>
+    <symbol id="i-pack" viewBox="0 0 100 100"><rect x="30" y="32" width="40" height="46" rx="11"/><path d="M50 46 q7 9 0 15 q-7 -6 0 -15 Z"/></symbol>
+    <symbol id="i-humidor" viewBox="0 0 100 100"><rect x="26" y="48" width="48" height="26" rx="5"/><path d="M28 48 l6 -13 h32 l6 13"/><path d="M50 24 q6 7 0 12 q-6 -5 0 -12 Z"/></symbol>
+    <symbol id="i-hygro" viewBox="0 0 100 100"><circle cx="50" cy="54" r="23"/><path d="M50 54 L61 41"/><path d="M50 37 v5 M67 54 h-5 M33 54 h5"/></symbol>
+    <symbol id="i-shelf" viewBox="0 0 100 100"><rect x="26" y="28" width="48" height="48" rx="5"/><path d="M26 52 h48 M42 28 v24 M58 52 v24"/></symbol>
+    <symbol id="i-sleeve" viewBox="0 0 100 100"><rect x="35" y="24" width="30" height="42" rx="4"/><path d="M28 42 v26 a7 7 0 0 0 7 7 h30 a7 7 0 0 0 7 -7 v-26"/></symbol>
+    <symbol id="i-saver" viewBox="0 0 100 100"><rect x="32" y="24" width="36" height="52" rx="6"/><path d="M32 36 h36"/><path d="M44 30 h12"/></symbol>
+    <symbol id="i-onetouch" viewBox="0 0 100 100"><rect x="29" y="29" width="42" height="42" rx="7"/><circle cx="50" cy="50" r="5"/></symbol>
+    <symbol id="i-binder" viewBox="0 0 100 100"><rect x="32" y="26" width="38" height="48" rx="5"/><circle cx="32" cy="40" r="4"/><circle cx="32" cy="60" r="4"/></symbol>
+    <symbol id="i-loupe" viewBox="0 0 100 100"><circle cx="44" cy="45" r="18"/><path d="M57 58 L77 78"/></symbol>
+    <symbol id="i-scope" viewBox="0 0 100 100"><path d="M38 74 h32"/><path d="M46 34 l16 10 -9 15 -16 -10 Z"/><path d="M56 30 l9 6"/><path d="M44 60 q-8 8 0 14"/></symbol>
+    <symbol id="i-uv" viewBox="0 0 100 100"><path d="M34 60 l18 -18 12 12 -18 18 Z"/><path d="M55 39 l8 -8"/><path d="M70 26 l6 -6 M76 36 l8 -3 M64 20 l3 -8"/></symbol>
+    <symbol id="i-lamp" viewBox="0 0 100 100"><path d="M30 78 h26"/><path d="M43 78 L56 50"/><path d="M56 50 l17 -9 -7 -13 -17 9 Z"/><path d="M62 24 l4 -8 M72 34 l9 -4"/></symbol>
+    <symbol id="i-plates" viewBox="0 0 100 100"><rect x="30" y="42" width="40" height="7" rx="3"/><rect x="30" y="56" width="40" height="7" rx="3"/><path d="M25 38 q-8 15 0 29 M75 38 q8 15 0 29"/></symbol>
+    <symbol id="i-press" viewBox="0 0 100 100"><rect x="27" y="26" width="46" height="8" rx="3"/><path d="M50 34 v10"/><rect x="33" y="47" width="34" height="7" rx="3"/><rect x="27" y="68" width="46" height="7" rx="3"/><path d="M30 34 v34 M70 34 v34"/></symbol>
+  </svg>
+
   <div class="topline"></div>
   <div class="wrap">
     <header class="site">
@@ -58,7 +103,7 @@
     <article>
       <p class="eyebrow">The shop</p>
       <h1>Gear we'd use on our own cards.</h1>
-      <p class="standfirst">A short, honest list — the card-care gear that earns its place on our bench, and nothing else. Every link goes straight to the maker or a trusted retailer.</p>
+      <p class="standfirst">A curated bench, not a warehouse — every pick earns its place, and nothing else gets in. Prices are typical Amazon ranges and drift a little; the link always shows today's.</p>
 
       <div class="callout">
         <b>Before you buy anything for a card you might grade:</b>
@@ -67,159 +112,159 @@
 
       <p class="cat">Keep it clean — the dry kit</p>
       <div class="pgrid">
-        <div class="prod"><span class="why">The first tool we reach for</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-blower"/></svg></div><span class="why">The first tool we reach for</span>
           <h3>Rubber-bulb air blower</h3>
-          <p>The photographer's lens blower. Lifts grit and dust without ever touching the card — the step that makes every other step safe. Any camera-gear brand works; Giottos' Rocket Blower is the classic.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=giottos+rocket+air+blower&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>The photographer's lens blower. Lifts grit and dust without ever touching the card — the step that makes every other step safe.</p>
+          <div class="rowend"><span class="pricehint">typically $8–15</span><a class="buy" href="https://www.amazon.com/s?k=giottos+rocket+air+blower&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">The only thing that touches the surface</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-cloth"/></svg></div><span class="why">The only thing that touches the surface</span>
           <h3>Clean microfiber cloths</h3>
-          <p>Spectacle-grade, washed and dedicated to cards only. Light passes, no pressure — let the cloth's weight do the work. A PokéSpa cloth of our own is in the works.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=microfiber+lens+cleaning+cloth&tag=pokespa-20" target="_blank" rel="noopener">Find them on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>Spectacle-grade, washed and dedicated to cards only. Light passes, no pressure — let the cloth's weight do the work.</p>
+          <div class="rowend"><span class="pricehint">typically $6–12</span><a class="buy" href="https://www.amazon.com/s?k=microfiber+lens+cleaning+cloth&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">For edges and textured surfaces</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-brush"/></svg></div><span class="why">For edges and textured surfaces</span>
           <h3>Soft anti-static brush</h3>
-          <p>A camera-sensor or record-grade soft brush sweeps dust out of textured foil and along edges where a cloth can't follow. Feather pressure only.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=anti+static+soft+detailing+brush+camera&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>A camera-sensor-grade soft brush sweeps dust out of textured foil and along edges where a cloth can't follow. Feather pressure only.</p>
+          <div class="rowend"><span class="pricehint">typically $8–15</span><a class="buy" href="https://www.amazon.com/s?k=anti+static+soft+detailing+brush+camera&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">Skin oil is the enemy</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-glove"/></svg></div><span class="why">Skin oil is the enemy</span>
           <h3>Cotton inspection gloves</h3>
-          <p>Fingerprints are most of what we're asked to clean off. Lint-free cotton gloves for handling raw vintage; bare clean hands are fine for modern gloss — never lotion.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=lint+free+cotton+inspection+gloves&tag=pokespa-20" target="_blank" rel="noopener">Find them on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>Fingerprints are most of what we're asked to clean off. Lint-free cotton for handling raw vintage; clean bare hands are fine for modern gloss.</p>
+          <div class="rowend"><span class="pricehint">typically $7–12</span><a class="buy" href="https://www.amazon.com/s?k=lint+free+cotton+inspection+gloves&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">Read before you clean</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-book"/></svg></div><span class="why">Read before you clean</span>
           <h3>Our free guides</h3>
-          <p>The gear only helps if the technique is right. The dry-first method, what graders flag, and when to stop — all free, no purchase required.</p>
-          <p class="go"><a href="/learn/">Start with the guides →</a></p>
+          <p>The gear only helps if the technique is right. The dry-first method, what graders flag, and when to stop — all free.</p>
+          <div class="rowend"><a class="buy ghost" href="/learn/">Start with the guides →</a></div>
         </div>
       </div>
 
       <p class="cat">Kurt's corner — the full line</p>
       <div class="pgrid">
-        <div class="prod"><span class="why">Read this first</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-book"/></svg></div><span class="why">Read this first</span>
           <h3>The honest caveat</h3>
-          <p>Kurt's Card Care is the best-known cleaning line in the hobby — handmade by a collector, loved by many. But solution-based cleaning is a hard alteration flag at every grader, and PSA has decertified treated cards. Display and personal-collection cards only. <a href="/learn/cleaning-cards-before-grading.html">The full story →</a></p>
-          <p class="go"><a href="https://www.kurtscardcare.com/" target="_blank" rel="noopener">Or buy direct at kurtscardcare.com →</a></p>
+          <p>Kurt's Card Care is the best-known cleaning line in the hobby — handmade by a collector. But solution-based cleaning is a hard alteration flag at every grader, and PSA has decertified treated cards. Display and personal-collection cards only. <a href="/learn/cleaning-cards-before-grading.html">The full story →</a></p>
+          <div class="rowend"><a class="buy ghost" href="https://www.kurtscardcare.com/" target="_blank" rel="noopener">kurtscardcare.com →</a></div>
         </div>
-        <div class="prod"><span class="why">The flagship</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-kit"/></svg></div><span class="why">The flagship</span>
           <h3>Kurt's Care Kit</h3>
           <p>The complete starter: spray, polish, corner-and-edge tool, mat, and cloths in a hard case. The one most collectors start with.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=kurts+card+care+kit&tag=pokespa-20" target="_blank" rel="noopener">Find it on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically ~$50</span><a class="buy" href="https://www.amazon.com/s?k=kurts+card+care+kit&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">The daily driver</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-spray"/></svg></div><span class="why">The daily driver</span>
           <h3>Kurt's Card Care Spray</h3>
           <p>The surface-cleaning spray that started the brand — lifts grime and residue from modern gloss.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=kurts+card+care+spray&tag=pokespa-20" target="_blank" rel="noopener">Find it on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $20–30</span><a class="buy" href="https://www.amazon.com/s?k=kurts+card+care+spray&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">For deeper surface work</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-polish"/></svg></div><span class="why">For deeper surface work</span>
           <h3>Kurt's Card Polish</h3>
           <p>The step past the spray for tired display cards. Adds gloss — which is exactly why it's a display-only tool in our book.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=kurts+card+care+polish&tag=pokespa-20" target="_blank" rel="noopener">Find it on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $25–45</span><a class="buy" href="https://www.amazon.com/s?k=kurts+card+care+polish&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">The rescue formula</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-recovery"/></svg></div><span class="why">The rescue formula</span>
           <h3>Kurt's Card Care Recovery</h3>
-          <p>The heavier-lift treatment for cards that a spray won't touch — sticker residue and years of grime on display copies.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=kurts+card+care+recovery&tag=pokespa-20" target="_blank" rel="noopener">Find it on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>The heavier-lift treatment for cards a spray won't touch — sticker residue and years of grime on display copies.</p>
+          <div class="rowend"><span class="pricehint">typically $25–30</span><a class="buy" href="https://www.amazon.com/s?k=kurts+card+care+recovery&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">Corners and edges</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-edgetool"/></svg></div><span class="why">Corners and edges</span>
           <h3>Kurt's Card Tool</h3>
-          <p>The patent-pending corner-and-edge tool for cleaning up frayed edges on well-loved cards.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=kurts+card+care+tool&tag=pokespa-20" target="_blank" rel="noopener">Find it on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>The patent-pending corner-and-edge tool for tidying frayed edges on well-loved cards.</p>
+          <div class="rowend"><span class="pricehint">typically ~$22</span><a class="buy" href="https://www.amazon.com/s?k=kurts+card+care+tool&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">For old stock</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-bundle"/></svg></div><span class="why">For old stock</span>
           <h3>Vintage Care Bundle</h3>
           <p>Kurt's kit tuned for vintage cardboard — wax-era stock plays by different rules than modern gloss. Sold direct from Kurt's.</p>
-          <p class="go"><a href="https://www.kurtscardcare.com/shop" target="_blank" rel="noopener">See it at kurtscardcare.com →</a></p>
+          <div class="rowend"><a class="buy ghost" href="https://www.kurtscardcare.com/shop" target="_blank" rel="noopener">See it at Kurt's →</a></div>
         </div>
       </div>
 
       <p class="cat">Humidity &amp; storage — the quiet killer</p>
       <div class="pgrid">
-        <div class="prod"><span class="why">Warping's worst enemy</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-pack"/></svg></div><span class="why">Warping's worst enemy</span>
           <h3>Two-way humidity packs</h3>
           <p>Boveda-style 2-way packs hold a steady RH inside sealed storage — the cheapest insurance against warping and curling there is.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=boveda+58+humidity+packs&tag=pokespa-20" target="_blank" rel="noopener">Find them on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $10–20</span><a class="buy" href="https://www.amazon.com/s?k=boveda+58+humidity+packs&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">The card humidor</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-humidor"/></svg></div><span class="why">The card humidor</span>
           <h3>Card storage humidor</h3>
-          <p>A gasket-sealed box plus a humidity pack is a card humidor. Kurt's sells a purpose-built one; an airtight dry box with a 2-way pack does the same job.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=card+humidor+trading+card+storage&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>A gasket-sealed box plus a humidity pack is a card humidor. Purpose-built ones exist; an airtight dry box with a 2-way pack does the same job.</p>
+          <div class="rowend"><span class="pricehint">typically $20–60</span><a class="buy" href="https://www.amazon.com/s?k=card+humidor+trading+card+storage&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">Trust, but verify</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-hygro"/></svg></div><span class="why">Trust, but verify</span>
           <h3>Mini digital hygrometer</h3>
           <p>A two-dollar sensor tells you the truth about your storage box. Aim for 45–55% RH; the display case in direct sun is lying to you.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=mini+digital+hygrometer&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $5–10</span><a class="buy" href="https://www.amazon.com/s?k=mini+digital+hygrometer&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">The full supplies wall</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-shelf"/></svg></div><span class="why">The full supplies wall</span>
           <h3>BCW Supplies</h3>
           <p>Boxes, binders, sleeves, UV-protected displays — the deepest catalog of card storage there is.</p>
-          <p class="go"><a href="https://www.bcwsupplies.com/" target="_blank" rel="noopener">Browse BCW →</a></p>
+          <div class="rowend"><a class="buy ghost" href="https://www.bcwsupplies.com/" target="_blank" rel="noopener">Browse BCW →</a></div>
         </div>
       </div>
 
       <p class="cat">Protect — sleeves, toploaders &amp; holders</p>
       <div class="pgrid">
-        <div class="prod"><span class="why">The first line of defense</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-sleeve"/></svg></div><span class="why">The first line of defense</span>
           <h3>Penny sleeves + toploaders</h3>
           <p>Sleeve first, then rigid — the hobby standard for a reason. Most damage we're asked to fix would never have happened inside these.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=ultra+pro+penny+sleeves+toploaders&tag=pokespa-20" target="_blank" rel="noopener">Find them on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $8–15</span><a class="buy" href="https://www.amazon.com/s?k=ultra+pro+penny+sleeves+toploaders&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">For grading submissions</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-saver"/></svg></div><span class="why">For grading submissions</span>
           <h3>Card Saver 1</h3>
-          <p>Cardboard Gold's semi-rigid holder — the standard graders themselves ask for in submissions. Snug, flexible, doesn't scratch on the way in or out.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=card+saver+1+cardboard+gold&tag=pokespa-20" target="_blank" rel="noopener">Find them on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>Cardboard Gold's semi-rigid holder — the standard graders themselves ask for in submissions. Snug, flexible, doesn't scratch.</p>
+          <div class="rowend"><span class="pricehint">typically $9–14</span><a class="buy" href="https://www.amazon.com/s?k=card+saver+1+cardboard+gold&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">For the shelf pieces</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-onetouch"/></svg></div><span class="why">For the shelf pieces</span>
           <h3>Magnetic one-touch holders</h3>
-          <p>UV-blocking magnetic holders for the cards that live on display. Get the right point-size for the card's thickness — 35pt for standard.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=ultra+pro+one+touch+35pt+uv&tag=pokespa-20" target="_blank" rel="noopener">Find them on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>UV-blocking magnetic holders for cards that live on display. Match the point-size to the card's thickness — 35pt for standard.</p>
+          <div class="rowend"><span class="pricehint">typically $10–18</span><a class="buy" href="https://www.amazon.com/s?k=ultra+pro+one+touch+35pt+uv&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">For the collection that travels</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-binder"/></svg></div><span class="why">For the collection that travels</span>
           <h3>Side-loading binder</h3>
-          <p>Side-loaders keep cards from sliding out upside down — the binder mistake everyone makes once. Zippered, with padded covers.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=side+loading+trading+card+binder+9+pocket&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>Side-loaders keep cards from sliding out upside down — the binder mistake everyone makes once. Zippered, padded covers.</p>
+          <div class="rowend"><span class="pricehint">typically $20–35</span><a class="buy" href="https://www.amazon.com/s?k=side+loading+trading+card+binder+9+pocket&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
       </div>
 
       <p class="cat">Inspect — the bench eyes</p>
       <div class="pgrid">
-        <div class="prod"><span class="why">See what you're dealing with</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-loupe"/></svg></div><span class="why">See what you're dealing with</span>
           <h3>10x jeweler's loupe</h3>
           <p>A cheap LED loupe shows you surface scratches, whitening, and print lines before a grader does. Ten dollars of honesty.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=10x+jewelers+loupe+led&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $8–15</span><a class="buy" href="https://www.amazon.com/s?k=10x+jewelers+loupe+led&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">The bench upgrade</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-scope"/></svg></div><span class="why">The bench upgrade</span>
           <h3>Digital microscope</h3>
-          <p>A USB digital microscope shows surface texture, edge cuts, and print dots at magnification a loupe can't reach — how doctored cards get caught, and how we document our own work.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=digital+microscope+1000x+coin+card&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>A USB microscope shows surface texture, edge cuts, and print dots at magnification a loupe can't reach — how doctored cards get caught, and how we document our own work.</p>
+          <div class="rowend"><span class="pricehint">typically $25–45</span><a class="buy" href="https://www.amazon.com/s?k=digital+microscope+1000x+coin+card&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">Residue glows</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-uv"/></svg></div><span class="why">Residue glows</span>
           <h3>365nm UV flashlight</h3>
           <p>Real 365nm UV makes cleaning residue, glue, and touch-up work fluoresce. Buyers use it to spot doctored cards — so should you.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=365nm+uv+flashlight&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $12–25</span><a class="buy" href="https://www.amazon.com/s?k=365nm+uv+flashlight&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
-        <div class="prod"><span class="why">Raking light finds everything</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-lamp"/></svg></div><span class="why">Raking light finds everything</span>
           <h3>A small angled lamp</h3>
-          <p>Any lamp you can angle low across the card surface. Raking light reveals dents, scratches and residue that overhead light hides — it's the first thing we do on the bench.</p>
-          <p class="go"><a href="/learn/how-to-clean-pokemon-cards.html">See how we use it →</a></p>
+          <p>Any lamp you can angle low across the card surface. Raking light reveals dents, scratches and residue that overhead light hides.</p>
+          <div class="rowend"><a class="buy ghost" href="/learn/how-to-clean-pokemon-cards.html">See how we use it →</a></div>
         </div>
       </div>
 
       <p class="cat">Bench tools — flattening, honestly</p>
       <div class="callout">
         <b>Pressing is alteration — full stop.</b>
-        <p>Every grader treats pressed-out creases and wrinkles as an altered card. These tools are for warped or curled <em>display and play</em> copies you want to sit flat — never for prepping a card to grade or sell as untouched. <a href="/learn/cleaning-vs-card-doctoring.html">Where the line is →</a></p>
+        <p>Every grader treats pressed-out creases and wrinkles as an altered card. These tools are for warped or curled <em>display and play</em> copies you want to sit flat — never for prepping a card to grade or sell as untouched. <a href="/learn/creases-and-pressing.html">The full pressing guide →</a></p>
       </div>
       <div class="pgrid">
-        <div class="prod"><span class="why">The gentle method</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-plates"/></svg></div><span class="why">The gentle method</span>
           <h3>Acrylic plates + soft clamps</h3>
           <p>Two small acrylic sheets and soft-jaw spring clamps, light pressure, patience measured in days — the conservative way to coax a warped card flat.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=clear+acrylic+sheet+4x6&tag=pokespa-20" target="_blank" rel="noopener">Acrylic plates on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span> · <a href="https://www.amazon.com/s?k=soft+jaw+mini+spring+clamps&tag=pokespa-20" target="_blank" rel="noopener">soft clamps →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <div class="rowend"><span class="pricehint">typically $15–25 combined</span><a class="buy" href="https://www.amazon.com/s?k=clear+acrylic+sheet+4x6&tag=pokespa-20" target="_blank" rel="noopener">Plates →</a><a class="buy" href="https://www.amazon.com/s?k=soft+jaw+mini+spring+clamps&tag=pokespa-20" target="_blank" rel="noopener">Clamps →</a><span class="paid">(paid links)</span></div>
         </div>
-        <div class="prod"><span class="why">The purpose-built route</span>
+        <div class="prod"><div class="thumb"><svg aria-hidden="true"><use href="#i-press"/></svg></div><span class="why">The purpose-built route</span>
           <h3>Card press</h3>
-          <p>Purpose-built screw presses exist for flattening warped display cards evenly. Same honesty applies: a pressed card is a restored card, and it gets disclosed if it's ever sold.</p>
-          <p class="go"><a href="https://www.amazon.com/s?k=trading+card+press+flattening&tag=pokespa-20" target="_blank" rel="noopener">Find one on Amazon →</a> <span style="color:var(--muted);font-size:.75rem">(paid link)</span></p>
+          <p>Purpose-built screw presses flatten warped display cards evenly. Same honesty applies: a pressed card is a restored card, and it gets disclosed if it's ever sold.</p>
+          <div class="rowend"><span class="pricehint">typically $25–60</span><a class="buy" href="https://www.amazon.com/s?k=trading+card+press+flattening&tag=pokespa-20" target="_blank" rel="noopener">View on Amazon →</a><span class="paid">(paid link)</span></div>
         </div>
       </div>
 
@@ -229,7 +274,7 @@
         <a class="btn" href="/quote.html">Request a free assessment →</a>
       </div>
 
-      <p class="disclosure"><b>As an Amazon Associate, PokéSpa earns from qualifying purchases.</b> Amazon links on this page (marked "paid link") are affiliate links — buying through them supports the free guides at no extra cost to you. The picks are ours alone: we only list gear we'd use on our own cards, and no brand pays to appear here. Non-Amazon links are plain links. Product names belong to their owners.</p>
+      <p class="disclosure"><b>As an Amazon Associate, PokéSpa earns from qualifying purchases.</b> Amazon links on this page (marked "paid link") are affiliate links — buying through them supports the free guides at no extra cost to you. Price ranges are typical at the time of writing; the listing always shows today's price. The picks are ours alone: we only list gear we'd use on our own cards, and no brand pays to appear here. Non-Amazon links are plain links. Product names belong to their owners.</p>
     </article>
 
     <footer class="site">
@@ -242,6 +287,5 @@
       </div>
     </footer>
   </div>
-  <!-- Amazon Associates tag pokespa-20 is baked into hrefs statically (activated 2026-09-01). -->
 </body>
 </html>

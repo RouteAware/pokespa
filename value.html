@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Card Value Lookup — PokéSpa</title>
+  <meta name="description" content="Look up the current market value of any Pokémon card — free. Search by name, see set, number, rarity, and live TCGplayer market prices." />
+  <meta property="og:title" content="Card Value Lookup — PokéSpa" />
+  <meta property="og:description" content="Look up the current market value of any Pokémon card — free." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pokespa.com/value.html" />
+  <meta property="og:site_name" content="PokéSpa" />
+  <meta property="og:image" content="https://pokespa.com/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://pokespa.com/value.html" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e1016" />
+  <link rel="stylesheet" href="/learn/learn.css" />
+  <style>
+    .wrap{max-width:1000px}
+    .searchrow{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+    .searchrow input{flex:1;min-width:220px;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      color:var(--text);padding:14px 16px;font:inherit;font-size:1.05rem}
+    .searchrow input:focus{outline:2px solid var(--accent-dim);border-color:var(--accent-dim)}
+    .searchrow button{background:var(--accent);color:#0e1016;font-weight:800;border:0;border-radius:10px;
+      padding:14px 22px;font:inherit;font-size:1rem;cursor:pointer}
+    .searchrow button:disabled{opacity:.6;cursor:default}
+    .hint{color:var(--muted);font-size:.85rem;font-family:ui-monospace,Menlo,monospace}
+    #status{min-height:26px;color:var(--muted);font-size:.95rem;margin-top:14px}
+    .results{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+    .hit{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:14px 16px;
+      display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center}
+    .hit .nm{font-weight:700}
+    .hit .meta{color:var(--muted);font-size:.85rem}
+    .hit .price{font-family:ui-monospace,Menlo,monospace;font-weight:700;font-size:1.05rem;color:var(--accent);text-align:right;white-space:nowrap}
+    .hit .ptype{color:var(--muted);font-size:.72rem;font-family:ui-monospace,Menlo,monospace;text-align:right}
+    .hit a{font-size:.85rem}
+    .more{margin-top:14px}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <div class="wrap">
+    <header class="site">
+      <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fd1c9"/><stop offset=".5" stop-color="#b9a7f0"/><stop offset="1" stop-color="#f0c98a"/></linearGradient></defs>
+        <g transform="rotate(-8 50 50)"><rect x="31" y="21" width="40" height="56" rx="5" fill="none" stroke="url(#lg)" stroke-width="5"/></g>
+        <path d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z" fill="#f0c98a"/>
+      </svg>
+      <a class="brand" href="/"><span class="holo">Poké</span>Spa</a>
+      <nav>
+        <a href="/learn/" class="active">Learn</a>
+        <a href="/shop.html">Shop</a>
+        <a href="/merch.html">Merch</a>
+        <a href="/service.html">Service</a>
+        <a href="/quote.html">Get a quote</a>
+      </nav>
+    </header>
+
+    <article>
+      <p class="eyebrow"><a href="/learn/">Learn</a> · Toolbox</p>
+      <h1>What's the card worth?</h1>
+      <p class="standfirst">Search any Pokémon card by name and see live market prices from TCGplayer. Free, no signup — a starting point, not an appraisal.</p>
+
+      <div class="searchrow">
+        <input id="q" type="text" placeholder="Card name — try a name and number like &quot;4/102&quot;" autocomplete="off" />
+        <button id="go">Look it up</button>
+      </div>
+      <p class="hint">tip: add the collector number to narrow it — e.g. "4/102"</p>
+      <div id="status"></div>
+      <div class="results" id="results"></div>
+
+      <div class="cta" style="margin-top:38px">
+        <h2>Damaged card dragging the value down?</h2>
+        <p>Condition is most of the price. Send photos and we'll tell you honestly what can improve, what can't, and what we'd do — free.</p>
+        <a class="btn" href="/quote.html">Request a free assessment →</a>
+      </div>
+
+      <p class="disclosure">Card data and pricing come from the community-run Pokémon TCG API with market prices from TCGplayer; prices move constantly and condition changes everything — treat these as ballpark figures for near-mint copies. PokéSpa is not affiliated with TCGplayer or the Pokémon TCG API and earns nothing from this tool. A graded, damaged, or restored copy is worth a different number — and a restored card must always be sold as restored.</p>
+    </article>
+
+    <footer class="site">
+      <div class="foot">
+        Restoration is disclosed and honest — never to deceive a grader or buyer.
+        PokéSpa is an independent service and is <b>not affiliated with, endorsed by, or sponsored by</b>
+        Nintendo, Creatures, Game Freak, or The Pokémon Company. All card and character names/artwork are the
+        property of their respective owners.
+        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/learn/">Learn</a> · <a href="/shop.html">Shop</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    var q=document.getElementById('q'), go=document.getElementById('go'),
+        status=document.getElementById('status'), results=document.getElementById('results');
+    function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+    function bestPrice(tp){
+      if(!tp||!tp.prices) return null;
+      var order=['holofoil','reverseHolofoil','normal','1stEditionHolofoil','unlimitedHolofoil','1stEditionNormal','unlimitedNormal'];
+      for(var i=0;i<order.length;i++){var p=tp.prices[order[i]];if(p&&p.market)return{v:p.market,t:order[i]};}
+      for(var k in tp.prices){var p2=tp.prices[k];if(p2&&p2.market)return{v:p2.market,t:k};}
+      return null;
+    }
+    function label(t){return t.replace(/([A-Z])/g,' $1').replace(/^1st Edition/,'1st ed.').toLowerCase();}
+    function search(){
+      var raw=q.value.trim();
+      if(!raw){status.textContent='Type a card name first.';return;}
+      var numMatch=raw.match(/(\d+)\s*\/\s*(\d+)/);
+      var name=raw.replace(/(\d+)\s*\/\s*(\d+)/,'').trim();
+      var parts=[];
+      if(name) parts.push('name:"'+name.replace(/"/g,'')+'*"');
+      if(numMatch) parts.push('number:'+numMatch[1]);
+      var url='https://api.pokemontcg.io/v2/cards?pageSize=24&orderBy=-set.releaseDate&q='+encodeURIComponent(parts.join(' '));
+      go.disabled=true; status.textContent='Searching…'; results.innerHTML='';
+      fetch(url).then(function(r){
+        if(!r.ok) throw new Error('API '+r.status);
+        return r.json();
+      }).then(function(d){
+        go.disabled=false;
+        var cards=d.data||[];
+        if(!cards.length){status.textContent='No cards found for “'+raw+'” — check the spelling, or try just the first word of the name.';return;}
+        status.textContent=cards.length+' result'+(cards.length===1?'':'s')+(d.totalCount>cards.length?' of '+d.totalCount+' — add the collector number to narrow it':'')+':';
+        var html='';
+        for(var i=0;i<cards.length;i++){
+          var c=cards[i], p=bestPrice(c.tcgplayer);
+          html+='<div class="hit"><div><div class="nm">'+esc(c.name)+' <span class="meta">#'+esc(c.number)+(c.set&&c.set.printedTotal?'/'+esc(c.set.printedTotal):'')+'</span></div>'
+             +'<div class="meta">'+esc(c.set?c.set.name:'')+(c.rarity?' · '+esc(c.rarity):'')+(c.set&&c.set.releaseDate?' · '+esc(c.set.releaseDate.slice(0,4)):'')+'</div>'
+             +(c.tcgplayer&&c.tcgplayer.url?'<a href="'+esc(c.tcgplayer.url)+'" target="_blank" rel="noopener">Live listing on TCGplayer →</a>':'')
+             +'</div><div>'
+             +(p?'<div class="price">$'+p.v.toFixed(2)+'</div><div class="ptype">'+esc(label(p.t))+' market</div>':'<div class="ptype">no market price<br>listed</div>')
+             +'</div></div>';
+        }
+        results.innerHTML=html;
+      }).catch(function(e){
+        go.disabled=false;
+        status.textContent='The price service didn’t answer (it rate-limits heavy use). Wait a few seconds and try again.';
+      });
+    }
+    go.addEventListener('click',search);
+    q.addEventListener('keydown',function(e){if(e.key==='Enter')search();});
+  })();
+  </script>
+</body>
+</html>
