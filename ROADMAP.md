@@ -44,9 +44,9 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ✅ Fourthwall first products LIVE-READY 2026-09-01: The PokéSpa Tee $32
   (left-chest mark + full back crest) + The Holo Mug $18/$21 — both Public.
   Masters + state: docs/MERCH.md
-- 🔄 Fourthwall theme + LAUNCH — theme installer hangs (3 tries, documented
-  in docs/MERCH.md); retry next session, then flip Coming soon → Live +
-  update merch.html copy
+- ✅ Fourthwall shop LIVE 2026-09-01: themed (holo hero collage, teal primary)
+  + launched; merch.html doors-open copy shipped. Backlog in docs/MERCH.md.
+  ⚠️ Alexander: payout setup before first sale.
 - ⬜ Learn era next articles (1–2/session): whitening · holo scratches ·
   creases · warping · vintage wax · indents (hub already teases them)
 - ⬜ Affiliate accounts (Alexander): Amazon Associates, BCW affiliate/wholesale

@@ -5,10 +5,16 @@ gotchas in `~/Desktop/Recursis-Site/docs/MERCH.md` — READ IT before touching
 the designer). Created + first products built by Hale 2026-08-31→09-01._
 
 ## Shop
-- **pokespa-shop.fourthwall.com** — status: **Coming soon** (NOT launched).
-- Linked from pokespa.com/merch.html ("being stocked" copy until doors open).
+- **pokespa-shop.fourthwall.com** — **LIVE 2026-09-01** ("Your site went live").
+- Linked from pokespa.com/merch.html (doors-open copy).
 - Admin: pokespa-shop.fourthwall.com/admin/dashboard (Chrome extension has
   site permission as of 2026-09-01).
+- Theme: dark Creator variant; Primary #7fd1c9, bg #161616 (close enough to
+  brand ink; picker mis-targets swatches — verify hex landed on the right row).
+  Hero: "WEAR THE SHINE" + collage = hero2 (rainbow foil) / hero1 (neon foil) /
+  icon-mark (card mark). Fourthwall slot quirk: only EMPTY image slots expose a
+  file input — JS-click the slot's Remove button first, then tag the input with
+  aria-label and file_upload to it (panel Remove buttons no-op via normal click).
 
 ## Products (both PUBLIC, ready for launch)
 | Product | Price | Base/Margin | Design |
@@ -25,18 +31,18 @@ the designer). Created + first products built by Hale 2026-08-31→09-01._
   (source banner.html; NOT YET uploaded to the shop)
 - pokespa-mark.svg — the vector source
 
-## OPEN — theme + launch (next session)
-1. **Theme install HANGS** ("Installation in progress" spinner never resolves;
-   tried 3× on 2026-09-01 ~00:15, two themes, fresh tabs — same hang; server
-   never committed, picker returns on reload). Likely Fourthwall glitch or
-   new-shop provisioning lag. RETRY first thing next session; if it persists,
-   route Alexander to pick any theme manually (his click may behave the same —
-   then it's a Fourthwall support ticket).
-2. After theme lands: colors bg #0e1016 / primary #7fd1c9, upload banner.png
-   as hero, logo, wire products on homepage.
-3. Flip status **Coming soon → Live** (top bar dropdown in Site design).
-4. Update pokespa.com/merch.html copy to "doors open" + verify storefront.
-5. Alexander: Fourthwall payout setup still pending account-wide.
+## DONE 2026-09-01 — theme + launch
+Theme installed on retry (the overnight hangs eventually committed server-side
+— lesson: the "Installation in progress" spinner can be stale; reload the
+store-design page later before assuming failure). Hero collage + colors set,
+status flipped **Live**, storefront verified (hero + both products + teal CTA),
+merch.html copy updated to doors-open.
+
+## Backlog
+- Header logo upload (wordmark POKESPA text currently — fine, mark would be nicer)
+- Sticker product (icon-mark master exists)
+- banner.png (2400×1000 lockup) unused — the collage won instead
+- Alexander: Fourthwall payout setup still pending account-wide (before first sale!)
 
 ## Content rule (from CLAUDE.md)
 Merch carries OUR mark only — no card artwork, no characters, no Pokémon
