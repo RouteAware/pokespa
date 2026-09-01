@@ -62,15 +62,20 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ✅ Merch expansion 2026-09-01: Shine Sticker $6 + Bench Hoodie $48 + Bench
   Mat $28 (5 products total); storefront flipped to LIGHT theme (Alexander:
   black items on black bg) — details docs/MERCH.md
-- ⬜ "Store-feel" shop upgrade (Alexander wants product-page look): own
-  illustrations/photos per product tile + prices — NOTE: Amazon product
-  IMAGES require their PA-API (needs 3 qualifying sales first); until then
-  use our own graphics, never scraped Amazon images
-- ⬜ Alexander's personally curated Amazon list → add as cards (append
-  &tag=pokespa-20)
-- 🅿️ Card show locator page (Alexander idea 2026-09-01)
-- 🅿️ Card price/market-value lookup feature (Alexander idea 2026-09-01 —
-  candidate APIs: pokemontcg.io, PriceCharting, eBay sold listings)
+- ✅ EXPANSION WAVE shipped 2026-09-01 (Alexander: "do all these"):
+  · Store-feel shop: 26 tiles w/ custom holo-line SVG icon set, price hints,
+    buy buttons (Amazon PA-API real images still gated on first 3 sales)
+  · Damage encyclopedia COMPLETE: whitening, holo scratches, creases &
+    pressing, warping, vintage wax/stains, indents (10 Learn articles total)
+  · /value.html card value lookup (pokemontcg.io + TCGplayer market prices;
+    API quirks: pageSize≤24, no orderBy, no multi-term q, needs retry —
+    all handled; text-only results, NO card images per trademark rule)
+  · /shows.html card show finder (live local searches + recurring majors)
+  · Hub: encyclopedia live + Toolbox section
+- ⬜ pokemontcg.io API key (Alexander, free signup at dev.pokemontcg.io) →
+  add X-Api-Key header in value.html for reliable rate limits
+- ⬜ Alexander's personally curated Amazon list → add as tiles (tag applied)
+- ⬜ Amazon PA-API images + live prices after first 3 qualifying sales
 - ⬜ BCW affiliate/wholesale (Alexander) — later, for the dropship era
 - ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
   dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
