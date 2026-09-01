@@ -36,7 +36,7 @@ function buildHtml(data) {
       data.news.slice(0, 6).map((n) => li(`<a href="${esc(n.link)}" style="color:#2ea99e">${esc(n.title)}</a> <span style="color:#888">(via ${esc(n.src||'community')}, ${esc(n.date)})</span>`)).join('') + `</ul>`;
   }
   html += `<p style="line-height:1.6">Drop day coming up? <a href="https://pokespa.com/drops.html" style="color:#2ea99e">Read how the queue actually works</a> — and once you pull the hits, <a href="https://pokespa.com/shop.html" style="color:#2ea99e">the slab-care shelf</a> is waiting.</p>
-  <p style="color:#888;font-size:12px;line-height:1.6">Sourced from public announcements and the Pokémon TCG API; headlines via r/PKMNTCGDeals. PokéSpa is not affiliated with Nintendo, The Pokémon Company, or Reddit. Prices and dates move — always confirm with the retailer.<br>
+  <p style="color:#888;font-size:12px;line-height:1.6">Sourced from public announcements and the Pokémon TCG API; headlines via Google News. PokéSpa is not affiliated with Nintendo, The Pokémon Company, or Google. Prices and dates move — always confirm with the retailer.<br>
   <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#888">Unsubscribe</a></p></div>`;
   return html;
 }

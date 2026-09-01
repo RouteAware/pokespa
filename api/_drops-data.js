@@ -1,8 +1,11 @@
-// Shared aggregator for the PokéSpa drop radar. Sources are public and
-// TOS-clean by design (see docs/DROP-ALERTS-RESEARCH.md): official set
-// release dates from the community Pokémon TCG API, and headline syndication
-// from public community feeds (linked + attributed — we never touch
-// pokemoncenter.com programmatically).
+// Shared aggregator for the PokéSpa drop radar. Sources chosen for being
+// public, TOS-clean, AND reachable from datacenter IPs (Reddit + pokemontcg.io
+// block/500 from Vercel egress — learned the hard way; background in
+// docs/DROP-ALERTS-RESEARCH.md):
+//   sets  → raw.githubusercontent.com PokemonTCG/pokemon-tcg-data (the dataset
+//           behind the TCG API; includes releaseDate)
+//   news  → Google News RSS (syndicated hobby-press headlines, per-item source
+//           attribution). We never touch pokemoncenter.com programmatically.
 
 async function fetchWithRetry(url, opts = {}, attempts = 3) {
   let lastErr;
@@ -20,11 +23,8 @@ async function fetchWithRetry(url, opts = {}, attempts = 3) {
 }
 
 async function getSets() {
-  // pokemontcg.io quirks (learned in value.html): small pages only, no big
-  // pageSize. Sets endpoint is light; 40 covers ~2 years.
-  const r = await fetchWithRetry('https://api.pokemontcg.io/v2/sets?pageSize=250');
-  const d = await r.json();
-  const all = (d.data || [])
+  const r = await fetchWithRetry('https://raw.githubusercontent.com/PokemonTCG/pokemon-tcg-data/master/sets/en.json');
+  const all = (await r.json())
     .filter((s) => s.releaseDate)
     .sort((a, b) => (a.releaseDate < b.releaseDate ? 1 : -1));
   const cutoff = new Date(Date.now() - 270 * 86400000).toISOString().slice(0, 10).replace(/-/g, '/');
@@ -40,22 +40,34 @@ async function getSets() {
 }
 
 async function getNews() {
-  // r/PKMNTCGDeals Atom feed: crowd-verified deals/restocks, updated all day.
-  const r = await fetchWithRetry('https://www.reddit.com/r/PKMNTCGDeals/new.rss', {
-    headers: { 'User-Agent': 'PokeSpaDropRadar/1.0 (+https://pokespa.com/drops.html)' },
-  });
+  const q = encodeURIComponent('"pokemon tcg" OR "pokemon center" (restock OR preorder OR "release date" OR drop)');
+  const r = await fetchWithRetry(`https://news.google.com/rss/search?q=${q}&hl=en-US&gl=US&ceid=US:en`);
   const xml = await r.text();
   const items = [];
-  const chunks = xml.split('<entry>').slice(1);
+  const seen = new Set();
+  const chunks = xml.split('<item>').slice(1);
+  const unesc = (t) => t
+    .replace(/<!\[CDATA\[|\]\]>/g, '')
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').trim();
   for (const c of chunks) {
-    const t = c.match(/<title>([\s\S]*?)<\/title>/);
-    const l = c.match(/<link href="([^"]+)"/);
-    const u = c.match(/<updated>([^<]+)<\/updated>/);
-    if (!t || !l) continue;
-    const title = t[1].replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
-    if (/^(question|help|psa:|meta)|thread|weekly|monthly/i.test(title)) continue;
-    const ts = u ? Date.parse(u[1]) : Date.now();
-    items.push({ title, link: l[1], date: new Date(ts).toISOString().slice(0, 10), src: 'r/PKMNTCGDeals' });
+    const pick = (tag) => {
+      const m = c.match(new RegExp('<' + tag + '[^>]*>([\\s\\S]*?)</' + tag + '>'));
+      return m ? unesc(m[1]) : '';
+    };
+    let title = pick('title');
+    const link = pick('link');
+    const pub = pick('pubDate');
+    const src = pick('source');
+    if (!title || !link) continue;
+    // Google News titles end with " - Source"; strip when we have the source tag.
+    if (src && title.endsWith(' - ' + src)) title = title.slice(0, -(' - ' + src).length);
+    const ts = Date.parse(pub) || 0;
+    if (Date.now() - ts > 21 * 86400000) continue;
+    const key = title.toLowerCase().slice(0, 60);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    items.push({ title, link, date: new Date(ts).toISOString().slice(0, 10), src: src || 'Google News' });
     if (items.length >= 10) break;
   }
   return items;
