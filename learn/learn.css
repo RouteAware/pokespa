@@ -13,7 +13,8 @@ body{
   display:flex;flex-direction:column;
 }
 .topline{height:3px;background:linear-gradient(90deg,#7fd1c9,#b9a7f0 35%,#f0c98a 70%,#7fd1c9)}
-.wrap{width:100%;max-width:760px;margin:0 auto;padding:0 24px}
+.wrap{width:100%;max-width:860px;margin:0 auto;padding:0 28px}
+@media(max-width:480px){.wrap{padding:0 20px}}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .holo{background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);
@@ -23,10 +24,11 @@ header.site{padding:24px 0;display:flex;align-items:center;gap:11px}
 header.site .logo{width:24px;height:24px;flex:none}
 header.site .brand{font-weight:800;letter-spacing:.02em;font-size:17px;color:var(--text)}
 header.site .brand:hover{text-decoration:none}
-header.site nav{margin-left:auto;display:flex;gap:18px;font-size:13px}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:13px;flex-wrap:wrap;justify-content:flex-end}
 header.site nav a{color:var(--muted)}
 header.site nav a:hover{color:var(--accent);text-decoration:none}
 header.site nav a.active{color:var(--text);font-weight:700}
+@media(max-width:420px){header.site nav{gap:12px;font-size:12px}header.site .brand{font-size:16px}}
 
 .eyebrow{font-family:ui-monospace,Menlo,monospace;color:var(--accent);font-size:12px;
   letter-spacing:.22em;text-transform:uppercase}
@@ -38,10 +40,17 @@ h1{font-size:clamp(1.9rem,5vw,2.7rem);line-height:1.1;font-weight:800;letter-spa
 .byline{font-family:ui-monospace,Menlo,monospace;color:var(--muted);font-size:11px;
   letter-spacing:.08em;margin-bottom:26px}
 
+.banner{margin:2px 0 30px;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  position:relative}
+.banner img{display:block;width:100%;height:clamp(170px,30vw,320px);object-fit:cover}
+.banner::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(14,16,22,.05),rgba(14,16,22,.35));pointer-events:none}
+
 article h2{font-size:1.45rem;font-weight:800;letter-spacing:-.01em;margin:38px 0 12px;text-wrap:balance}
 article h3{font-size:1.12rem;font-weight:700;margin:26px 0 8px}
-article p{margin:0 0 14px;max-width:68ch}
-article ul,article ol{margin:0 0 16px 22px;max-width:66ch}
+article p{margin:0 0 14px;max-width:70ch}
+article ul,article ol{margin:0 0 16px 22px;max-width:68ch}
+@media(min-width:900px){article p,article li{font-size:1.02rem}}
 article li{margin-bottom:7px}
 article strong{color:var(--text)}
 article p,article li{color:#d6d4cd}
