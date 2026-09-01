@@ -25,6 +25,16 @@ global profile (`~/.claude/CLAUDE.md`) + portfolio home (`~/Desktop/HALE.md`).
   "Card catching the light" = restored shine. Favicon/header are inline SVG.
 - Voice: warm, careful, craftsperson-honest. Short sentences.
 
+## Expansion-era rules (2026-08-31 — full context: docs/EXPANSION-2026-08-31.md)
+5. **NEVER grade-improvement marketing.** PSA treats cleaning/pressing as
+   alteration (N5/N7) and has decertified Kurt's-treated cards. Products and
+   guides are framed as card care / display prep / preservation — education
+   states plainly that a restored card is an altered card under grader policy.
+6. **FTC affiliate disclosure** adjacent to every monetized link ("paid link"
+   style, visible with the recommendation) — footer boilerplate isn't compliant.
+7. **Never file a USPTO application for "PokéSpa"** — TPCi actively opposes
+   Poké-prefix marks in the card space. Name stays unregistered; keep clean.
+
 ## State (2026-08-29)
 Landing: hero (CTA → /quote.html) → What we do → How it works (4 steps) →
 The PokéSpa promise (disclosure tenets) → Before & after (placeholder) →

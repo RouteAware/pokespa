@@ -18,6 +18,18 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ⬜ Pricing / turnaround copy — ONLY once Alexander sets real numbers
 - ⬜ OG share checks after any copy change
 
+## Expansion — Service + Shop + Learn (plan: docs/EXPANSION-2026-08-31.md)
+- ✅ Three-agent research (market/SEO, vendors, legal) — 2026-08-31
+- 🔄 Kurt's Card Care dealer outreach (Alexander emailed 2026-08-31; awaiting
+  reply — no formal program exists; anchors: 30% reseller / 10–15% affiliate)
+- ⬜ **Phase 1 — Learn era**: /learn hub + first articles (pillar, grading
+  anxiety, doctoring-line, service page, DIY-or-Pro), affiliate links + FTC
+  disclosures. Zero inventory, zero checkout. Needs Alexander's go.
+- ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
+  dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
+- 🅿️ **Phase 3 — Brand era** (trigger: real sales): white-label PokéSpa
+  microfiber cloth, short-form video channel
+
 ## Later / parked
 - 🅿️ Booking or queue system — only if volume justifies it
 - 🅿️ Restoration write-ups (case-study pages per card) — great SEO, needs
