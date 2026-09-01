@@ -104,11 +104,19 @@
       return null;
     }
     function label(t){return t.replace(/([A-Z])/g,' $1').replace(/^1st Edition/,'1st ed.').toLowerCase();}
-    function fetchPage(query,page){
+    function fetchPage(query,page,attempt){
+      attempt=attempt||1;
       var url='https://api.pokemontcg.io/v2/cards?pageSize=24&page='+page+'&q='+encodeURIComponent(query);
       return fetch(url).then(function(r){
         if(!r.ok) throw new Error('API '+r.status);
         return r.json();
+      }).catch(function(e){
+        if(attempt<3){
+          return new Promise(function(res){setTimeout(res,1200*attempt);}).then(function(){
+            return fetchPage(query,page,attempt+1);
+          });
+        }
+        throw e;
       });
     }
     function search(){
