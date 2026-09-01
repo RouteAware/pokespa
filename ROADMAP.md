@@ -37,9 +37,17 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   — NEVER use card/character photos; watch for watermarked Unsplash+ tier),
   article banners, hub image cards, holo homepage hero, wider desktop
   (articles 860px / hub+home 1080–1100px), mobile verified at 390px
+- ✅ Shop + Merch pages 2026-08-31: /shop.html (curated gear, PLAIN links —
+  the pre-affiliate storefront) + /merch.html + nav/footers/sitemap.
+  **Fourthwall shop #5 CREATED: pokespa-shop.fourthwall.com** (Hale, via
+  Chrome on Alexander's account).
+- ⬜ Fourthwall PokéSpa theming + first products (logo tee left-chest, mug) —
+  BLOCKED on Alexander granting the Chrome extension permission on
+  pokespa-shop.fourthwall.com (same as TSC); then Hale themes it
 - ⬜ Learn era next articles (1–2/session): whitening · holo scratches ·
   creases · warping · vintage wax · indents (hub already teases them)
 - ⬜ Affiliate accounts (Alexander): Amazon Associates, BCW affiliate/wholesale
+  → then swap /shop.html plain links to disclosed affiliate links
 - ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
   dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
 - 🅿️ **Phase 3 — Brand era** (trigger: real sales): white-label PokéSpa
