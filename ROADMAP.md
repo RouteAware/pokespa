@@ -22,9 +22,15 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ✅ Three-agent research (market/SEO, vendors, legal) — 2026-08-31
 - 🔄 Kurt's Card Care dealer outreach (Alexander emailed 2026-08-31; awaiting
   reply — no formal program exists; anchors: 30% reseller / 10–15% affiliate)
-- ⬜ **Phase 1 — Learn era**: /learn hub + first articles (pillar, grading
-  anxiety, doctoring-line, service page, DIY-or-Pro), affiliate links + FTC
-  disclosures. Zero inventory, zero checkout. Needs Alexander's go.
+- ✅ **Phase 1 — Learn era SHIPPED 2026-08-31** (Alexander's "make it happen"):
+  /learn hub + 4 guides (cleaning pillar, grading-policy matrix, cleaning-vs-
+  doctoring, DIY-or-pro) + /service.html + site nav + sitemap. Homepage
+  placeholder gallery removed (Alexander's ask), replaced with Learn grid.
+  Links are PLAIN retail links for now — swap to affiliate once accounts exist
+  (Amazon Associates + BCW = Alexander signups; disclosure copy already in place).
+- ⬜ Learn era next articles (1–2/session): whitening · holo scratches ·
+  creases · warping · vintage wax · indents (hub already teases them)
+- ⬜ Affiliate accounts (Alexander): Amazon Associates, BCW affiliate/wholesale
 - ⬜ **Phase 2 — Shop era** (trigger: Kurt's reply or Learn traffic): BCW
   dropship account + storefront checkout (Shopify vs Stripe-on-Vercel decision)
 - 🅿️ **Phase 3 — Brand era** (trigger: real sales): white-label PokéSpa
