@@ -41,9 +41,12 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
   the pre-affiliate storefront) + /merch.html + nav/footers/sitemap.
   **Fourthwall shop #5 CREATED: pokespa-shop.fourthwall.com** (Hale, via
   Chrome on Alexander's account).
-- ⬜ Fourthwall PokéSpa theming + first products (logo tee left-chest, mug) —
-  BLOCKED on Alexander granting the Chrome extension permission on
-  pokespa-shop.fourthwall.com (same as TSC); then Hale themes it
+- ✅ Fourthwall first products LIVE-READY 2026-09-01: The PokéSpa Tee $32
+  (left-chest mark + full back crest) + The Holo Mug $18/$21 — both Public.
+  Masters + state: docs/MERCH.md
+- 🔄 Fourthwall theme + LAUNCH — theme installer hangs (3 tries, documented
+  in docs/MERCH.md); retry next session, then flip Coming soon → Live +
+  update merch.html copy
 - ⬜ Learn era next articles (1–2/session): whitening · holo scratches ·
   creases · warping · vintage wax · indents (hub already teases them)
 - ⬜ Affiliate accounts (Alexander): Amazon Associates, BCW affiliate/wholesale
