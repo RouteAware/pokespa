@@ -1,14 +1,12 @@
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control','no-store');
   const out = {};
-  const UA = {'User-Agent':'PokeSpaDropRadar/1.0 (+https://pokespa.com/drops.html)'};
-  for (const [k,u,h] of [
-    ['tcgapi','https://api.pokemontcg.io/v2/sets?pageSize=250',{}],
-    ['reddit','https://www.reddit.com/r/PKMNTCGDeals/new.rss',UA],
-    ['reddit_json','https://www.reddit.com/r/PKMNTCGDeals/new.json?limit=10',UA],
-    ['libreddit','https://old.reddit.com/r/PKMNTCGDeals/new.rss',UA],
+  for (const [k,u] of [
+    ['gh_sets','https://raw.githubusercontent.com/PokemonTCG/pokemon-tcg-data/master/sets/en.json'],
+    ['gnews','https://news.google.com/rss/search?q=%22pokemon%20tcg%22%20(restock%20OR%20preorder%20OR%20%22release%20date%22)&hl=en-US&gl=US&ceid=US:en'],
+    ['tcgapi_again','https://api.pokemontcg.io/v2/sets?pageSize=250'],
   ]) {
-    try { const r = await fetch(u,{headers:h}); const t = await r.text(); out[k]={status:r.status,len:t.length,head:t.slice(0,80)}; }
+    try { const r = await fetch(u); const t = await r.text(); out[k]={status:r.status,len:t.length,head:t.slice(0,100).replace(/\s+/g,' ')}; }
     catch(e){ out[k]={err:e.message}; }
   }
   res.status(200).json(out);
