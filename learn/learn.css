@@ -7,7 +7,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{
-  background:var(--bg);color:var(--text);
+  background:
+    radial-gradient(640px 420px at 12% 0%,rgba(127,209,201,.06),transparent 70%),
+    radial-gradient(560px 380px at 88% 100%,rgba(185,167,240,.055),transparent 70%),
+    var(--bg);
+  color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
   line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;
   display:flex;flex-direction:column;
@@ -73,7 +77,8 @@ tr:last-child td{border-bottom:0}
 td.ok{color:var(--accent);font-weight:700;white-space:nowrap}
 td.no{color:var(--gold);font-weight:700;white-space:nowrap}
 
-.cta{border:1px solid var(--accent-dim);background:linear-gradient(180deg,#141a22,#12151d);
+.cta{border:1px solid var(--accent-dim);
+  background:linear-gradient(180deg,rgba(20,26,34,.93),rgba(18,21,29,.97)),url(/img/holo-swirl.jpg) center/cover;
   border-radius:14px;padding:22px;margin:34px 0 0;text-align:center}
 .cta h2{margin:0 0 6px;font-size:1.25rem}
 .cta p{color:var(--muted);margin:0 auto 16px;max-width:52ch}
@@ -93,7 +98,8 @@ td.no{color:var(--gold);font-weight:700;white-space:nowrap}
 .disclosure{color:var(--muted);font-size:12px;border:1px dashed var(--line);border-radius:10px;
   padding:12px 16px;margin:26px 0 0;line-height:1.6}
 
-footer.site{margin-top:auto;border-top:1px solid var(--line);padding:24px 0}
+footer.site{margin-top:auto;border-top:1px solid transparent;padding:24px 0;
+  border-image:linear-gradient(90deg,transparent,rgba(127,209,201,.45) 30%,rgba(185,167,240,.45) 50%,rgba(240,201,138,.45) 70%,transparent) 1}
 footer.site .foot{color:var(--muted);font-size:12px;line-height:1.7}
 footer.site a{color:var(--muted)}
 footer.site a:hover{color:var(--accent)}
