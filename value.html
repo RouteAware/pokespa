@@ -104,20 +104,30 @@
       return null;
     }
     function label(t){return t.replace(/([A-Z])/g,' $1').replace(/^1st Edition/,'1st ed.').toLowerCase();}
+    function fetchCards(query,withOrder){
+      var url='https://api.pokemontcg.io/v2/cards?pageSize=60'+(withOrder?'&orderBy=-set.releaseDate':'')+'&q='+encodeURIComponent(query);
+      return fetch(url).then(function(r){
+        if(!r.ok){
+          if(withOrder) return fetchCards(query,false);
+          throw new Error('API '+r.status);
+        }
+        return r.json();
+      });
+    }
     function search(){
       var raw=q.value.trim();
       if(!raw){status.textContent='Type a card name first.';return;}
-      var numMatch=raw.match(/(\d+)\s*\/\s*(\d+)/);
-      var name=raw.replace(/(\d+)\s*\/\s*(\d+)/,'').trim();
-      var parts=[];
-      if(name) parts.push('name:"'+name.replace(/"/g,'')+'*"');
-      if(numMatch) parts.push('number:'+numMatch[1]);
-      var url='https://api.pokemontcg.io/v2/cards?pageSize=24&orderBy=-set.releaseDate&q='+encodeURIComponent(parts.join(' '));
+      var numMatch=raw.match(/(\d+)\s*\/\s*(\d+)/) || raw.match(/#\s*(\d+)/);
+      var name=raw.replace(/(\d+)\s*\/\s*(\d+)/,'').replace(/#\s*\d+/,'').trim();
+      if(!name){status.textContent='Add the card’s name too — the number alone isn’t enough.';return;}
+      var clean=name.replace(/"/g,'');
+      var query=/\s/.test(clean)?('name:"'+clean+'"'):('name:'+clean);
       go.disabled=true; status.textContent='Searching…'; results.innerHTML='';
-      fetch(url).then(function(r){
-        if(!r.ok) throw new Error('API '+r.status);
-        return r.json();
-      }).then(function(d){
+      fetchCards(query,true).then(function(d){
+        if(numMatch&&d.data){
+          d.data=d.data.filter(function(c){return String(c.number)===String(numMatch[1]);});
+        }
+        if(d.data&&d.data.length>24){d.data=d.data.slice(0,24);}
         go.disabled=false;
         var cards=d.data||[];
         if(!cards.length){status.textContent='No cards found for “'+raw+'” — check the spelling, or try just the first word of the name.';return;}
