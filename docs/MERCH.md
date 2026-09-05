@@ -19,7 +19,7 @@ the designer). Created + first products built by Hale 2026-08-31→09-01._
 ## Products (all PUBLIC)
 | Product | Price | Base/Margin | Design |
 |---|---|---|---|
-| The PokéSpa Tee (black Bella+Canvas 3001 Supersoft) | $32 | $17.70 / $14.30 | Front: card mark 3.71" left chest ("Fit to area → Left chest"). Back: full crest — mark + holo PokéSpa wordmark + "RESTORATION, DISCLOSED. ALWAYS." |
+| The PokéSpa Tee (black **Comfort Colors 1717**, rebuilt 2026-09-04) | **$38** | $21.40 / $16.60 | Front: card mark 3.71" left chest ("Fit to area → Left chest"). Back: full crest — mark + holo PokéSpa wordmark + "RESTORATION, DISCLOSED. ALWAYS." |
 | The Holo Mug (Black Glossy WGM79B, 11/15oz) | $18 / $21 | $8.95+ / ~$9-10.50 | Card mark 2.14" left of handle |
 | The Shine Sticker (Allcolor 5493 kiss-cut, 3"/4"/5.5") | $6 | $2.29+ / ~$3.71 | icon-mark; 15×3.75" strip size REMOVED (bad quality flag) |
 | The Bench Hoodie (Cotton Heritage M2580 black) | $48 | $33.24 / $14.76 | front-mark left chest + back-tee crest (2 prints) |
@@ -45,6 +45,25 @@ Theme installed on retry (the overnight hangs eventually committed server-side
 store-design page later before assuming failure). Hero collage + colors set,
 status flipped **Live**, storefront verified (hero + both products + teal CTA),
 merch.html copy updated to doors-open.
+
+
+## 2026-09-04 — Comfort Colors migration (portfolio polish, Hale)
+- **The PokéSpa Tee rebuilt from the catalog on Comfort Colors 1717 Black**,
+  two prints: front-mark.png → Fit to area → Left chest (4.06"); back-tee.png
+  full-area back. Price $32 → **$38** ($16.60/sale). New product id
+  `eca3a473-4fe4-40f0-90fa-620b38b5a77f`, LIVE on the original slug
+  `/products/the-pokespa-tee`. Old Bella tee `3ea7a8fe…` parked **Private on
+  `the-pokespa-tee-bc`** (rollback: swap URLs + statuses back).
+- Hero: already a split layout (WEAR THE SHINE + collage card) — verified in
+  the editor desktop + Mobile toggle, no crop → no re-cut. A square lockup card
+  `merch-art/hero-card-v3.png` (1350²) was rendered as a spare (source
+  hero-card-v3.html; note ../img/hero-holo.jpg no longer exists, so it renders
+  on the dark gradient only).
+- Domain: Namecheap CNAME `shop.pokespa.com → shops.fourthwall.com` added
+  (hale-tools/namecheap_dns.py). Fourthwall Connect-domain: see plan run log.
+- Gotcha (this shop is slower): Change-URL dialog + status popover need ~1.5s
+  extra; coordinate typing landed before the dialog opened once — use `find`
+  refs for the slug input here.
 
 ## Backlog
 - Header logo upload (wordmark POKESPA text currently — fine, mark would be nicer)
