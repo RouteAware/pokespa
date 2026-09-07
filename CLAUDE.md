@@ -43,4 +43,6 @@ form w/ photo attachments via Resend (RESEND_API_KEY in Vercel env, key
 shared w/ lane-watch; stored SENSITIVE so `vercel env pull` returns it
 empty — the plaintext lives in lane-watch/.env.local). Sender is
 alerts@berouteaware.com until pokespa.com is Resend-verified. No analytics.
-Direction: `ROADMAP.md`.
+Privacy: /privacy.html + pixel opt-out (branch privacy-2026-09-06); meta-pixel.js
+must stay byte-identical across all five Recursis brand sites; the weekly digest
+cron no-ops until POSTAL_ADDRESS env exists (CAN-SPAM). Direction: `ROADMAP.md`.
