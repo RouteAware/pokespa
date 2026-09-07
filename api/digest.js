@@ -8,7 +8,7 @@ const AUDIENCE_ID = '25aac3cb-6f49-4ec1-9924-6d43813ebcd0';
 const FROM = 'PokéSpa Drops <quotes@pokespa.com>';
 
 function esc(s) {
-  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 function fmtDate(yyyymmdd) {
@@ -16,7 +16,7 @@ function fmtDate(yyyymmdd) {
   return isNaN(d) ? yyyymmdd : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
-function buildHtml(data) {
+function buildHtml(data, postal) {
   const today = new Date().toISOString().slice(0, 10).replace(/-/g, '/');
   const upcoming = data.sets.filter((s) => s.releaseDate >= today);
   const recent = data.sets.filter((s) => s.releaseDate < today).slice(0, 4);
@@ -37,6 +37,7 @@ function buildHtml(data) {
   }
   html += `<p style="line-height:1.6">Drop day coming up? <a href="https://pokespa.com/drops.html" style="color:#2ea99e">Read how the queue actually works</a> — and once you pull the hits, <a href="https://pokespa.com/shop.html" style="color:#2ea99e">the slab-care shelf</a> is waiting.</p>
   <p style="color:#888;font-size:12px;line-height:1.6">Sourced from public announcements and the Pokémon TCG API; headlines via Google News. PokéSpa is not affiliated with Nintendo, The Pokémon Company, or Google. Prices and dates move — always confirm with the retailer.<br>
+  PokéSpa · ${esc(postal)}<br>
   <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#888">Unsubscribe</a></p></div>`;
   return html;
 }
@@ -46,6 +47,15 @@ module.exports = async (req, res) => {
   const auth = req.headers['authorization'] || '';
   if (!process.env.CRON_SECRET || auth !== `Bearer ${process.env.CRON_SECRET}`) {
     res.status(401).json({ error: 'unauthorized' });
+    return;
+  }
+  // CAN-SPAM: every commercial email must carry a valid physical postal address.
+  // There is no CMRA/business address yet, so until POSTAL_ADDRESS is set in the
+  // Vercel env this cron deliberately no-ops instead of sending a non-compliant digest.
+  const postal = String(process.env.POSTAL_ADDRESS || '').replace(/\s+/g, ' ').trim();
+  if (!postal) {
+    console.warn('digest skipped: POSTAL_ADDRESS env is not set (CAN-SPAM physical address required)');
+    res.status(200).json({ skipped: 'POSTAL_ADDRESS not set' });
     return;
   }
   try {
@@ -68,7 +78,7 @@ module.exports = async (req, res) => {
         audience_id: AUDIENCE_ID,
         from: FROM,
         subject: 'Pokémon drops this week — PokéSpa',
-        html: buildHtml(data),
+        html: buildHtml(data, postal),
       }),
     });
     const cj = await create.json();

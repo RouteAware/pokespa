@@ -4,6 +4,8 @@
 // DECISION: photos travel as base64 JSON because Vercel caps request bodies
 // at ~4.5MB — the form compresses images client-side to stay well under it.
 
+const { rateLimited, tooLarge, oneLine } = require('./_guard.js');
+
 const TO = 'info@alexandermhughes.com';
 const FROM = 'PokéSpa <quotes@pokespa.com>';
 const MAX_PHOTOS = 4;
@@ -16,14 +18,17 @@ module.exports = async (req, res) => {
     return;
   }
   try {
+    // Photos travel base64 in the JSON body; 4.2MB keeps us under Vercel's own cap with room for the fields.
+    if (tooLarge(req, 4_200_000)) { res.status(413).json({ error: 'Photos are too large — try fewer or smaller ones.' }); return; }
+    if (rateLimited(req)) { res.status(429).json({ error: 'Too many requests from this connection — give it a few minutes and try again.' }); return; }
     const { name, email, message, photos = [], website } = req.body || {};
 
     // Honeypot: real users never fill "website"
     if (website) { res.status(200).json({ ok: true }); return; }
 
     const clean = (s, max) => String(s || '').trim().slice(0, max);
-    const cName = clean(name, 120);
-    const cEmail = clean(email, 200);
+    const cName = oneLine(clean(name, 120));
+    const cEmail = oneLine(clean(email, 200));
     const cMessage = clean(message, 4000);
     if (!cName || !cMessage || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) {
       res.status(400).json({ error: 'Please fill in your name, a valid email, and the card details.' });
