@@ -1,14 +1,18 @@
 // Drops digest signup — adds a contact to the Resend "PokéSpa Drops"
 // audience. Same honeypot pattern as the inquiry form.
+const { rateLimited, tooLarge, oneLine } = require('./_guard.js');
+
 const AUDIENCE_ID = '25aac3cb-6f49-4ec1-9924-6d43813ebcd0';
 
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') { res.status(405).json({ error: 'Method not allowed' }); return; }
   try {
+    if (tooLarge(req, 4096)) { res.status(413).json({ error: 'That request is too large.' }); return; }
+    if (rateLimited(req)) { res.status(429).json({ error: 'Too many signups from this connection — give it a few minutes and try again.' }); return; }
     const { email, website } = req.body || {};
     if (website) { res.status(200).json({ ok: true }); return; } // honeypot
-    const cEmail = String(email || '').trim().slice(0, 200);
+    const cEmail = oneLine(String(email || '').trim().slice(0, 200));
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) {
       res.status(400).json({ error: 'That email doesn’t look right.' });
       return;

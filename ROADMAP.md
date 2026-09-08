@@ -96,6 +96,19 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - 🅿️ **Phase 3 — Brand era** (trigger: real sales): white-label PokéSpa
   microfiber cloth, short-form video channel
 
+## Privacy + hardening (branch privacy-2026-09-06 — PREVIEW, awaiting owner click-test)
+- 🔄 /privacy.html (quote photos, drops list, Vercel Analytics, Meta Pixel w/
+  working Do-Not-Sell opt-out + GPC, Fourthwall MoR, Amazon Associates) +
+  footer links on all 20 pages + sitemap; Associates statement now ALSO at the
+  top of shop.html above the first product; drops.html disclosure reworded
+- 🔄 API hardening: per-IP sliding-window rate limit + body-size caps on
+  /api/inquiry + /api/subscribe (api/_guard.js, in-memory by design); digest
+  esc() now escapes quotes
+- ⚠️ **/api/digest now REFUSES to send until `POSTAL_ADDRESS` is set in Vercel
+  env** (CAN-SPAM physical-address rule; no CMRA yet — see ~/Desktop/PRIVACY-PII.md).
+  The Monday cron no-ops (200 `skipped`) until then. Do NOT invent an address.
+- 🔄 HSTS header added to vercel.json
+
 ## Later / parked
 - 🅿️ Booking or queue system — only if volume justifies it
 - 🅿️ Restoration write-ups (case-study pages per card) — great SEO, needs
