@@ -16,7 +16,7 @@
       privacy: '/privacy#do-not-sell'
     },
     'terribleshirtco.com': {
-      bar: 'We’d love to know whether our ads are working, and that takes Meta’s ad pixel. Say no and nothing loads — the shirts are exactly as terrible either way.',
+      bar: 'We’d love to know whether our ads are working, and that takes Meta’s ad pixel. Tap “Not now” and nothing loads — the shirts are exactly as terrible either way.',
       privacy: '/privacy.html#do-not-sell'
     },
     'pokespa.com': {
