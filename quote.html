@@ -138,7 +138,7 @@
       Restoration is disclosed and honest — never to deceive a grader or buyer.
       PokéSpa is an independent service and is <b>not affiliated with, endorsed by, or sponsored by</b>
       Nintendo, Creatures, Game Freak, or The Pokémon Company.
-      <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
+      <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
     </div>
   </footer>
 
@@ -227,6 +227,8 @@
           .then(function (res) {
             if (res.ok) {
               say('Sent! We’ll get back to you with an honest assessment.', 'ok');
+              // Meta "Lead" — only fires if the visitor accepted the ad pixel; a no-op otherwise.
+              try { if (window.RecursisPixel) window.RecursisPixel.track('Lead'); } catch (e) {}
               document.getElementById('f').reset(); files = []; render();
               sendBtn.disabled = false;
             } else {
