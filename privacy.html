@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy — PokéSpa</title>
-  <meta name="description" content="What pokespa.com collects (quote photos, the drops list, analytics, an ad pixel), why, and how to turn the ad pixel off." />
+  <meta name="description" content="What pokespa.com collects (quote photos, the drops list, analytics, an ad pixel), why, and how the ad pixel asks before it loads." />
   <meta property="og:title" content="Privacy — PokéSpa" />
-  <meta property="og:description" content="What this site collects, why, and how to turn the ad pixel off." />
+  <meta property="og:description" content="What this site collects, why, and how the ad pixel asks before it loads." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pokespa.com/privacy.html" />
   <meta property="og:site_name" content="PokéSpa" />
@@ -49,15 +49,15 @@
     <article>
       <p class="eyebrow">Privacy</p>
       <h1>What this site collects, and how to say no.</h1>
-      <p class="standfirst">Plain words, no tricks. Effective September 6, 2026.</p>
+      <p class="standfirst">Plain words, no tricks. Effective September 21, 2026.</p>
 
-      <p><strong>The short version.</strong> PokéSpa is a Recursis Holdings venture. We collect what you send through the quote form (including your card photos), the email you give us for the drops digest, cookieless page-view counts, and — unless you turn it off below — a Meta ad pixel. Some shop links are Amazon affiliate links. We don't sell your data, we don't trade it with data brokers, and a person answers <a href="mailto:info@pokespa.com">info@pokespa.com</a>.</p>
+      <p><strong>The short version.</strong> PokéSpa is a Recursis Holdings venture. We collect what you send through the quote form (including your card photos), the email you give us for the drops digest, cookieless page-view counts, and — only if you press OK when we ask — a Meta ad pixel. Some shop links are Amazon affiliate links. We don't sell your data, we don't trade it with data brokers, and a person answers <a href="mailto:info@pokespa.com">info@pokespa.com</a>.</p>
 
       <h2>What we collect and why</h2>
       <p><strong>The quote form.</strong> <a href="/quote.html">Requesting a quote</a> asks for your name, email, a description of the card, and up to four photos. Photos are shrunk in your browser before they're sent. The whole thing is turned into one email — photos attached — and sent to our inbox through Resend, our email provider, with your address set as reply-to so we can answer you. We use it to assess the card and reply, and for nothing else. Your photos are never posted anywhere.</p>
       <p><strong>The drops digest.</strong> If you sign up on the <a href="/drops.html">Drops</a> page, your email goes into a mailing list held by Resend and you get a short weekly email about upcoming sets. Every email has an unsubscribe link; one click removes you. We don't add anyone to that list who didn't sign up for it, including people who send a quote request.</p>
       <p><strong>Analytics.</strong> We use Vercel Web Analytics and Vercel Speed Insights to count page views and measure how fast pages load. They are cookieless, don't build a profile of you, and don't follow you across other sites. We see aggregate numbers — pages, countries, device types, load times — not people. <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener">How Vercel handles it</a>.</p>
-      <p><strong>The ad pixel.</strong> This site loads the Meta Pixel (Facebook/Instagram) so we can tell whether our ads bring people here, and show our ads to people who have visited. The pixel sets cookies in your browser and sends Meta the pages you view here, with your browser and IP details. For visitors in California we send Meta the "Limited Data Use" flag, which tells Meta to process that data under California's restrictions. Under California's definition this counts as "sharing" data for advertising, so we give you a real switch: the button below stops the pixel from loading on this browser, and we also honor your browser's <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener">Global Privacy Control</a> signal automatically. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta's privacy policy</a> covers what Meta does with what it receives.</p>
+      <p><strong>The ad pixel — off until you say yes.</strong> We use the Meta Pixel (Facebook and Instagram) to tell whether our ads bring collectors here, and — if you send the quote form — to count that as a lead. <strong>None of it loads until you press OK on the bar at the bottom of the page.</strong> Before that there is no request to Meta, no fbevents.js, no pixel cookie, and nothing about your visit leaves this site. If you say yes, the pixel sets cookies and sends Meta the pages you view here along with your browser and IP details, and we always send Meta the <strong>Limited Data Use</strong> flag, which tells Meta to process that data under California’s restrictions. We never send Meta your name, your email, your message, or your card photos. We keep your answer in your browser for 12 months and then ask again. Change it any time with <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> in the footer, or the switch below — and we honor your browser’s <a href="https://globalprivacycontrol.org/" target="_blank" rel="noopener">Global Privacy Control</a> signal automatically, in which case we never ask at all. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">Meta’s privacy policy</a> covers what Meta does with what it receives.</p>
       <p><strong>Amazon affiliate links.</strong> As an Amazon Associate, PokéSpa earns from qualifying purchases. Links marked "(paid link)" on the <a href="/shop.html">Shop</a> page carry our affiliate tag. When you click one, Amazon sets its own cookies and handles everything from there under <a href="https://www.amazon.com/privacy" target="_blank" rel="noopener">Amazon's privacy notice</a>. Amazon tells us what was bought through our links in aggregate; it does not tell us who bought it.</p>
       <p><strong>The merch shop.</strong> <a href="https://shop.pokespa.com" target="_blank" rel="noopener">shop.pokespa.com</a> is hosted by Fourthwall, which is the merchant of record: Fourthwall takes your payment, prints, ships, and handles returns under its own privacy policy and terms (linked in the shop footer). We can see order details in the shop dashboard so we can help with a problem; we don't get your card number.</p>
       <p><strong>The tools.</strong> The <a href="/value.html">value lookup</a> sends your search terms from your browser to the community Pokémon TCG API to fetch results; the <a href="/shows.html">show finder</a> links you out to Google Maps and Facebook searches, which run under their own policies. The Drops page pulls set dates and headlines from public sources on our server; nothing about you goes with those requests.</p>
@@ -77,23 +77,23 @@
           <tr><td>Quote requests and photos (in our inbox)</td><td>As long as the job or conversation is live, or until you ask us to delete them</td></tr>
           <tr><td>Drops digest list</td><td>Until you unsubscribe or ask to be removed</td></tr>
           <tr><td>Vercel analytics</td><td>Aggregate only, kept by Vercel under its standard retention</td></tr>
-          <tr><td>Meta Pixel data</td><td>Held by Meta under Meta's policy; stop it any time with the button below</td></tr>
+          <tr><td>Meta Pixel data</td><td>Only exists if you said yes; held by Meta under Meta’s policy. Turn it off any time with the switch below</td></tr>
           <tr><td>Shop orders</td><td>Held by Fourthwall for as long as it needs to fulfil and support the order</td></tr>
         </table>
       </div>
 
       <h2>Your choices</h2>
       <ul>
-        <li><strong>Turn the ad pixel off</strong> with the button below, or turn on Global Privacy Control in your browser.</li>
+        <li><strong>Say no to the ad pixel</strong> — it is off until you press OK, and the switch below turns it back off whenever you like. Global Privacy Control in your browser does the same thing automatically.</li>
         <li><strong>Leave the drops list</strong> with the unsubscribe link in any digest email.</li>
         <li><strong>See, correct or delete</strong> anything you've sent us — photos included: email <a href="mailto:info@pokespa.com">info@pokespa.com</a> from the address you used and we'll do it, usually within a few days.</li>
         <li><strong>Block cookies</strong> in your browser if you'd rather — the site works fine without them.</li>
       </ul>
 
       <div class="optout" id="do-not-sell">
-        <h2>Do Not Sell or Share My Personal Information</h2>
-        <p>Press the button and the Meta ad pixel stops loading on this browser and device. The choice is saved in your browser, survives future visits, and you can undo it here any time. It takes effect from the next page you open — this page had already loaded the pixel before you pressed it.</p>
-        <button type="button" id="optout-btn">Do Not Sell or Share My Personal Information</button>
+        <h2>Your ad-pixel choice</h2>
+        <p>The Meta ad pixel is off on this browser until you turn it on. This is the same switch as the bar at the bottom of the page and the <em>Change my choice</em> link in the footer — press it to turn the pixel on, press it again to turn it off. We keep your answer in this browser for 12 months, then ask again. This also covers California’s “Do Not Sell or Share My Personal Information” right: saying no here is that request.</p>
+        <button type="button" id="optout-btn">Turn the ad pixel on</button>
         <p class="state" id="optout-status" role="status"></p>
       </div>
 
@@ -107,30 +107,10 @@
         PokéSpa is an independent service and is <b>not affiliated with, endorsed by, or sponsored by</b>
         Nintendo, Creatures, Game Freak, or The Pokémon Company. All card and character names/artwork are the
         property of their respective owners.
-        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/learn/">Learn</a> · <a href="/drops.html">Drops</a> · <a href="/shop.html">Shop</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
+        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/learn/">Learn</a> · <a href="/drops.html">Drops</a> · <a href="/shop.html">Shop</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
       </div>
     </footer>
   </div>
-  <script>
-    (function () {
-      var KEY = 'recursis_pixel_optout';
-      var btn = document.getElementById('optout-btn'), st = document.getElementById('optout-status');
-      function get() { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
-      function set(v) { try { if (v) localStorage.setItem(KEY, '1'); else localStorage.removeItem(KEY); return true; } catch (e) { return false; } }
-      function render() {
-        var gpc = navigator.globalPrivacyControl === true, out = get();
-        if (gpc) st.textContent = 'Your browser is sending Global Privacy Control, so the ad pixel is already off here. Nothing to press.';
-        else if (out) st.textContent = 'Done. The ad pixel is off on this browser and stays off until you turn it back on.';
-        else st.textContent = 'The ad pixel is currently allowed on this browser.';
-        btn.textContent = out ? 'Turn the ad pixel back on' : 'Do Not Sell or Share My Personal Information';
-      }
-      btn.addEventListener('click', function () {
-        if (!set(!get())) { st.textContent = "Your browser is blocking site storage, so we can't save the choice here. Turn on Global Privacy Control or block third-party cookies in your browser settings instead."; return; }
-        render();
-      });
-      render();
-    })();
-  </script>
   <!-- Vercel Analytics: anonymous, cookieless page-view counts -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
