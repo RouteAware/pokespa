@@ -6,9 +6,18 @@ venture under Recursis Holdings. LIVE at **pokespa.com** (Vercel project
 global profile (`~/.claude/CLAUDE.md`) + portfolio home (`~/Desktop/HALE.md`).
 
 ## Hard rules (non-negotiable)
-1. **TRADEMARK CARE.** No Pokémon/Nintendo logos, character art, or card
-   artwork anywhere on the site. The non-affiliation disclaimer in the footer
-   stays. "PokéSpa" is our name; everything else belongs to its owners.
+1. **TRADEMARK CARE.** No Pokémon/Nintendo logos or character artwork used as
+   a design element, hero art, background, or logo anywhere on the site.
+   **Carve-out (ruling 2026-09-21, council/2026-09-21-photos-and-california-privacy.md
+   §1):** documentation photos of Alexander's own physical cards are allowed
+   — site, organic social, and paid ads, same rule for all three — under
+   these conditions: never used as hero art, a background, or a logo; the
+   non-affiliation disclaimer stays visible on the same page/post; never
+   captioned or framed as "improves grade" (rule 5); card and set named
+   plainly, not stylized to spotlight the character art; any takedown or
+   complaint request = stop and pull immediately, never fight. The
+   non-affiliation disclaimer in the footer stays. "PokéSpa" is our name;
+   everything else belongs to its owners.
 2. **Disclosed restoration is the identity.** The whole pitch is honest
    restoration — documented work, disclosure when selling or grading, never
    helping anyone deceive a grader or buyer. Copy must never drift toward
@@ -35,10 +44,11 @@ global profile (`~/.claude/CLAUDE.md`) + portfolio home (`~/Desktop/HALE.md`).
 7. **Never file a USPTO application for "PokéSpa"** — TPCi actively opposes
    Poké-prefix marks in the card space. Name stays unregistered; keep clean.
 
-## State (2026-08-29)
+## State (2026-08-29, gallery updated 2026-09-21)
 Landing: hero (CTA → /quote.html) → What we do → How it works (4 steps) →
-The PokéSpa promise (disclosure tenets) → Before & after (placeholder) →
-footer w/ legal. **Backend: one Vercel function, `api/inquiry.js`** — quote
+The PokéSpa promise (disclosure tenets) → From the bench (real photo gallery,
+Alexander's own cards, shipped 2026-09-21 per rule 1 carve-out) → Learn card
+care → footer w/ legal. **Backend: one Vercel function, `api/inquiry.js`** — quote
 form w/ photo attachments via Resend (RESEND_API_KEY in Vercel env, key
 shared w/ lane-watch; stored SENSITIVE so `vercel env pull` returns it
 empty — the plaintext lives in lane-watch/.env.local). Sender is

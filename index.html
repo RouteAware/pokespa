@@ -99,6 +99,28 @@
 
     .soonnote{color:var(--muted);font-size:.9rem;margin-top:14px}
 
+    .gallerylede{color:var(--muted);font-size:.95rem;margin-bottom:16px;max-width:60ch}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;list-style:none}
+    @media(min-width:640px){.gallery{grid-template-columns:repeat(4,1fr)}}
+    .gtile{border:1px solid var(--line);background:var(--panel);border-radius:12px;
+      overflow:hidden;cursor:zoom-in;text-align:left;color:inherit;font:inherit;
+      display:flex;flex-direction:column;width:100%;padding:0;transition:border-color .15s ease}
+    .gtile img{width:100%;height:auto;aspect-ratio:63/88;object-fit:cover;display:block;background:#0b0d12}
+    .gtile .gcap{color:var(--muted);font-size:.72rem;line-height:1.35;padding:8px 9px}
+    .gtile:hover,.gtile:focus-visible{border-color:var(--accent)}
+    .galnote{color:var(--muted);font-size:.78rem;margin-top:14px}
+
+    .lightbox{position:fixed;inset:0;background:rgba(10,11,15,.92);display:flex;
+      align-items:center;justify-content:center;padding:24px;z-index:50}
+    .lightbox[hidden]{display:none}
+    .lightbox figure{max-width:min(92vw,520px);text-align:center}
+    .lightbox img{max-width:100%;max-height:76vh;border-radius:10px;display:block;margin:0 auto;
+      border:1px solid var(--line)}
+    .lightbox figcaption{color:var(--muted);font-size:.85rem;margin-top:12px}
+    .lbclose{position:absolute;top:18px;right:22px;background:var(--panel);border:1px solid var(--line);
+      color:var(--text);width:36px;height:36px;border-radius:8px;font-size:20px;line-height:1;cursor:pointer}
+    .lbclose:hover{border-color:var(--accent);color:var(--accent)}
+
     footer{margin-top:auto;border-top:1px solid transparent;padding:24px 0;
       border-image:linear-gradient(90deg,transparent,rgba(127,209,201,.45) 30%,rgba(185,167,240,.45) 50%,rgba(240,201,138,.45) 70%,transparent) 1}
     .foot{color:var(--muted);font-size:12px;line-height:1.7}
@@ -172,6 +194,54 @@
     </section>
 
     <section class="block">
+      <h2>From the bench</h2>
+      <p class="gallerylede">Cards from Alexander's own collection, photographed the way we document any card that comes through the door — surface, holo, and edges, before any work begins.</p>
+      <div class="gallery" id="gallery">
+        <button type="button" class="gtile" data-full="/img/gallery/img_2263.jpg" data-caption="Heracross — Neo Genesis, 1st Edition, 6/111. Holo surface and edges under raking light.">
+          <img src="/img/gallery/img_2263-card.jpg" alt="Heracross, Neo Genesis 1st Edition 6/111, front view showing holo surface and edges" loading="lazy" width="573" height="800">
+          <span class="gcap">Heracross — Neo Genesis, 1st Edition, 6/111</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2264.jpg" data-caption="Heracross — Neo Genesis, 1st Edition, 6/111. Second angle, holo pattern shifting under the light.">
+          <img src="/img/gallery/img_2264-card.jpg" alt="Heracross, Neo Genesis 1st Edition 6/111, second angle showing the holo pattern" loading="lazy" width="573" height="800">
+          <span class="gcap">Heracross — Neo Genesis, 1st Edition, 6/111</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2265.jpg" data-caption="Heracross — Neo Genesis, 1st Edition, 6/111. Third angle, warmer light on the holo foil and corners.">
+          <img src="/img/gallery/img_2265-card.jpg" alt="Heracross, Neo Genesis 1st Edition 6/111, third angle showing holo foil and corners" loading="lazy" width="573" height="800">
+          <span class="gcap">Heracross — Neo Genesis, 1st Edition, 6/111</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2266.jpg" data-caption="Heracross — Neo Genesis, 1st Edition, 6/111. Close view of the holo sparkle across the artwork window.">
+          <img src="/img/gallery/img_2266-card.jpg" alt="Heracross, Neo Genesis 1st Edition 6/111, close view of the holo sparkle" loading="lazy" width="573" height="800">
+          <span class="gcap">Heracross — Neo Genesis, 1st Edition, 6/111</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2267.jpg" data-caption="Pikachu — Japanese 2nd Anniversary Birthday promo, No. 025. Full holo card front, surface and edges shown.">
+          <img src="/img/gallery/img_2267-card.jpg" alt="Pikachu, Japanese 2nd Anniversary Birthday promo No. 025, front view" loading="lazy" width="573" height="800">
+          <span class="gcap">Pikachu — Japanese Birthday promo, No. 025</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2268.jpg" data-caption="Bellossom — Neo Genesis, 1st Edition, 3/111. Holo pattern and corners, front view.">
+          <img src="/img/gallery/img_2268-card.jpg" alt="Bellossom, Neo Genesis 1st Edition 3/111, front view showing holo pattern and corners" loading="lazy" width="573" height="800">
+          <span class="gcap">Bellossom — Neo Genesis, 1st Edition, 3/111</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2269.jpg" data-caption="Mega Greninja ex — modern full-art holo, 116/086. Foil surface catching light, edges and corners visible.">
+          <img src="/img/gallery/img_2269-card.jpg" alt="Mega Greninja ex, modern full-art holo 116/086, front view" loading="lazy" width="573" height="800">
+          <span class="gcap">Mega Greninja ex — 116/086</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2270.jpg" data-caption="Jumpluff — Neo Genesis, 1st Edition, 7/111. Holo pattern and border edges, front view.">
+          <img src="/img/gallery/img_2270-card.jpg" alt="Jumpluff, Neo Genesis 1st Edition 7/111, front view showing holo pattern and edges" loading="lazy" width="573" height="800">
+          <span class="gcap">Jumpluff — Neo Genesis, 1st Edition, 7/111</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2271.jpg" data-caption="Mewtwo — Base Set holo rare, 10/102 (1999 Wizards). Holo foil texture and border condition, front view.">
+          <img src="/img/gallery/img_2271-card.jpg" alt="Mewtwo, Base Set holo rare 10/102, front view showing holo foil and border" loading="lazy" width="573" height="800">
+          <span class="gcap">Mewtwo — Base Set, 10/102</span>
+        </button>
+        <button type="button" class="gtile" data-full="/img/gallery/img_2272.jpg" data-caption="Mew — Japanese promo, No. 151. Full-card rainbow holo foil, front view showing surface and edges.">
+          <img src="/img/gallery/img_2272-card.jpg" alt="Mew, Japanese promo No. 151, full-card rainbow holo, front view" loading="lazy" width="573" height="800">
+          <span class="gcap">Mew — Japanese promo, No. 151</span>
+        </button>
+      </div>
+      <p class="galnote">These are Alexander's own cards, shown for documentation — condition, care, and display prep. PokéSpa is not affiliated with Nintendo, Creatures, Game Freak, or The Pokémon Company (see footer).</p>
+    </section>
+
+    <section class="block">
       <h2>Learn card care</h2>
       <div class="services">
         <a class="svc" href="/learn/how-to-clean-pokemon-cards.html" style="display:block;color:inherit"><h3>How to clean cards safely</h3><p>The dry-first method — what to use, and when to stop.</p></a>
@@ -192,6 +262,44 @@
       </div>
     </footer>
   </div>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lbclose" id="lbclose" aria-label="Close photo">×</button>
+    <figure>
+      <img id="lbimg" src="" alt="">
+      <figcaption id="lbcap"></figcaption>
+    </figure>
+  </div>
+  <script>
+    (function(){
+      var gallery = document.getElementById('gallery');
+      var lb = document.getElementById('lightbox');
+      var lbimg = document.getElementById('lbimg');
+      var lbcap = document.getElementById('lbcap');
+      var lbclose = document.getElementById('lbclose');
+      if(!gallery || !lb) return;
+      function openLB(tile){
+        var img = tile.querySelector('img');
+        lbimg.src = tile.dataset.full;
+        lbimg.alt = img ? img.alt : '';
+        lbcap.textContent = tile.dataset.caption || '';
+        lb.hidden = false;
+        lbclose.focus();
+      }
+      function closeLB(){
+        lb.hidden = true;
+        lbimg.src = '';
+      }
+      gallery.addEventListener('click', function(e){
+        var tile = e.target.closest('.gtile');
+        if(!tile) return;
+        openLB(tile);
+      });
+      lbclose.addEventListener('click', closeLB);
+      lb.addEventListener('click', function(e){ if(e.target === lb) closeLB(); });
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !lb.hidden) closeLB(); });
+    })();
+  </script>
   <!-- Vercel Analytics: anonymous, cookieless page-view counts -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>

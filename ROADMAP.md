@@ -6,8 +6,11 @@ Status marks: ✅ done · 🔄 in progress · ⬜ not started · 🅿️ parked
 - ✅ Landing page live at pokespa.com (2026-08-29)
 - ✅ Brand mark (tilted holo card + sparkles) — favicon, header, touch icon
 - ✅ Depth pass: How it works + PokéSpa promise sections (2026-08-29)
-- ⬜ Real before/after photos into the gallery (needs Alexander's first
-  restorations photographed — blocker: content, not code)
+- ✅ First real photo gallery LIVE 2026-09-21: "From the bench" section on
+  index.html, 10 documentation photos of Alexander's own cards (condition/
+  care shots, not before/after restoration pairs yet — those still need his
+  first completed jobs photographed). Ships under rule 1 carve-out
+  (council/2026-09-21-photos-and-california-privacy.md §1).
 
 ## Next (when Alexander wants inquiries flowing)
 - ✅ Proper inquiry form (2026-08-29): /quote.html + /api/inquiry — Resend,
