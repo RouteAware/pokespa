@@ -3,3 +3,7 @@ ROADMAP.md
 node_modules
 docs
 merch-art
+*.jpeg
+* 2.*
+.DS_Store
+STATE.md

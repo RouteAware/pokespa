@@ -10,8 +10,17 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pokespa.com/drops.html" />
   <meta property="og:site_name" content="PokéSpa" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://pokespa.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="PokéSpa — trading card restoration. Bring tired cards back to life." />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pokémon Drop Radar — PokéSpa" />
+  <meta name="twitter:description" content="Upcoming set releases, preorder chatter, and how to actually win drop day." />
+  <meta name="twitter:image" content="https://pokespa.com/og.png" />
+  <meta name="twitter:image:alt" content="PokéSpa — trading card restoration. Bring tired cards back to life." />
+  <link rel="preload" as="image" href="/img/silk-dark.jpg" fetchpriority="high" />
   <link rel="canonical" href="https://pokespa.com/drops.html" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=2" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -19,7 +28,7 @@
   <link rel="stylesheet" href="/learn/learn.css" />
   <style>
     .wrap{max-width:1000px}
-    .sechead{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:36px 0 14px;display:flex;align-items:center;gap:12px}
+    .sechead{font-weight:400;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:36px 0 14px;display:flex;align-items:center;gap:12px}
     .sechead::after{content:"";flex:1;height:1px;background:var(--line)}
     .signup{border:1px solid var(--accent-dim);background:linear-gradient(180deg,rgba(20,26,34,.93),rgba(18,21,29,.97)),url(/img/silk-dark.jpg) center/cover;
       border-radius:14px;padding:22px;margin-top:20px}
@@ -60,6 +69,9 @@
     #loading{color:var(--muted);font-size:.95rem}
   </style>
   <script defer src="/meta-pixel.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pokespa.com/"},{"@type":"ListItem","position":2,"name":"Drop radar","item":"https://pokespa.com/drops.html"}]}
+  </script>
 </head>
 <body>
   <div class="topline"></div>
@@ -99,14 +111,14 @@
         </form>
       </div>
 
-      <p class="sechead">Set releases — auto-updated</p>
+      <h2 class="sechead">Set releases — auto-updated</h2>
       <div id="loading">Loading the radar…</div>
       <div class="setlist" id="sets"></div>
 
-      <p class="sechead">Drop &amp; preorder chatter</p>
+      <h2 class="sechead">Drop &amp; preorder chatter</h2>
       <div class="newslist" id="news"></div>
 
-      <p class="sechead">How to actually win drop day</p>
+      <h2 class="sechead">How to actually win drop day</h2>
       <div class="guide">
         <div class="step"><span class="num">01</span><h3>One tab. Don't refresh.</h3><p>Pokémon Center uses a randomized virtual waiting room. Opening ten tabs or refreshing doesn't move you up — it can reset you. One tab, one wait.</p></div>
         <div class="step"><span class="num">02</span><h3>Prep the account the night before</h3><p>Signed in, address saved, payment saved. Drop-day carts die during typing. The fastest checkout is the one with nothing left to fill in.</p></div>
@@ -114,14 +126,14 @@
         <div class="step"><span class="num">04</span><h3>Don't buy from bots — and don't be one</h3><p>When bots bypassed the queue on a recent preorder, The Pokémon Company canceled roughly 42,000 orders. Play it straight; the reprint always comes.</p></div>
       </div>
 
-      <p class="sechead">The X watchlist — tap 🔔 on these</p>
+      <h2 class="sechead">The X watchlist — tap 🔔 on these</h2>
       <div class="tools">
         <div class="tool"><span class="k">Community · drops</span><h3>@PokemonRestocks</h3><p>Posts Pokémon Center queue openings, TCG drops and restocks as they happen.</p><a href="https://x.com/PokemonRestocks" target="_blank" rel="noopener">x.com/PokemonRestocks →</a></div>
         <div class="tool"><span class="k">Fan-run · PC news</span><h3>@PokemonCenterUS</h3><p>New releases and stock notes from pokemoncenter.com. Fan-run — not an official TPCi account (there is no official US drop account).</p><a href="https://x.com/PokemonCenterUS" target="_blank" rel="noopener">x.com/PokemonCenterUS →</a></div>
         <div class="tool"><span class="k">Official · announcements</span><h3>@Pokemon</h3><p>The official account — product reveals and launch announcements, not restocks. Good for knowing what's coming.</p><a href="https://x.com/Pokemon" target="_blank" rel="noopener">x.com/Pokemon →</a></div>
       </div>
 
-      <p class="sechead">Free alert tools we actually recommend</p>
+      <h2 class="sechead">Free alert tools we actually recommend</h2>
       <div class="tools">
         <div class="tool"><span class="k">App</span><h3>Restockd</h3><p>iOS/Android push alerts across major retailers.</p><a href="https://restockd.app/brands/pokemon" target="_blank" rel="noopener">restockd.app →</a></div>
         <div class="tool"><span class="k">App</span><h3>TYPA</h3><p>Retailer restock alerts with per-product watches.</p><a href="https://www.typa.app/brands/pokemon" target="_blank" rel="noopener">typa.app →</a></div>
@@ -146,7 +158,7 @@
         PokéSpa is an independent service and is <b>not affiliated with, endorsed by, or sponsored by</b>
         Nintendo, Creatures, Game Freak, or The Pokémon Company. All card and character names/artwork are the
         property of their respective owners.
-        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/learn/">Learn</a> · <a href="/drops.html">Drops</a> · <a href="/shop.html">Shop</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
+        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis</a> venture · <a href="/learn/">Learn</a> · <a href="/drops.html">Drops</a> · <a href="/shop.html">Shop</a> · <a href="/value.html">Card values</a> · <a href="/shows.html">Card shows</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
       </div>
     </footer>
   </div>
