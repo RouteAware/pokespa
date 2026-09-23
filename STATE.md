@@ -1,0 +1,4 @@
+# STATE
+
+## Now
+- ✅ 2026-09-23 16:20 · SEO PASS LIVE (merge a4861c4 → Vercel dpl_42PLbgTP READY): all 20 pages titles/descriptions/canonical/OG/twitter, JSON-LD Org+WebSite+WebPage + 19 BreadcrumbList (no Product/Offer — shop shows ranges, no prices; no ratings), 404 page, sitemap lastmod, robots, h1→h2 fixes (no visual change), images −60%, LCP 9.2→4.4 s local. Gates: Ansel PASS + 2 meta rewrites (creases: no 'flatten a crease' repair implication; holo: no truncation), Nyla BLOCK→clear (.vercelignore: *.jpeg, ' 2' dupes, .DS_Store, STATE.md; smoke: /privacy%202.html 404, /IMG_2263.jpeg 404, /nope-xyz 404, JSON-LD on home). Rollback: `vercel rollback https://pokespa-a0l25mhz7-alexander-hughes-projects.vercel.app --yes` or `git revert -m 1 a4861c4 && git push`. Owner: submit sitemap in Search Console (steps in docs/SEO-2026-09-23.md); 10 raw IMG_226x.jpeg still in the folder untracked — move to ~/Recursis-Digital/records or delete (his photos).
