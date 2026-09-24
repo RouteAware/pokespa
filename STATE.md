@@ -1,5 +1,5 @@
 # STATE — PokeSpa-Site · updated 2026-09-24 01:10 ET
-<!-- machine header (hale-close): branch master · HEAD ff7ad68 · dirty 0 · unpushed 0 · worktrees 4 · verified-at 2026-09-24 06:43 -->
+<!-- machine header (hale-close): branch master · HEAD cd28249 · dirty 0 · unpushed 0 · worktrees 4 · verified-at 2026-09-24 06:44 -->
 
 ## Now
 - Hale · SEO pass LIVE (merge a4861c4, Vercel READY 2026-09-23 ~16:15 ET); sitemap resubmitted in GSC 19:22. Next: check GSC "Last read" 2026-09-30; nothing else scheduled.
