@@ -1,4 +1,19 @@
-# STATE
+# STATE — PokeSpa-Site · updated 2026-09-24 01:10 ET
 
 ## Now
-- ✅ 2026-09-23 16:20 · SEO PASS LIVE (merge a4861c4 → Vercel dpl_42PLbgTP READY): all 20 pages titles/descriptions/canonical/OG/twitter, JSON-LD Org+WebSite+WebPage + 19 BreadcrumbList (no Product/Offer — shop shows ranges, no prices; no ratings), 404 page, sitemap lastmod, robots, h1→h2 fixes (no visual change), images −60%, LCP 9.2→4.4 s local. Gates: Ansel PASS + 2 meta rewrites (creases: no 'flatten a crease' repair implication; holo: no truncation), Nyla BLOCK→clear (.vercelignore: *.jpeg, ' 2' dupes, .DS_Store, STATE.md; smoke: /privacy%202.html 404, /IMG_2263.jpeg 404, /nope-xyz 404, JSON-LD on home). Rollback: `vercel rollback https://pokespa-a0l25mhz7-alexander-hughes-projects.vercel.app --yes` or `git revert -m 1 a4861c4 && git push`. Owner: submit sitemap in Search Console (steps in docs/SEO-2026-09-23.md); 10 raw IMG_226x.jpeg still in the folder untracked — move to ~/Recursis-Digital/records or delete (his photos).
+- Hale · SEO pass LIVE (merge a4861c4, Vercel READY 2026-09-23 ~16:15 ET); sitemap resubmitted in GSC 19:22. Next: check GSC "Last read" 2026-09-30; nothing else scheduled.
+- Alexander · 10 raw card photos (IMG_2263–2272) + two iCloud " 2" dupes moved OUT of the repo to `~/Recursis-Digital/pokespa-untracked-2026-09-24/` at close (untracked, would have deployed via CLI); keep or delete — your photos.
+- Hale · Kurt reply + affiliate items unchanged (memory pokespa-session-close-2026-09-02).
+
+## Verified live
+- pokespa.com: /privacy%202.html 404 · /IMG_2263.jpeg 404 · /nope-xyz 404 · JSON-LD on home · new creases/holo meta descriptions · `curl -s -o /dev/null -w '%{http_code}' https://pokespa.com/nope-xyz` · 2026-09-23 16:20 ET.
+
+## Open owner calls
+- Delete or keep the moved raw photos · default: keep 30 days then delete · decide-by 2026-10-24.
+- Privacy page says "run by Recursis Holdings" — legal entity wording waits on Marlowe (must match the real LLC) · default: leave until his read · decide-by 2026-09-30.
+
+## Rollback
+- `vercel rollback https://pokespa-a0l25mhz7-alexander-hughes-projects.vercel.app --yes` (pre-SEO prod) or `git revert -m 1 a4861c4 && git push origin master`.
+
+## Do-not-touch
+- none — local branch `seo-2026-09-23` is merged; delete after 2026-09-30.
