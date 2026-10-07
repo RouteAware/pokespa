@@ -2,6 +2,7 @@
 <!-- machine header (hale-close): branch master · HEAD cd28249 · dirty 0 · unpushed 0 · worktrees 4 · verified-at 2026-09-24 06:44 -->
 
 ## Now
+- Hale · ✅ 2026-10-07 17:05 ET · cookie banner standard wording + Accept/Decline parity LIVE (merge 18babfa; Ansel+Marlowe 16:41; shared meta-pixel.js md5 08065a68 ×3 sites). Rollback `git revert -m 1 18babfa && git push`.
 - Hale · ✅ 2026-10-06 11:20 ET · LIVE 9f87559: gallery lede "Our own cards, photographed at intake…" (owner: old note broke the fourth wall; Ansel B, Marlowe footer-only), mobile header fixed (461→390 px), footer "a Recursis Digital company" on 21 pages. 4 customer deflection drafts in info@ await owner send. Rollback `git revert -m 1 9f87559`.
 - Hale · SEO pass LIVE (merge a4861c4, Vercel READY 2026-09-23 ~16:15 ET); sitemap resubmitted in GSC 19:22. Next: check GSC "Last read" 2026-09-30; nothing else scheduled.
 - Alexander · 10 raw card photos (IMG_2263–2272) + two iCloud " 2" dupes moved OUT of the repo to `~/Recursis-Digital/pokespa-untracked-2026-09-24/` at close (untracked, would have deployed via CLI); keep or delete — your photos.
