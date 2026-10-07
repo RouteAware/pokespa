@@ -1,5 +1,5 @@
 /* Meta Pixel — Recursis shared, CONSENT-GATED. The ID lives ONLY in this file; every page loads it from <head>.
-   Nothing reaches Meta until the visitor presses OK: fbevents.js is not requested, fbq is not defined, no cookie
+   Nothing reaches Meta until the visitor presses Accept: fbevents.js is not requested, fbq is not defined, no cookie
    is set. That is the point — California CIPA §631 needs consent BEFORE the pixel fires, not after.
    Guard: with the placeholder still in place this file is a no-op, so previews are safe to ship.
    LDU = Meta "Limited Data Use" is still sent on every consented load.
@@ -12,35 +12,35 @@
   /* ---------- ALL COPY LIVES HERE (per-site voice; the file stays byte-identical) ---------- */
   var COPY = {
     'recursisdigital.com': {
-      bar: 'We’d like to load Meta’s ad pixel so we can tell whether our ads actually bring anyone here. Nothing loads until you say OK, and you can change your mind any time.',
+      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
       privacy: '/privacy#do-not-sell'
     },
     'terribleshirtco.com': {
-      bar: 'We’d love to know whether our ads are working, and that takes Meta’s ad pixel. Tap “Not now” and nothing loads — the shirts are exactly as terrible either way.',
+      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
       privacy: '/privacy.html#do-not-sell'
     },
     'pokespa.com': {
-      bar: 'We’d like to load Meta’s ad pixel so we can see whether our ads bring collectors here. Nothing loads unless you say OK, and you can change your mind any time.',
+      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
       privacy: '/privacy.html#do-not-sell'
     },
     _default: {
-      bar: 'We’d like to load Meta’s ad pixel so we can tell whether our ads bring anyone here. Nothing loads until you say OK, and you can change your mind any time.',
+      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
       privacy: '/privacy.html#do-not-sell'
     }
   };
   var UI = {
-    yes: 'OK',
-    no: 'Not now',
-    more: 'What this is',
-    label: 'Ad pixel choice',
+    yes: 'Accept',
+    no: 'Decline',
+    more: 'Privacy policy',
+    label: 'Ad cookies',
     /* the control on the privacy page */
-    onBtn: 'Turn the ad pixel on',
-    offBtn: 'Turn the ad pixel off',
-    stateOn: 'The ad pixel is on for this browser. It stays on until you turn it off, or for 12 months, whichever comes first.',
-    stateOff: 'The ad pixel is off for this browser. Nothing has been sent to Meta.',
-    stateGpc: 'Your browser is sending Global Privacy Control, so the ad pixel is off here and we never ask. Nothing to press.',
-    stateNone: 'You haven’t been asked yet on this browser. The ad pixel is off until you say otherwise.',
-    noStorage: 'Your browser is blocking site storage, so we can’t remember the choice here. The ad pixel stays off.'
+    onBtn: 'Allow ad cookies',
+    offBtn: 'Turn off ad cookies',
+    stateOn: 'Ad cookies are on for this browser, for up to 12 months.',
+    stateOff: 'Ad cookies are off. Nothing has been sent to Meta.',
+    stateGpc: 'Your browser sends Global Privacy Control, so ad cookies stay off.',
+    stateNone: 'You haven’t chosen yet. Ad cookies stay off until you accept.',
+    noStorage: 'Your browser blocks storage, so ad cookies stay off.'
   };
   /* ---------------------------------------------------------------------------------------- */
 
@@ -125,8 +125,7 @@
       '.rcx-bar a{color:#f1f2f4;text-decoration:underline;text-underline-offset:2px}' +
       '.rcx-acts{display:flex;gap:8px;flex:0 0 auto;flex-wrap:wrap}' +
       '.rcx-bar button{font:inherit;font-weight:600;cursor:pointer;border-radius:8px;padding:9px 18px;min-height:40px;' +
-      'border:1px solid rgba(255,255,255,.4);background:transparent;color:#f1f2f4}' +
-      '.rcx-bar button.rcx-yes{background:#f1f2f4;color:#14161a;border-color:#f1f2f4}' +
+      'border:1px solid #f1f2f4;background:#f1f2f4;color:#14161a}' +
       '.rcx-bar button:focus-visible{outline:2px solid #7cb7ff;outline-offset:2px}' +
       '@media (max-width:560px){.rcx-bar{align-items:stretch;flex-direction:column;gap:10px}' +
       '.rcx-bar p{flex:0 1 auto}.rcx-acts button{flex:1 1 0}}';
