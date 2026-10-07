@@ -32,6 +32,7 @@ header.site nav{margin-left:auto;display:flex;gap:18px;font-size:13px;flex-wrap:
 header.site nav a{color:var(--muted)}
 header.site nav a:hover{color:var(--accent);text-decoration:none}
 header.site nav a.active{color:var(--text);font-weight:700}
+@media(max-width:600px){header.site{flex-wrap:wrap;padding:20px 0 14px;row-gap:12px}header.site nav{margin-left:0;width:100%;justify-content:flex-start;gap:8px 16px}}
 @media(max-width:420px){header.site nav{gap:12px;font-size:12px}header.site .brand{font-size:16px}}
 
 .eyebrow{font-family:ui-monospace,Menlo,monospace;color:var(--accent);font-size:12px;
