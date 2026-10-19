@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Restoration orders — PokéSpa</title>
-  <meta name="description" content="Restoration orders are paused. Read our free card-care guides or shop the supplies we use." />
+  <title>Restoration waitlist — PokéSpa</title>
+  <meta name="description" content="We're not taking restoration orders right now. Join the waitlist, or read our free card-care guides and shop the supplies we use." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://pokespa.com/quote.html" />
-  <meta property="og:title" content="Restoration orders — PokéSpa" />
-  <meta property="og:description" content="Restoration orders are paused. Card-care guides and supplies are open." />
+  <meta property="og:title" content="Restoration waitlist — PokéSpa" />
+  <meta property="og:description" content="Restoration orders are closed for now. Join the waitlist; the guides and shop are open." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pokespa.com/quote.html" />
   <meta property="og:site_name" content="PokéSpa" />
@@ -20,8 +20,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://pokespa.com/og.png" />
   <meta name="twitter:image:alt" content="PokéSpa — card-care guides and supplies for collectors." />
-  <meta name="twitter:title" content="Restoration orders — PokéSpa" />
-  <meta name="twitter:description" content="Restoration orders are paused. Card-care guides and supplies are open." />
+  <meta name="twitter:title" content="Restoration waitlist — PokéSpa" />
+  <meta name="twitter:description" content="Restoration orders are closed for now. Join the waitlist; the guides and shop are open." />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=2" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#0e1016" />
@@ -50,23 +50,25 @@
     .brand{font-weight:800;letter-spacing:.02em;font-size:18px}
     h1{font-size:clamp(1.9rem,5.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-top:26px}
     .lede{color:var(--muted);margin-top:12px;max-width:52ch}
-    form{margin:34px 0 60px;display:flex;flex-direction:column;gap:18px}
+    form{margin:34px 0 44px;display:flex;flex-direction:column;gap:18px}
     label{font-size:13px;font-weight:700;letter-spacing:.04em;display:block;margin-bottom:7px}
     label span{color:var(--muted);font-weight:400}
-    input[type=text],input[type=email],textarea{
+    input[type=text],input[type=email],input[type=number],textarea{
       width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;
       color:var(--text);padding:13px 14px;font:inherit;font-size:1rem;
     }
     input:focus,textarea:focus{outline:2px solid var(--accent-dim);border-color:var(--accent-dim)}
-    textarea{min-height:130px;resize:vertical}
+    textarea{min-height:90px;resize:vertical}
+    input[type=number]{max-width:160px}
+    .consent{color:var(--muted);font-size:.92rem}
+    .faq{margin:0 0 60px;border-top:1px solid var(--line);padding-top:26px}
+    .faq h2{font-size:1.25rem;font-weight:800;margin-bottom:14px}
+    .faq h3{font-size:1rem;font-weight:700;margin:18px 0 6px}
+    .faq p,.faq li{color:#d6d4cd;max-width:62ch}
+    .faq ul{margin:6px 0 0 20px}
+    .faq li{margin-bottom:4px}
+    .faq a{color:var(--accent)}
     .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
-    .drop{border:1px dashed var(--line);border-radius:10px;background:var(--panel);padding:16px;text-align:center;color:var(--muted);font-size:.95rem;cursor:pointer}
-    .drop:hover{border-color:var(--accent-dim)}
-    .drop input{display:none}
-    .thumbs{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .thumb{position:relative;width:74px;height:74px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .thumb button{position:absolute;top:2px;right:2px;background:#0e1016cc;color:var(--text);border:0;border-radius:6px;width:20px;height:20px;font-size:12px;cursor:pointer;line-height:1}
     .btn{background:var(--accent);color:#0e1016;font-weight:800;padding:15px 26px;border-radius:8px;border:0;font:inherit;font-size:1rem;cursor:pointer;transition:transform .1s ease,filter .1s ease}
     .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
     .btn:disabled{opacity:.6;cursor:default;transform:none}
@@ -81,7 +83,7 @@
     @media(prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pokespa.com/"},{"@type":"ListItem","position":2,"name":"Restoration orders","item":"https://pokespa.com/quote.html"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pokespa.com/"},{"@type":"ListItem","position":2,"name":"Restoration waitlist","item":"https://pokespa.com/quote.html"}]}
   </script>
 </head>
 <body>
@@ -106,40 +108,53 @@
       </nav>
     </header>
 
-    <h1>Restoration orders</h1>
-    <p class="lede">We're not taking restoration orders right now. Our <a href="/learn/">card-care guides</a> and <a href="/shop.html">shop</a> are open.</p>
+    <h1>Restoration waitlist</h1>
+    <!-- Ansel/Marlowe read these: lede, field labels, consent line, button, status messages, FAQ -->
+    <p class="lede">We're not taking restoration orders right now. Leave your email and how many cards, and we'll write when the bench opens.</p>
 
     <form id="f" novalidate>
       <div>
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" autocomplete="name" required maxlength="120" />
-      </div>
-      <div>
-        <label for="email">Email <span>— where the assessment goes</span></label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" autocomplete="email" required maxlength="200" />
       </div>
       <div>
-        <label for="message">The card &amp; what needs help</label>
-        <textarea id="message" name="message" required maxlength="4000" placeholder="What card is it, and what's wrong? Creases, grime, edges, surface — tell us what you see."></textarea>
+        <label for="cards">How many cards?</label>
+        <input type="number" id="cards" name="cards" inputmode="numeric" min="1" max="999" step="1" required />
       </div>
       <div>
-        <label>Photos <span>— up to 4; front and problem areas help most</span></label>
-        <label class="drop" id="drop">
-          <input type="file" id="photos" accept="image/*" multiple />
-          Tap to add photos (or drop them here)
-        </label>
-        <div class="thumbs" id="thumbs"></div>
+        <label for="note">Note <span>(optional)</span></label>
+        <textarea id="note" name="note" maxlength="1000" placeholder="Which cards, and what's wrong with them."></textarea>
       </div>
       <div class="hp" aria-hidden="true">
         <label for="website">Website</label>
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
       </div>
+      <p class="consent">We'll only email you about restoration openings.</p>
       <div>
-        <button class="btn" id="send" type="submit">Send inquiry →</button>
+        <button class="btn" id="send" type="submit">Join the waitlist →</button>
       </div>
       <div id="status" role="status" aria-live="polite"></div>
-      <p class="fineprint">Prefer plain email? <a href="mailto:info@pokespa.com" style="text-decoration:underline">info@pokespa.com</a> works too.</p>
     </form>
+
+    <section class="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h">Common questions</h2>
+      <h3>Can you fix my card now?</h3>
+      <p>Not right now. These guides cover what you can safely do at home:</p>
+      <ul>
+        <li>White edges or corners: <a href="/learn/edge-whitening.html">Edge and corner whitening</a></li>
+        <li>Creases and bends: <a href="/learn/creases-and-pressing.html">Creases, bends and pressing</a></li>
+        <li>Grime, residue, fingerprints: <a href="/learn/how-to-clean-pokemon-cards.html">How to clean Pokémon cards safely</a> and <a href="/learn/vintage-wax-and-stains.html">Wax, gum and stains on vintage</a></li>
+        <li>Scratches on a holo: <a href="/learn/holo-scratches.html">Holo scratches</a></li>
+        <li>Dents and dings: <a href="/learn/indents-and-dings.html">Indents, dings and lifted edges</a></li>
+      </ul>
+      <h3>What will it cost?</h3>
+      <p>Prices aren't set yet.</p>
+      <h3>Will restoration raise my card's grade?</h3>
+      <p>No. PSA, BGS, CGC and TAG treat cleaned, pressed or repaired cards as altered. See <a href="/learn/cleaning-cards-before-grading.html">Cleaning cards before grading</a>.</p>
+      <h3>How do I protect the card until then?</h3>
+      <p>Penny sleeve, then a toploader, stored flat and dry. The <a href="/shop.html">card-care shop</a> has what we use.</p>
+      <p class="fineprint" style="margin-top:20px">Questions? <a href="mailto:info@pokespa.com" style="text-decoration:underline">info@pokespa.com</a></p>
+    </section>
   </div>
 
   <footer>
@@ -152,100 +167,36 @@
 
   <script>
     (function () {
-      var MAX = 4, files = [];
-      var input = document.getElementById('photos');
-      var thumbs = document.getElementById('thumbs');
-      var drop = document.getElementById('drop');
       var statusEl = document.getElementById('status');
       var sendBtn = document.getElementById('send');
-
       function say(msg, cls) { statusEl.textContent = msg; statusEl.className = cls || ''; }
-
-      function render() {
-        thumbs.innerHTML = '';
-        files.forEach(function (f, idx) {
-          var d = document.createElement('div'); d.className = 'thumb';
-          var img = document.createElement('img'); img.src = f.preview; img.alt = '';
-          var x = document.createElement('button'); x.type = 'button'; x.textContent = '×';
-          x.setAttribute('aria-label', 'Remove photo');
-          x.addEventListener('click', function () { files.splice(idx, 1); render(); });
-          d.appendChild(img); d.appendChild(x); thumbs.appendChild(d);
-        });
-      }
-
-      // Shrink images client-side so 4 phone photos fit comfortably in one request.
-      function compress(file) {
-        return new Promise(function (resolve, reject) {
-          var url = URL.createObjectURL(file);
-          var img = new Image();
-          img.onload = function () {
-            var maxDim = 1600, w = img.width, h = img.height;
-            var scale = Math.min(1, maxDim / Math.max(w, h));
-            var c = document.createElement('canvas');
-            c.width = Math.round(w * scale); c.height = Math.round(h * scale);
-            c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
-            URL.revokeObjectURL(url);
-            var dataUrl = c.toDataURL('image/jpeg', 0.82);
-            resolve({
-              name: (file.name || 'photo').replace(/\.[^.]+$/, '') + '.jpg',
-              data: dataUrl.split(',')[1],
-              preview: dataUrl
-            });
-          };
-          img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('bad image')); };
-          img.src = url;
-        });
-      }
-
-      function addFiles(list) {
-        var incoming = Array.prototype.slice.call(list || []);
-        if (!incoming.length) return;
-        if (files.length + incoming.length > MAX) {
-          say('Up to ' + MAX + ' photos, please.', 'err');
-          incoming = incoming.slice(0, MAX - files.length);
-        }
-        Promise.all(incoming.map(function (f) { return compress(f).catch(function () { return null; }); }))
-          .then(function (done) {
-            done.filter(Boolean).forEach(function (f) { files.push(f); });
-            render();
-            if (files.length) say('');
-          });
-      }
-
-      input.addEventListener('change', function () { addFiles(input.files); input.value = ''; });
-      drop.addEventListener('dragover', function (e) { e.preventDefault(); });
-      drop.addEventListener('drop', function (e) { e.preventDefault(); addFiles(e.dataTransfer.files); });
-
       document.getElementById('f').addEventListener('submit', function (e) {
         e.preventDefault();
-        var name = document.getElementById('name').value.trim();
         var email = document.getElementById('email').value.trim();
-        var message = document.getElementById('message').value.trim();
-        if (!name || !email || !message) { say('Name, email, and the card details are all needed.', 'err'); return; }
-        sendBtn.disabled = true; say('Sending…');
-        fetch('/api/inquiry', {
+        var cards = document.getElementById('cards').value.trim();
+        if (!email || !cards) { say('Please add your email and how many cards.', 'err'); return; }
+        sendBtn.disabled = true; say('Saving…');
+        fetch('/api/waitlist', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            name: name, email: email, message: message,
-            website: document.getElementById('website').value,
-            photos: files.map(function (f) { return { name: f.name, data: f.data }; })
+            email: email, cards: cards,
+            note: document.getElementById('note').value.trim(),
+            website: document.getElementById('website').value
           })
         }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
           .then(function (res) {
             if (res.ok) {
-              say('Sent! We’ll get back to you with an honest assessment.', 'ok');
-              // Meta "Lead" — only fires if the visitor accepted the ad pixel; a no-op otherwise.
+              // Meta "Lead": only fires if the visitor accepted the ad pixel; a no-op otherwise.
               try { if (window.RecursisPixel) window.RecursisPixel.track('Lead'); } catch (e) {}
-              document.getElementById('f').reset(); files = []; render();
-              sendBtn.disabled = false;
+              window.location.href = '/waitlist-thanks.html';
             } else {
-              say(res.j && res.j.error || 'Couldn’t send — please email us directly.', 'err');
+              say(res.j && res.j.error || 'Couldn’t save that. Please try again.', 'err');
               sendBtn.disabled = false;
             }
           })
           .catch(function () {
-            say('Network hiccup — please try again or email us directly.', 'err');
+            say('Network hiccup. Please try again.', 'err');
             sendBtn.disabled = false;
           });
       });

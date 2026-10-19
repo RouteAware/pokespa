@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You're on the waitlist — PokéSpa</title>
+  <meta name="description" content="We're not taking restoration orders right now. Join the waitlist, or read our free card-care guides and shop the supplies we use." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://pokespa.com/waitlist-thanks.html" />
+  <meta property="og:title" content="Restoration waitlist — PokéSpa" />
+  <meta property="og:description" content="Restoration orders are closed for now. Join the waitlist; the guides and shop are open." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pokespa.com/waitlist-thanks.html" />
+  <meta property="og:site_name" content="PokéSpa" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://pokespa.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="PokéSpa — card-care guides and supplies for collectors." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://pokespa.com/og.png" />
+  <meta name="twitter:image:alt" content="PokéSpa — card-care guides and supplies for collectors." />
+  <meta name="twitter:title" content="Restoration waitlist — PokéSpa" />
+  <meta name="twitter:description" content="Restoration orders are closed for now. Join the waitlist; the guides and shop are open." />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png?v=2" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e1016" />
+  <style>
+    :root{
+      --bg:#0e1016; --panel:#161923; --line:#272b38; --text:#f1efe9; --muted:#9aa0ad;
+      --accent:#7fd1c9; --accent-dim:#2c4b48; --err:#e08a84;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:100%}
+    body{background:
+        radial-gradient(640px 420px at 12% 0%,rgba(127,209,201,.06),transparent 70%),
+        radial-gradient(560px 380px at 88% 100%,rgba(185,167,240,.055),transparent 70%),
+        var(--bg);
+      color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+    .topline{height:3px;background:linear-gradient(90deg,#7fd1c9,#b9a7f0 35%,#f0c98a 70%,#7fd1c9)}
+    .wrap{width:100%;max-width:680px;margin:0 auto;padding:0 24px}
+    a{color:inherit;text-decoration:none}
+    .holo{background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);-webkit-background-clip:text;background-clip:text;color:transparent}
+    header{padding:26px 0;display:flex;align-items:center;gap:11px}
+    header nav{margin-left:auto;display:flex;gap:18px;font-size:13px}
+    header nav a{color:var(--muted)}
+    header nav a:hover{color:var(--accent)}
+    @media(max-width:600px){header{flex-wrap:wrap;padding:20px 0 14px;row-gap:12px}header nav{margin:-10px -4px;width:calc(100% + 8px);flex-wrap:wrap;gap:0 8px;font-size:13px}header nav a{display:inline-flex;align-items:center;min-height:40px;padding:0 4px}}
+    .logo{width:26px;height:26px;flex:none}
+    .brand{font-weight:800;letter-spacing:.02em;font-size:18px}
+    h1{font-size:clamp(1.9rem,5.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;margin-top:26px}
+    .lede{color:var(--muted);margin-top:12px;max-width:52ch}
+    form{margin:34px 0 44px;display:flex;flex-direction:column;gap:18px}
+    label{font-size:13px;font-weight:700;letter-spacing:.04em;display:block;margin-bottom:7px}
+    label span{color:var(--muted);font-weight:400}
+    input[type=text],input[type=email],input[type=number],textarea{
+      width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      color:var(--text);padding:13px 14px;font:inherit;font-size:1rem;
+    }
+    input:focus,textarea:focus{outline:2px solid var(--accent-dim);border-color:var(--accent-dim)}
+    textarea{min-height:90px;resize:vertical}
+    input[type=number]{max-width:160px}
+    .consent{color:var(--muted);font-size:.92rem}
+    .faq{margin:0 0 60px;border-top:1px solid var(--line);padding-top:26px}
+    .faq h2{font-size:1.25rem;font-weight:800;margin-bottom:14px}
+    .faq h3{font-size:1rem;font-weight:700;margin:18px 0 6px}
+    .faq p,.faq li{color:#d6d4cd;max-width:62ch}
+    .faq ul{margin:6px 0 0 20px}
+    .faq li{margin-bottom:4px}
+    .faq a{color:var(--accent)}
+    .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+    .btn{background:var(--accent);color:#0e1016;font-weight:800;padding:15px 26px;border-radius:8px;border:0;font:inherit;font-size:1rem;cursor:pointer;transition:transform .1s ease,filter .1s ease}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+    .btn:disabled{opacity:.6;cursor:default;transform:none}
+    #status{min-height:24px;font-size:.95rem}
+    #status.err{color:var(--err)}
+    #status.ok{color:var(--accent);font-weight:700}
+    .fineprint{color:var(--muted);font-size:12px}
+    .lede a,.fineprint a{color:var(--accent)}
+    footer{margin-top:auto;border-top:1px solid var(--line);padding:22px 0}
+    .foot{color:var(--muted);font-size:12px;line-height:1.7}
+    .foot a:hover{color:var(--accent)}
+    @media(prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <div class="site-notice" role="region" aria-label="Site notice" style="background:#c8342a;color:#fff;font:600 12px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;padding:7px 12px">We're not taking new restoration orders right now, and replies may be delayed. Our <a href="/learn/" style="color:#fff;text-decoration:underline">card-care guides</a> and <a href="/shop.html" style="color:#fff;text-decoration:underline">shop</a> are open.</div>
+  <div class="topline"></div>
+  <div class="wrap">
+    <header>
+      <a href="/" style="display:flex;align-items:center;gap:11px">
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7fd1c9"/><stop offset=".5" stop-color="#b9a7f0"/><stop offset="1" stop-color="#f0c98a"/></linearGradient></defs>
+          <g transform="rotate(-8 50 50)"><rect x="31" y="21" width="40" height="56" rx="5" fill="none" stroke="url(#lg)" stroke-width="5"/></g>
+          <path d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z" fill="#f0c98a"/>
+        </svg>
+        <span class="brand"><span class="holo">Poké</span>Spa</span>
+      </a>
+      <nav>
+        <a href="/learn/">Learn</a>
+        <a href="/drops.html">Drops</a>
+        <a href="/shop.html">Shop</a>
+        <a href="/merch.html">Merch</a>
+        <a href="/service.html">Service</a>
+      </nav>
+    </header>
+
+    <h1>You're on the list.</h1>
+    <!-- Ansel/Marlowe read these -->
+    <p class="lede">We'll email you when the bench opens. Until then, the guides cover what you can safely do at home, and the shop has the supplies.</p>
+    <p style="margin:30px 0 60px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="/learn/">Read the guides →</a>
+      <a class="btn" href="/shop.html" style="background:transparent;color:var(--accent);border:1px solid var(--accent-dim)">See the shop →</a>
+    </p>
+  </div>
+
+  <footer>
+    <div class="wrap foot">
+      PokéSpa is an independent site and is <b>not affiliated with, endorsed by, or sponsored by</b>
+      Nintendo, Creatures, Game Freak, or The Pokémon Company.
+      <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis Digital</a> company · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
+    </div>
+  </footer>
+
+  <!-- Vercel Analytics: anonymous, cookieless page-view counts -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script defer src="/meta-pixel.js"></script>
+</body>
+</html>
