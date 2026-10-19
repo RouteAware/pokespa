@@ -20,7 +20,8 @@ module.exports = async (req, res) => {
     if (website) { res.status(200).json({ ok: true }); return; } // honeypot
 
     const cEmail = oneLine(String(email || '').trim().slice(0, 200));
-    const nCards = parseInt(String(cards || '').trim(), 10);
+    const rawCards = String(cards == null ? '' : cards).trim();
+    const nCards = /^\d{1,3}$/.test(rawCards) ? parseInt(rawCards, 10) : NaN; // strict: "3abc" is rejected
     const cNote = String(note || '').trim().slice(0, 1000);
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail)) {
       res.status(400).json({ error: 'Please enter a valid email.' });
