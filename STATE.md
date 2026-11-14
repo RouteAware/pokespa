@@ -1,5 +1,5 @@
 # STATE — PokeSpa-Site · updated 2026-09-24 01:10 ET
-<!-- machine header (hale-close): branch master · HEAD 1bf5166 · dirty 0 · unpushed 0 · worktrees 3 · verified-at 2026-10-20 15:13 -->
+<!-- machine header (hale-close): branch master · HEAD ba202ed · dirty 0 · unpushed 0 · worktrees 3 · verified-at 2026-11-14 15:58 -->
 
 ## Now
 - Hale · 2026-11-14 10:44 ET · **WAITLIST RELEASE LIVE (master 70ebd3f on prod; owner go 2026-11-14 'Switch to waitlist').** Restoration closed sitewide, /quote.html is the waitlist, guides + FAQ + 3 paid-link kits. Verified live: 6 pages 200, home no longer says 'Request a quote' / 'honest assessment, free', POST /api/waitlist → 200 and the mail reached info@ 10:44 ET (test address hale-release-test@example.com — not a customer). Preview cannot send (RESEND_API_KEY is Production-only) — expected. Rollback: promote the 1bf5166 deployment. Open: 17 reply drafts for the owner to send (Q-85/Q-120); Q-88 Advanced Matching check; FB About/IG bio still say restoration.
