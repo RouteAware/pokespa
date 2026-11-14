@@ -12,19 +12,19 @@
   /* ---------- ALL COPY LIVES HERE (per-site voice; the file stays byte-identical) ---------- */
   var COPY = {
     'recursisdigital.com': {
-      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
+      bar: 'We use cookies for advertising and to measure our ads.',
       privacy: '/privacy#do-not-sell'
     },
     'terribleshirtco.com': {
-      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
+      bar: 'We use cookies for advertising and to measure our ads.',
       privacy: '/privacy.html#do-not-sell'
     },
     'pokespa.com': {
-      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
+      bar: 'We use cookies for advertising and to measure our ads.',
       privacy: '/privacy.html#do-not-sell'
     },
     _default: {
-      bar: 'If you accept, we use cookies to measure and show our ads (via Meta).',
+      bar: 'We use cookies for advertising and to measure our ads.',
       privacy: '/privacy.html#do-not-sell'
     }
   };
@@ -36,11 +36,11 @@
     /* the control on the privacy page */
     onBtn: 'Allow ad cookies',
     offBtn: 'Turn off ad cookies',
-    stateOn: 'Ad cookies are on for this browser, for up to 12 months.',
-    stateOff: 'Ad cookies are off. Nothing has been sent to Meta.',
-    stateGpc: 'Your browser sends Global Privacy Control, so ad cookies stay off.',
-    stateNone: 'You haven’t chosen yet. Ad cookies stay off until you accept.',
-    noStorage: 'Your browser blocks storage, so ad cookies stay off.'
+    stateOn: 'Ad cookies are on.',
+    stateOff: 'Ad cookies are off.',
+    stateGpc: 'Ad cookies are off because your browser sends Global Privacy Control.',
+    stateNone: 'Ad cookies are off until you accept.',
+    noStorage: 'Ad cookies are off. Your browser is blocking storage.'
   };
   /* ---------------------------------------------------------------------------------------- */
 
