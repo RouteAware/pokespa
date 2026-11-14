@@ -16,6 +16,21 @@
       ],
       "destination": "https://pokespa.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/shop",
+      "destination": "/shop.html",
+      "statusCode": 308
+    },
+    {
+      "source": "/quote",
+      "destination": "/quote.html",
+      "statusCode": 308
+    },
+    {
+      "source": "/learn",
+      "destination": "/learn/",
+      "statusCode": 308
     }
   ],
   "headers": [
