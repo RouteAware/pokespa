@@ -129,14 +129,61 @@
       color:var(--text);width:36px;height:36px;border-radius:8px;font-size:20px;line-height:1;cursor:pointer}
     .lbclose:hover{border-color:var(--accent);color:var(--accent)}
 
+
+    /* 2026-11 revamp: split hero, real section headings, tiles, bands */
+    .hero.split{text-align:left;display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:clamp(36px,6vw,64px) clamp(22px,4vw,48px)}
+    @media(min-width:860px){.hero.split{grid-template-columns:1.1fr .9fr}}
+    .hero.split .lede{margin-left:0}
+    .hero.split h1{font-size:clamp(2.1rem,4.4vw,3.2rem)}
+    .cta-row{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn.ghost{background:rgba(14,16,22,.5);color:var(--accent);border:1px solid var(--accent-dim)}
+    .still{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(14,16,22,.15),rgba(14,16,22,.55)),url(/img/silk-glow.jpg) center/cover;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 40px rgba(0,0,0,.4)}
+    .still img{position:absolute;width:58%;height:auto}
+    .still .s1{left:0;top:16%;width:52%}
+    .still .s2{right:-2%;top:0;width:50%}
+    .still .s3{left:28%;bottom:-6%;width:52%}
+    .label{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+    h2.title{font-family:inherit;font-size:clamp(1.75rem,3.6vw,2.25rem);letter-spacing:-.015em;text-transform:none;color:var(--text);font-weight:800;line-height:1.12;margin-bottom:8px}
+    .sublede{color:var(--muted);margin-bottom:20px;max-width:60ch}
+    .home-band{border:1px solid var(--line);border-radius:18px;padding:30px clamp(16px,3vw,28px);margin:34px 0;
+      background:linear-gradient(180deg,#161923,#12151d);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+    .home-band + section.block{border-top:0}
+    .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(min-width:860px){.tiles{grid-template-columns:repeat(4,1fr)}}
+    .tiles.three{grid-template-columns:1fr}
+    @media(min-width:640px){.tiles.three{grid-template-columns:repeat(3,1fr)}}
+    .tile{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+      background:linear-gradient(180deg,#1a1e2a,var(--panel) 40%);color:inherit;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 24px rgba(0,0,0,.28);transition:transform .18s ease,border-color .18s ease}
+    .tile:hover{transform:translateY(-3px);border-color:#39405a}
+    .tile .ti{position:relative;overflow:hidden;aspect-ratio:4/3;background:radial-gradient(90% 110% at 50% 0%,#232838,#12151d 75%);border-bottom:1px solid var(--line)}
+    .tile .ti img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+    .tile .ti.photo img{object-fit:cover}
+    .tile .tb{padding:12px 14px 16px}
+    .tile .tag{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#f0c98a}
+    .tile h3{font-size:1.02rem;font-weight:700;margin-top:4px;line-height:1.3}
+    .tile p{color:var(--muted);font-size:.88rem;margin-top:4px}
+    @media(max-width:639px){.tiles.three .tile{flex-direction:row;align-items:center}.tiles.three .ti{width:42%;flex:none;border-bottom:0;border-right:1px solid var(--line)}}
+    .shipnote{color:var(--muted);font-size:.9rem;margin-top:14px}
+    .shipnote a{color:var(--accent);text-decoration:underline}
+    .promise .lines{list-style:none;display:grid;gap:12px}
+    .promise .lines li{color:var(--muted)}
+    .promise .lines b{color:var(--text)}
+    .foot-group{color:var(--text);font-weight:700;margin-right:4px}
+    @media(prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover{transform:none}}
+
     footer{margin-top:auto;border-top:1px solid transparent;padding:24px 0;
       border-image:linear-gradient(90deg,transparent,rgba(127,209,201,.45) 30%,rgba(185,167,240,.45) 50%,rgba(240,201,138,.45) 70%,transparent) 1}
     .foot{color:var(--muted);font-size:12px;line-height:1.7}
     .foot a:hover{color:var(--accent)}
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://pokespa.com/#org","name":"PokéSpa","url":"https://pokespa.com/","logo":"https://pokespa.com/og.png","image":"https://pokespa.com/og.png","email":"info@pokespa.com","description":"Disclosed restoration for Pokémon and collectible trading cards. Not affiliated with Nintendo, Creatures, GAME FREAK, The Pokémon Company, or any grading company.","parentOrganization":{"@type":"Organization","name":"Recursis","url":"https://recursisdigital.com"},"sameAs":["https://www.facebook.com/pokespacards"]},{"@type":"WebSite","@id":"https://pokespa.com/#website","name":"PokéSpa","url":"https://pokespa.com/","inLanguage":"en-US","publisher":{"@id":"https://pokespa.com/#org"}},{"@type":"WebPage","@id":"https://pokespa.com/#webpage","url":"https://pokespa.com/","name":"PokéSpa — card-care guides and supplies for collectors","description":"Card-care guides and supplies for Pokémon and trading card collectors. Learn to clean, flatten and store your cards safely.","isPartOf":{"@id":"https://pokespa.com/#website"},"primaryImageOfPage":"https://pokespa.com/og.png","inLanguage":"en-US"}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://pokespa.com/#org","name":"PokéSpa","url":"https://pokespa.com/","logo":"https://pokespa.com/og.png","image":"https://pokespa.com/og.png","email":"info@pokespa.com","description":"Card-care guides, supplies and gift picks for Pokémon and trading card collectors. Not affiliated with Nintendo, Creatures, GAME FREAK, The Pokémon Company, or any grading company.","parentOrganization":{"@type":"Organization","name":"Recursis","url":"https://recursisdigital.com"},"sameAs":["https://www.facebook.com/pokespacards"]},{"@type":"WebSite","@id":"https://pokespa.com/#website","name":"PokéSpa","url":"https://pokespa.com/","inLanguage":"en-US","publisher":{"@id":"https://pokespa.com/#org"}},{"@type":"WebPage","@id":"https://pokespa.com/#webpage","url":"https://pokespa.com/","name":"PokéSpa — card-care guides and supplies for collectors","description":"Card-care guides and supplies for Pokémon and trading card collectors. Learn to clean, flatten and store your cards safely.","isPartOf":{"@id":"https://pokespa.com/#website"},"primaryImageOfPage":"https://pokespa.com/og.png","inLanguage":"en-US"}]}
   </script>
+  <!-- Christmas accents: remove after 2027-01-02 -->
+  <link rel="stylesheet" href="/holiday.css" />
 </head>
 <body>
   <div class="site-notice" role="region" aria-label="Site notice" style="background:#c8342a;color:#fff;font:600 12px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;padding:7px 12px">Restoration orders are closed. <a href="/learn/" style="color:#fff;text-decoration:underline">Guides</a> and <a href="/shop.html" style="color:#fff;text-decoration:underline">shop</a> are open.</div>
@@ -150,39 +197,57 @@
       </svg>
       <span class="brand"><span class="holo">Poké</span>Spa</span>
       <nav>
-        <a href="/learn/">Learn</a>
-        <a href="/drops.html">Drops</a>
+        <a href="/gifts.html">Gifts</a>
         <a href="/shop.html">Shop</a>
+        <a href="/learn/">Learn</a>
         <a href="/merch.html">Merch</a>
-        <a href="/service.html">Service</a>
+        <a href="/quote.html">Restoration</a>
       </nav>
     </header>
 
-    <section class="hero">
-      <svg class="hero-card" viewBox="0 0 100 100" aria-hidden="true">
-        <g transform="rotate(-8 50 50)"><rect x="31" y="21" width="40" height="56" rx="5"/></g>
-        <path d="M71,13 l3,7 7,3 -7,3 -3,7 -3,-7 -7,-3 7,-3 z"/>
-      </svg>
-      <p class="eyebrow">Card care for collectors</p>
-      <h1>Keep your cards<br><span class="holo">looking their best.</span></h1>
-      <p class="lede">Free guides to cleaning, flattening and storing Pokémon and trading cards, plus the supplies we recommend.</p>
-      <div class="cta">
-        <a class="btn" href="/learn/">Read the guides →</a>
+    <section class="hero split">
+      <div>
+        <p class="eyebrow">Gift guide · card care</p>
+        <h1>Gifts for the collector who <span class="holo">sleeves everything.</span></h1>
+        <p class="lede">Card-care supplies, storage, and free guides for the collector on your list.</p>
+        <div class="cta-row">
+          <a class="btn" href="/gifts.html">Gift guide</a>
+          <a class="btn ghost" href="/learn/">Card-care guides</a>
+        </div>
+      </div>
+      <div class="still" aria-hidden="true">
+        <img class="s1" src="/img/picks/zip-binder.svg" alt="" width="800" height="600">
+        <img class="s2" src="/img/picks/toploader.svg" alt="" width="800" height="600">
+        <img class="s3" src="/img/picks/cloth.svg" alt="" width="800" height="600">
       </div>
     </section>
 
-    <section class="block">
-      <h2>What we do</h2>
-      <div class="services">
-        <div class="svc"><h3>Cleaning</h3><p>Surface grime, residue, and stains lifted without harming the card.</p></div>
-        <div class="svc"><h3>De-creasing &amp; flattening</h3><p>Bends, creases, and warping eased back toward flat.</p></div>
-        <div class="svc"><h3>Edge &amp; corner work</h3><p>Frayed edges and soft corners cleaned up and reinforced.</p></div>
-        <div class="svc"><h3>Surface repair</h3><p>Scratches, print lines, and blemishes carefully addressed.</p></div>
+    <section class="block" style="border-top:0">
+      <p class="label">Gift guide</p>
+      <h2 class="title">What do they do with their cards?</h2>
+      <p class="sublede">Pick the closest one. Each jumps to a short list in the gift guide.</p>
+      <div class="tiles">
+        <a class="tile" href="/gifts.html#starting"><div class="ti"><img src="/img/picks/toploader.svg" alt="" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">New collector</span><h3>They're just getting started</h3><p>Binders, toploaders, a playmat.</p></div></a>
+        <a class="tile" href="/gifts.html#binder"><div class="ti"><img src="/img/picks/zip-binder.svg" alt="" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">Binders</span><h3>They fill binders</h3><p>Bigger binders and inner sleeves.</p></div></a>
+        <a class="tile" href="/gifts.html#graded"><div class="ti"><img src="/img/picks/storage-box.svg" alt="" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">Graded cards</span><h3>They get cards graded</h3><p>Holders, slab sleeves, storage.</p></div></a>
+        <a class="tile" href="/gifts.html#display"><div class="ti"><img src="/img/picks/display-case.svg" alt="" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">Display</span><h3>They show them off</h3><p>Magnetic holders, stands, cases.</p></div></a>
       </div>
     </section>
 
+    <section class="home-band">
+      <p class="label">From our merch shop</p>
+      <h2 class="title">Stocking stuffers</h2>
+      <p class="sublede">Our own card mark, printed to order.</p>
+      <div class="tiles three">
+        <a class="tile" href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener"><div class="ti"><img src="/img/picks/merch-sticker.svg" alt="The Shine Sticker" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">Sticker</span><h3>The Shine Sticker</h3></div></a>
+        <a class="tile" href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener"><div class="ti"><img src="/img/picks/merch-mug.svg" alt="The Holo Mug" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">Mug</span><h3>The Holo Mug</h3></div></a>
+        <a class="tile" href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener"><div class="ti"><img src="/img/picks/merch-mat.svg" alt="The Bench Mat" width="800" height="600" loading="lazy"></div><div class="tb"><span class="tag">Desk mat</span><h3>The Bench Mat</h3></div></a>
+      </div>
+      <p class="shipnote"><a href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener">See the shop for holiday shipping dates.</a></p>
+    </section>
+
     <section class="block">
-      <h2>Card restoration</h2>
+      <h2 class="title">Card restoration</h2>
       <div class="step">
         <p>Restoration is closed to new cards for now. Add your name to the waitlist.</p>
         <div class="cta" style="margin-top:16px"><a class="btn" href="/quote.html">Join the waitlist →</a></div>
@@ -190,19 +255,20 @@
     </section>
 
     <section class="block">
-      <h2>The PokéSpa promise</h2>
-      <div class="promise">
-        <p class="plede">Restoration, disclosed. Always.</p>
-        <div class="tenets">
-          <div class="tenet"><b>You'll know everything we did</b><p>Every card leaves with its documentation. No mystery work, ever.</p></div>
-          <div class="tenet"><b>We'll say no when we should</b><p>Some damage is permanent. If restoration won't help — or could hurt — we tell you before we start.</p></div>
-          <div class="tenet"><b>Disclose when you sell or grade</b><p>A restored card is a restored card. We never help pass one off as untouched, and neither should you.</p></div>
-        </div>
+      <p class="label">Learn</p>
+      <h2 class="title">Damage guides</h2>
+      <p class="sublede">What happened to the card, and what you can honestly do about it.</p>
+      <div class="tiles three">
+        <a class="tile" href="/learn/edge-whitening.html"><div class="ti photo"><img src="/img/prism-dark.jpg" alt="" width="1920" height="1080" loading="lazy"></div><div class="tb"><span class="tag">Guide</span><h3>Edge &amp; corner whitening</h3><p>What causes it, and how to stop it spreading.</p></div></a>
+        <a class="tile" href="/learn/holo-scratches.html"><div class="ti photo"><img src="/img/silk-glow.jpg" alt="" width="1920" height="1080" loading="lazy"></div><div class="tb"><span class="tag">Guide</span><h3>Holo scratches</h3><p>Scratch, print line, or grime? How to tell.</p></div></a>
+        <a class="tile" href="/learn/warping-and-humidity.html"><div class="ti photo"><img src="/img/holo-film.jpg" alt="" width="1920" height="1080" loading="lazy"></div><div class="tb"><span class="tag">Guide</span><h3>Warping &amp; humidity</h3><p>Why cards curl, and the slow, safe fix.</p></div></a>
       </div>
+      <p class="soonnote"><a href="/learn/" style="color:var(--accent)">Browse all guides →</a></p>
     </section>
 
     <section class="block">
-      <h2>From the bench</h2>
+      <p class="label">Our own cards</p>
+      <h2 class="title">From the bench</h2>
       <p class="gallerylede">Our own cards, photographed at intake. These are before shots, not restoration results.</p>
       <div class="gallery" id="gallery">
         <button type="button" class="gtile" data-full="/img/gallery/img_2263.jpg" data-caption="Heracross — Neo Genesis, 1st Edition, 6/111. Holo surface and edges under raking light.">
@@ -249,14 +315,15 @@
     </section>
 
     <section class="block">
-      <h2>Learn card care</h2>
-      <div class="services">
-        <a class="svc" href="/learn/how-to-clean-pokemon-cards.html" style="display:block;color:inherit"><h3>How to clean cards safely</h3><p>The dry-first method — what to use, and when to stop.</p></a>
-        <a class="svc" href="/learn/cleaning-cards-before-grading.html" style="display:block;color:inherit"><h3>Cleaning before grading</h3><p>What PSA, BGS and CGC actually flag as alteration.</p></a>
-        <a class="svc" href="/learn/cleaning-vs-card-doctoring.html" style="display:block;color:inherit"><h3>Cleaning vs. doctoring</h3><p>Where the hobby draws the line — and where we do.</p></a>
-        <a class="svc" href="/learn/diy-or-pro.html" style="display:block;color:inherit"><h3>DIY or pro?</h3><p>An honest triage for the card on your desk.</p></a>
+      <p class="label">How we work</p>
+      <h2 class="title">The PokéSpa promise</h2>
+      <div class="promise">
+        <ul class="lines">
+          <li><b>Plain picks.</b> No brand pays to be on our lists.</li>
+          <li><b>Care, not grade tricks.</b> A cleaned or pressed card is an altered card, and we say so.</li>
+          <li><b>Disclose when you sell or grade.</b> A restored card is a restored card.</li>
+        </ul>
       </div>
-      <p class="soonnote"><a href="/learn/" style="color:var(--accent)">Browse all guides →</a></p>
     </section>
 
     <footer>
@@ -264,7 +331,8 @@
         PokéSpa is an independent site and is <b>not affiliated with, endorsed by, or sponsored by</b>
         Nintendo, Creatures, Game Freak, or The Pokémon Company. All card and character names/artwork are the
         property of their respective owners.
-        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis Digital</a> company · <a href="/learn/">Learn</a> · <a href="/drops.html">Drops</a> · <a href="/shop.html">Shop</a> · <a href="/value.html">Card values</a> · <a href="/shows.html">Card shows</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
+        <br><span class="foot-group">Collector tools</span> <a href="/value.html">Card values</a> · <a href="/shows.html">Card shows</a> · <a href="/drops.html">Drops</a>
+        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis Digital</a> company · <a href="/gifts.html">Gifts</a> · <a href="/shop.html">Shop</a> · <a href="/learn/">Learn</a> · <a href="/merch.html">Merch</a> · <a href="/quote.html">Restoration</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
       </div>
     </footer>
   </div>
