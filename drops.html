@@ -99,13 +99,13 @@
       <p class="standfirst">Upcoming set releases and live preorder chatter, pulled automatically from official release data and public announcements. No bots, no scraped stores, no $10/month Discord — just the signal.</p>
 
       <div class="signup">
-        <h2>📬 Drops this week, every Monday</h2>
-        <p>One short email: what releases, what's preordering, what restocked. Free, unsubscribe anytime.</p>
+        <h2>📬 Drop news by email</h2>
+        <p>New releases, preorders and restocks. Unsubscribe anytime.</p>
         <form id="subform" novalidate>
           <div class="srow">
             <input id="subemail" type="email" placeholder="you@email.com" autocomplete="email" />
             <input class="hp" name="website" tabindex="-1" autocomplete="off" />
-            <button id="subgo" type="submit">Get the digest</button>
+            <button id="subgo" type="submit">Sign up</button>
           </div>
           <div id="substatus"></div>
         </form>
@@ -202,7 +202,7 @@
         .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
         .then(function(x){
           go.disabled=false;
-          if(x.ok){st.className='ok';st.textContent='You’re on the list — first digest lands Monday. ✉️';em.value='';}
+          if(x.ok){st.className='ok';st.textContent='You’re on the list. ✉️';em.value='';}
           else{st.textContent=(x.j&&x.j.error)||'Couldn’t save that — try again.';}
         }).catch(function(){go.disabled=false;st.textContent='Network hiccup — try again.';});
     });
