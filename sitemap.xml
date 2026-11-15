@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://pokespa.com/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://pokespa.com/service.html</loc>
@@ -69,12 +69,16 @@
     <lastmod>2026-10-19</lastmod>
   </url>
   <url>
+    <loc>https://pokespa.com/gifts.html</loc>
+    <lastmod>2026-11-15</lastmod>
+  </url>
+  <url>
     <loc>https://pokespa.com/shop.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://pokespa.com/merch.html</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-15</lastmod>
   </url>
   <url>
     <loc>https://pokespa.com/privacy.html</loc>

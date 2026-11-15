@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Share-image source (1200x630). Render: scripts/render-og.mjs. ?v=gifts for og-gifts.png -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=JetBrains+Mono:wght@600&display=swap">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#0e1016}
+.c{position:relative;width:1200px;height:630px;display:flex;align-items:center;
+  background:linear-gradient(100deg,rgba(14,16,22,.96) 38%,rgba(14,16,22,.55)),url(../img/silk-dark.jpg) center/cover}
+.c.gifts{background:linear-gradient(100deg,rgba(14,22,24,.96) 38%,rgba(23,58,50,.45)),url(../img/silk-dark.jpg) center/cover}
+.frame{position:absolute;inset:26px;border:2px solid rgba(241,239,233,.12);border-radius:28px}
+.gifts .frame{border-color:rgba(240,201,138,.35)}
+.copy{position:relative;margin-left:84px;width:600px}
+.brand{display:flex;align-items:center;gap:14px;font:800 34px Inter,sans-serif;color:#f1efe9}
+.brand img{width:52px;height:52px}
+.holo{background:linear-gradient(100deg,#7fd1c9,#b9a7f0 40%,#f0c98a 70%,#7fd1c9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kick{margin-top:44px;font:600 20px 'JetBrains Mono',monospace;letter-spacing:.24em;text-transform:uppercase;color:#7fd1c9}
+.gifts .kick{color:#f0c98a}
+h1{margin:14px 0 0;font:800 64px/1.04 Inter,sans-serif;letter-spacing:-.02em;color:#f1efe9}
+.objs{position:absolute;right:30px;top:0;width:520px;height:630px}
+.objs img{position:absolute;width:360px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.45))}
+.o1{left:-10px;top:120px}.o2{right:-20px;top:40px;width:330px!important}.o3{left:110px;top:300px}
+</style></head><body>
+<div class="c" id="c"><div class="frame"></div>
+  <div class="copy">
+    <div class="brand"><img src="pokespa-mark.svg" alt=""><span><span class="holo">Poké</span>Spa</span></div>
+    <div class="kick" id="kick">Card care</div>
+    <h1 id="h">Card-care picks and guides from PokéSpa.</h1>
+  </div>
+  <div class="objs"><img class="o1" id="i1" src="../img/picks/zip-binder.svg"><img class="o2" id="i2" src="../img/picks/toploader.svg"><img class="o3" id="i3" src="../img/picks/cloth.svg"></div>
+</div>
+<script>
+if (location.search.includes('gifts')) {
+  document.getElementById('c').classList.add('gifts');
+  document.getElementById('kick').textContent = 'Gift guide';
+  document.getElementById('h').textContent = 'Gifts for card collectors';
+  document.getElementById('i1').src = '../img/picks/display-case.svg';
+  document.getElementById('i2').src = '../img/picks/magnetic-holder.svg';
+  document.getElementById('i3').src = '../img/picks/humidity-pack.svg';
+}
+</script>
+</body></html>
