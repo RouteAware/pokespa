@@ -30,6 +30,8 @@ DEFS = f"""<defs>
   <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3efe6"/><stop offset="1" stop-color="#cfc9bb"/></linearGradient>
   <linearGradient id="nitrile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4c5470"/><stop offset="1" stop-color="#1a1d28"/></linearGradient>
   <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7dcae"/><stop offset="1" stop-color="#b8915a"/></linearGradient>
+  <linearGradient id="tealSlate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f7b77"/><stop offset="1" stop-color="#1d3534"/></linearGradient>
+  <linearGradient id="iron" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7180"/><stop offset="1" stop-color="#33363f"/></linearGradient>
   <radialGradient id="lens" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#e6f0ef" stop-opacity=".55"/><stop offset=".45" stop-color="#7fd1c9" stop-opacity=".22"/><stop offset="1" stop-color="#1b1f2b" stop-opacity=".9"/></radialGradient>
   <filter id="soft" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="14"/></filter>
   <filter id="lift" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".45"/></filter>
@@ -237,6 +239,90 @@ svg("gloves", f"""
     <path d="M-10 64 h108" stroke="{TEAL}" stroke-opacity=".5" stroke-width="3"/>
   </g>
 </g>""", shadow=(400, 520, 220, 24))
+
+
+# --- Variants so the same drawing never sits beside itself (round 2) ---
+
+# 4b wide 12-pocket zip binder — landscape-wider cover, evergreen-teal tint, 4x3 page grid deboss
+grid = "".join(f'<rect x="{292+c*62}" y="{170+r*62}" width="50" height="50" rx="6"/>' for r in range(3) for c in range(4))
+svg("zip-binder-wide", f"""
+<g filter="url(#lift)">
+  <path d="M590 118 l30 20 v318 l-30 -20 Z" fill="url(#slateSide)" stroke="{INK}" stroke-width="3"/>
+  <path d="M190 436 h400 l30 20 h-400 Z" fill="#132423" stroke="{INK}" stroke-width="3"/>
+  <rect x="190" y="118" width="400" height="318" rx="18" fill="url(#tealSlate)" stroke="{INK}" stroke-width="3"/>
+  <rect x="190" y="118" width="46" height="318" rx="14" fill="#122120" stroke="{INK}" stroke-width="3"/>
+  <path d="M242 140 H566 a10 10 0 0 1 10 10 V404 a10 10 0 0 1 -10 10 H242" fill="none" stroke="{GOLD}" stroke-width="5" stroke-dasharray="3 6" stroke-linecap="butt"/>
+  <g fill="none" stroke="{FROST}" stroke-opacity=".28" stroke-width="2">{grid}</g>
+  <path d="M576 250 l26 -8 v36 l-26 -8 Z" fill="url(#gold)" stroke="{INK}" stroke-width="2"/>
+  <path d="M210 118 h360 a14 14 0 0 1 14 14" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="3"/>
+</g>""", shadow=(405, 500, 240, 24))
+
+# 4c strapped portfolio — iron grey, no zipper, elastic strap across the right edge
+svg("portfolio", f"""
+<g transform="rotate(-4 400 300)" filter="url(#lift)">
+  <path d="M524 112 l22 16 v340 l-22 -16 Z" fill="#26282f" stroke="{INK}" stroke-width="3"/>
+  <rect x="234" y="112" width="290" height="340" rx="14" fill="url(#iron)" stroke="{INK}" stroke-width="3"/>
+  <path d="M234 126 q0 -14 14 -14 h18 v340 h-18 q-14 0 -14 -14 Z" fill="#2a2d35" stroke="{INK}" stroke-width="3"/>
+  <rect x="300" y="168" width="170" height="228" rx="10" fill="none" stroke="#9aa0ad" stroke-opacity=".45" stroke-width="2"/>
+  <rect x="466" y="98" width="32" height="368" rx="8" fill="#1b1f2b" stroke="{INK}" stroke-width="3"/>
+  <path d="M474 110 v344" stroke="{LAV}" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M250 124 h260" stroke="#fff" stroke-opacity=".28" stroke-width="3"/>
+</g>""")
+
+# 1b penny-sleeve stack — a loose fan of five thin sleeves
+fan = "".join(
+    f'<g transform="rotate({a} 400 470)"><rect x="300" y="150" width="200" height="280" rx="6" fill="url(#clear)" stroke="url(#clearEdge)" stroke-width="2.5"/></g>'
+    for a in (-24, -12, 0, 12, 24))
+svg("penny-sleeves", f"""
+<g filter="url(#lift)">
+  {fan}
+  <path d="M352 430 L420 150 L450 150 L382 430 Z" fill="url(#glare)"/>
+  <path d="M302 168 H498" stroke="{FROST}" stroke-opacity=".6" stroke-width="2"/>
+</g>""", shadow=(400, 500, 240, 24))
+
+# 1c perfect-fit inner sleeve — one sleeve snug inside a second, sealed top
+svg("inner-sleeve", f"""
+<g transform="rotate(4 400 300)" filter="url(#lift)">
+  <rect x="270" y="110" width="260" height="354" rx="10" fill="url(#clear)" stroke="url(#clearEdge)" stroke-width="3"/>
+  <rect x="284" y="132" width="232" height="318" rx="5" fill="{LAV}" fill-opacity=".08" stroke="{FROST}" stroke-opacity=".7" stroke-width="2.5"/>
+  <path d="M284 146 H516" stroke="{TEAL}" stroke-opacity=".8" stroke-width="3"/>
+  <path d="M320 450 L440 132 L476 132 L356 450 Z" fill="url(#glare)"/>
+  <path d="M270 126 H530" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+</g>""")
+
+# 1d team bag — wide resealable bag with an adhesive seal strip and open flap
+svg("team-bag", f"""
+<g transform="rotate(-5 400 300)" filter="url(#lift)">
+  {clear_rect(232, 170, 336, 270, 10)}
+  <path d="M232 170 l20 -66 h296 l20 66" fill="{FROST}" fill-opacity=".1" stroke="url(#clearEdge)" stroke-width="3"/>
+  <rect x="266" y="118" width="268" height="20" rx="4" fill="url(#gold)" fill-opacity=".9" stroke="{INK}" stroke-width="2"/>
+  <path d="M276 128 H524" stroke="#fff" stroke-opacity=".55" stroke-width="2" stroke-dasharray="10 8"/>
+  <path d="M232 190 H568" stroke="{FROST}" stroke-opacity=".55" stroke-width="2"/>
+</g>""")
+
+# 2b semi-rigid holder (Card Saver style) — taller, soft corners, wide lip and pull tab
+svg("semi-rigid", f"""
+<g transform="rotate(5 400 300)" filter="url(#lift)">
+  <rect x="272" y="96" width="256" height="380" rx="20" fill="url(#clear)" stroke="url(#clearEdge)" stroke-width="3"/>
+  <path d="M272 150 H528" stroke="{FROST}" stroke-opacity=".6" stroke-width="3"/>
+  <rect x="356" y="74" width="88" height="40" rx="12" fill="{FROST}" fill-opacity=".18" stroke="url(#clearEdge)" stroke-width="3"/>
+  <path d="M310 476 L420 96 L460 96 L350 476 Z" fill="url(#glare)"/>
+  <rect x="292" y="168" width="216" height="290" rx="10" fill="none" stroke="{LAV}" stroke-opacity=".35" stroke-width="2"/>
+</g>""")
+
+# 3b one-touch on its stand — holder leaning in a small acrylic stand
+svg("one-touch-stand", f"""
+<g filter="url(#lift)">
+  <g transform="rotate(-6 400 300)">
+    <rect x="280" y="92" width="240" height="290" rx="14" fill="url(#clear)" stroke="url(#clearEdge)" stroke-width="4"/>
+    <rect x="316" y="124" width="168" height="224" rx="5" fill="#0e1016" fill-opacity=".28" stroke="{FROST}" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M280 236 h240" stroke="{LAV}" stroke-opacity=".6" stroke-width="2" stroke-dasharray="2 8"/>
+    <path d="M330 382 L420 92 L460 92 L370 382 Z" fill="url(#glare)"/>
+  </g>
+  <path d="M240 372 h320 l30 54 h-380 Z" fill="url(#clear)" stroke="url(#clearEdge)" stroke-width="3"/>
+  <path d="M210 426 h380 v22 h-380 Z" fill="{FROST}" fill-opacity=".14" stroke="url(#clearEdge)" stroke-width="3"/>
+  <path d="M262 396 h276" stroke="{GOLD}" stroke-opacity=".85" stroke-width="5"/>
+</g>""")
 
 # --- Merch tiles (our own products; our mark only) ---
 MARK = """<g transform="rotate(-8 50 50)"><rect x="31" y="21" width="40" height="56" rx="5" fill="none" stroke="url(#holo)" stroke-width="5"/></g>
