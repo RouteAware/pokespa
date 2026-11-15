@@ -32,7 +32,7 @@
       background:linear-gradient(180deg,rgba(14,16,22,.80),rgba(14,16,22,.93)),url(/img/silk-dark.jpg) center/cover}
     .merchhero h1,.merchhero p,.merchhero .cta-row{position:relative}
     .cta-row{margin-top:26px}
-    .points{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px}
+    .points{display:grid;margin-bottom:8px;grid-template-columns:1fr;gap:12px;margin-top:16px}
     @media(min-width:680px){.points{grid-template-columns:repeat(3,1fr)}}
     .pt{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:16px 18px}
     .pt b{color:var(--accent);display:block;font-size:.95rem}
@@ -42,6 +42,8 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pokespa.com/"},{"@type":"ListItem","position":2,"name":"Merch","item":"https://pokespa.com/merch.html"}]}
   </script>
+  <!-- Christmas accents: remove after 2027-01-02 -->
+  <link rel="stylesheet" href="/holiday.css" />
 </head>
 <body>
   <div class="site-notice" role="region" aria-label="Site notice" style="background:#c8342a;color:#fff;font:600 12px/1.35 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;padding:7px 12px">Restoration orders are closed. <a href="/learn/" style="color:#fff;text-decoration:underline">Guides</a> and <a href="/shop.html" style="color:#fff;text-decoration:underline">shop</a> are open.</div>
@@ -55,11 +57,11 @@
       </svg>
       <a class="brand" href="/"><span class="holo">Poké</span>Spa</a>
       <nav>
-        <a href="/learn/">Learn</a>
-        <a href="/drops.html">Drops</a>
+        <a href="/gifts.html">Gifts</a>
         <a href="/shop.html">Shop</a>
+        <a href="/learn/">Learn</a>
         <a href="/merch.html" class="active">Merch</a>
-        <a href="/service.html">Service</a>
+        <a href="/quote.html">Restoration</a>
       </nav>
     </header>
 
@@ -79,6 +81,36 @@
         <div class="pt"><b>Our art only</b><p>PokéSpa merch carries our own mark and nothing else — no card artwork, no characters, ever.</p></div>
       </div>
 
+      <section class="sec band" id="stocking-stuffers" aria-labelledby="stocking-h">
+        <p class="sec-label">Small gifts</p>
+        <h2 class="sec-title" id="stocking-h">Stocking stuffers</h2>
+        <p class="sec-lede">Our own card mark, printed to order.</p>
+        <div class="picks">
+          <div class="pick">
+            <div class="pick-img"><img src="/img/picks/merch-sticker.svg" alt="The Shine Sticker" width="800" height="600" loading="lazy" decoding="async"></div>
+            <p class="pick-tag">Sticker</p>
+            <h3>The Shine Sticker</h3>
+            <p class="pick-why">A kiss-cut sticker of the holo card mark.</p>
+            <div class="pick-buy"><a class="buy ghost" href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener">See it in the shop</a></div>
+          </div>
+          <div class="pick">
+            <div class="pick-img"><img src="/img/picks/merch-mug.svg" alt="The Holo Mug" width="800" height="600" loading="lazy" decoding="async"></div>
+            <p class="pick-tag">Mug</p>
+            <h3>The Holo Mug</h3>
+            <p class="pick-why">A black mug with the card mark beside the handle.</p>
+            <div class="pick-buy"><a class="buy ghost" href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener">See it in the shop</a></div>
+          </div>
+          <div class="pick">
+            <div class="pick-img"><img src="/img/picks/merch-mat.svg" alt="The Bench Mat" width="800" height="600" loading="lazy" decoding="async"></div>
+            <p class="pick-tag">Desk mat</p>
+            <h3>The Bench Mat</h3>
+            <p class="pick-why">A desk mat with the mark and wordmark, for the card table.</p>
+            <div class="pick-buy"><a class="buy ghost" href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener">See it in the shop</a></div>
+          </div>
+        </div>
+        <p class="pick-note"><a href="https://shop.pokespa.com/?utm_source=pokespa" target="_blank" rel="noopener">See the shop for holiday shipping dates.</a></p>
+      </section>
+
       <div class="cta">
         <h2>Learn to care for your cards</h2>
         <p>Free step-by-step guides to cleaning, flattening and storage.</p>
@@ -91,9 +123,13 @@
         PokéSpa is an independent site and is <b>not affiliated with, endorsed by, or sponsored by</b>
         Nintendo, Creatures, Game Freak, or The Pokémon Company. All card and character names/artwork are the
         property of their respective owners.
-        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis Digital</a> company · <a href="/learn/">Learn</a> · <a href="/drops.html">Drops</a> · <a href="/shop.html">Shop</a> · <a href="/value.html">Card values</a> · <a href="/shows.html">Card shows</a> · <a href="/merch.html">Merch</a> · <a href="/service.html">Service</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
+        <br><span class="foot-group">Collector tools</span> <a href="/value.html">Card values</a> · <a href="/shows.html">Card shows</a> · <a href="/drops.html">Drops</a>
+        <br>© 2026 PokéSpa · a <a href="https://recursisdigital.com" target="_blank" rel="noopener">Recursis Digital</a> company · <a href="/gifts.html">Gifts</a> · <a href="/shop.html">Shop</a> · <a href="/learn/">Learn</a> · <a href="/merch.html">Merch</a> · <a href="/quote.html">Restoration</a> · <a href="mailto:info@pokespa.com">contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/privacy.html#do-not-sell" data-pixel-choice>Change my choice</a> · <a href="/privacy.html#do-not-sell">Do Not Sell or Share</a>
       </div>
     </footer>
   </div>
+  <!-- Vercel Analytics: anonymous, cookieless page-view counts -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
