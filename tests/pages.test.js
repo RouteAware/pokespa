@@ -46,6 +46,20 @@ for (const page of ['gifts.html', 'shop.html']) {
   });
 }
 
+const LEARN_PAID = fs.readdirSync(path.join(ROOT, 'learn')).filter((f) => f.endsWith('.html'))
+  .map((f) => 'learn/' + f).filter((f) => read(f).includes('https://www.amazon.com'));
+test('learn: the paid-link kits exist on three guides', () => assert.equal(LEARN_PAID.length, 3));
+for (const page of LEARN_PAID) {
+  test(`${page}: every Amazon link is sponsored nofollow noopener and has "(paid link)" beside it`, () => {
+    const links = anchors(read(page));
+    assert.ok(links.length > 0);
+    for (const l of links) {
+      assert.match(l.tag, /rel="sponsored nofollow noopener"/, l.href);
+      assert.match(l.after, /\(paid links?\)/, l.href);
+    }
+  });
+}
+
 test('gifts: no cleaning chemicals on the gift page', () => {
   assert.doesNotMatch(read('gifts.html'), /Kurt|NOVUS|polish|spray/i);
 });
@@ -80,6 +94,22 @@ test('home: no restoration offer, new hero copy', () => {
   assert.doesNotMatch(t, /What we do|De-creasing|Surface repair/);
   assert.match(t, /Gifts for the collector who/);
   assert.match(read('index.html'), /utm_source=pokespa/);
+  assert.doesNotMatch(t, /Plain picks|No brand pays/);
+  assert.match(t, /Honest about alteration\./);
+  assert.match(t, /Free guides\./);
 });
 
 test('sitemap lists gifts.html', () => assert.match(read('sitemap.xml'), /https:\/\/pokespa\.com\/gifts\.html/));
+
+test('merch tiles link to the real product pages with utm_source', () => {
+  for (const f of ['index.html', 'merch.html']) {
+    for (const slug of ['the-shine-sticker', 'the-holo-mug', 'the-bench-mat']) {
+      assert.match(read(f), new RegExp(`https://shop\\.pokespa\\.com/products/${slug}\\?utm_source=pokespa`), `${f} ${slug}`);
+    }
+  }
+});
+
+test('shop: no unsourced or confessional lines', () => {
+  const t = visibleText(read('shop.html')) + read('shop.html').match(/<head>[\s\S]*?<\/head>/)[0];
+  assert.doesNotMatch(t, /Honest picks, no junk|patent-pending|decertified|curated bench|comes back clear|we'd use/);
+});
