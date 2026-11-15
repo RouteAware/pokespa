@@ -5,10 +5,25 @@
 
 :root{--evergreen:#173a32;--hgold:#f0c98a;--frost:#e6f0ef}
 
-/* Bands: evergreen at 25% over the panel colour */
+/* One notice bar, same words: evergreen with frost text and gold links */
+.site-notice{background:var(--evergreen) !important;color:var(--frost) !important;
+  border-bottom:1px solid rgba(240,201,138,.35)}
+.site-notice a{color:var(--hgold) !important;text-decoration:underline !important}
+
+/* Bands: evergreen over the panel colour, gold hairline on top */
 .band,.home-band{
-  background:linear-gradient(180deg,#162127,#121a1f) !important;
-  border-color:rgba(230,240,239,.10) !important}
+  background:linear-gradient(180deg,rgba(23,58,50,.55),rgba(23,58,50,.25)),#161923 !important;
+  border-color:rgba(230,240,239,.10) !important;
+  border-top:1px solid rgba(240,201,138,.35) !important}
+
+/* Home hero picture frame wrapped like a gift: a thin gold ribbon cross */
+.still::before,.still::after{content:"";position:absolute;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,#b8915a,#f7dcae 45%,#f0c98a 60%,#b8915a);
+  box-shadow:0 0 0 1px rgba(11,13,18,.35),0 4px 12px rgba(0,0,0,.35)}
+.still img{z-index:4}
+.still::before{top:0;bottom:0;left:64%;width:12px}
+.still::after{left:0;right:0;top:38%;height:12px;
+  background:linear-gradient(180deg,#b8915a,#f7dcae 45%,#f0c98a 60%,#b8915a)}
 
 /* Frost top highlight on pick tiles and home tiles */
 .pick,.tile{box-shadow:inset 0 1px 0 rgba(230,240,239,.10),0 10px 24px rgba(0,0,0,.28)}
@@ -24,13 +39,18 @@
 .jumprow{border-bottom-color:rgba(240,201,138,.35)}
 .jumprow a:hover,.jumprow a:focus-visible{border-color:var(--hgold);color:var(--hgold)}
 
-/* The logo sparkle is the snow: a few slow gold sparkles drifting behind the page */
+/* The logo sparkle is the snow: a few slow gold sparkles drifting behind the page.
+   Masked to the side gutters so none ever sits behind a heading or label;
+   on narrow screens the gutters are empty, so no sparkles show there. */
 body::after{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55;
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35;
+  -webkit-mask-image:linear-gradient(90deg,#000,#000 calc(50% - 600px),transparent calc(50% - 560px),transparent calc(50% + 560px),#000 calc(50% + 600px));
+  mask-image:linear-gradient(90deg,#000,#000 calc(50% - 600px),transparent calc(50% - 560px),transparent calc(50% + 560px),#000 calc(50% + 600px));
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520'%3E%3Cg fill='%23f0c98a'%3E%3Cpath d='M60 40 l2.4 5.6 5.6 2.4 -5.6 2.4 -2.4 5.6 -2.4 -5.6 -5.6 -2.4 5.6 -2.4z' opacity='.8'/%3E%3Cpath d='M300 130 l1.8 4.2 4.2 1.8 -4.2 1.8 -1.8 4.2 -1.8 -4.2 -4.2 -1.8 4.2 -1.8z' opacity='.6'/%3E%3Cpath d='M450 260 l2.8 6.5 6.5 2.8 -6.5 2.8 -2.8 6.5 -2.8 -6.5 -6.5 -2.8 6.5 -2.8z' opacity='.7'/%3E%3Cpath d='M160 330 l1.6 3.8 3.8 1.6 -3.8 1.6 -1.6 3.8 -1.6 -3.8 -3.8 -1.6 3.8 -1.6z' opacity='.5'/%3E%3C/g%3E%3Cpath fill='%23e6f0ef' d='M380 450 l1.6 3.8 3.8 1.6 -3.8 1.6 -1.6 3.8 -1.6 -3.8 -3.8 -1.6 3.8 -1.6z' opacity='.5'/%3E%3C/svg%3E");
   background-size:520px 520px;
   animation:pokespa-snow 90s linear infinite}
 @keyframes pokespa-snow{from{background-position:0 0}to{background-position:-60px 520px}}
+/* Reduced motion: the sparkle field stays, perfectly still */
 @media(prefers-reduced-motion:reduce){
-  body::after{animation:none;display:none}
+  body::after{animation:none}
 }
