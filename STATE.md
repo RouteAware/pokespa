@@ -1,5 +1,5 @@
 # STATE — PokeSpa-Site · updated 2026-09-24 01:10 ET
-<!-- machine header (hale-close): branch master · HEAD ba202ed · dirty 0 · unpushed 0 · worktrees 3 · verified-at 2026-11-14 15:58 -->
+<!-- machine header (hale-close): branch master · HEAD a43d75c · dirty 1 · unpushed 0 · worktrees 5 · verified-at 2026-11-17 06:38 -->
 
 ## Now
 - Hale · 2026-11-17 06:36 ET · **Christmas revamp is LIVE (master 428f4a2; owner "Post it now" 2026-11-15).** New /gifts.html (19 Amazon paid links, tag pokespa-20), shop as pick cards, nav Gifts · Shop · Learn · Merch · Restoration, home re-ordered, holiday.css, new og.png + og-gifts.png, tests/pages.test.js 64/64 (`npm test`). Waitlist page line now "…has what we recommend." NEXT (Hale): recheck the 19 ASINs weekly through Dec 24 (`node --test tests/` + open each link); **remove holiday.css and its link tags after 2027-01-02**; January: shop.html leftovers + FB/IG bios. Picture concepts (Gemini, two rounds) wait on the owner's picks: https://claude.ai/artifact/UELefbDjWJQLMUiAZrmBMf (hale Q-176); no picture goes on the site before a Marlowe read per picture. Name research: the name is a loan, not a carve-out; never file a trademark (hale/council/2026-11-15-pokespa-name-research.md).
